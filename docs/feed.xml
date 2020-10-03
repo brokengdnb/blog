@@ -3,8 +3,8 @@
   <channel>
     <title>Room23</title>
     <description>Just another voice outside of group.</description>
-    <link>http://brokengdnb.github.io/blog/</link>
-    <atom:link href="http://brokengdnb.github.io/blog/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://brokengdnb.github.io//</link>
+    <atom:link href="http://brokengdnb.github.io//feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>Announcing Version 2.0</title>
@@ -17,8 +17,8 @@
 &lt;p&gt;So far I need to put together &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Room23&lt;/code&gt; earn enough money to move, pay semester, finish and run the whole idea. It will take a time, but I will make it done.&lt;/p&gt;
 </description>
         <pubDate>Sat, 26 Sep 2020 00:00:00 +0200</pubDate>
-        <link>http://brokengdnb.github.io/blog/update/2020/09/26/announcing-pixyll-version-2/</link>
-        <guid isPermaLink="true">http://brokengdnb.github.io/blog/update/2020/09/26/announcing-pixyll-version-2/</guid>
+        <link>http://brokengdnb.github.io//update/2020/09/26/announcing-pixyll-version-2/</link>
+        <guid isPermaLink="true">http://brokengdnb.github.io//update/2020/09/26/announcing-pixyll-version-2/</guid>
       </item>
     
       <item>
@@ -131,8 +131,8 @@ winecfg
 &lt;p&gt;Copyright (c) 2020 BrokenG&lt;/p&gt;
 </description>
         <pubDate>Tue, 17 Mar 2020 00:00:00 +0100</pubDate>
-        <link>http://brokengdnb.github.io/blog/project/2020/03/17/me/</link>
-        <guid isPermaLink="true">http://brokengdnb.github.io/blog/project/2020/03/17/me/</guid>
+        <link>http://brokengdnb.github.io//project/2020/03/17/me/</link>
+        <guid isPermaLink="true">http://brokengdnb.github.io//project/2020/03/17/me/</guid>
       </item>
     
       <item>
@@ -208,8 +208,8 @@ npm &lt;span class=&quot;nb&quot;&gt;install
 
 </description>
         <pubDate>Tue, 30 Jan 2018 00:00:00 +0100</pubDate>
-        <link>http://brokengdnb.github.io/blog/project/2018/01/30/ava-tv-control/</link>
-        <guid isPermaLink="true">http://brokengdnb.github.io/blog/project/2018/01/30/ava-tv-control/</guid>
+        <link>http://brokengdnb.github.io//project/2018/01/30/ava-tv-control/</link>
+        <guid isPermaLink="true">http://brokengdnb.github.io//project/2018/01/30/ava-tv-control/</guid>
       </item>
     
       <item>
@@ -305,8 +305,8 @@ npm &lt;span class=&quot;nb&quot;&gt;install
 &lt;/table&gt;
 </description>
         <pubDate>Wed, 30 Nov 2016 00:00:00 +0100</pubDate>
-        <link>http://brokengdnb.github.io/blog/project/2016/11/30/emi/</link>
-        <guid isPermaLink="true">http://brokengdnb.github.io/blog/project/2016/11/30/emi/</guid>
+        <link>http://brokengdnb.github.io//project/2016/11/30/emi/</link>
+        <guid isPermaLink="true">http://brokengdnb.github.io//project/2016/11/30/emi/</guid>
       </item>
     
       <item>
@@ -331,8 +331,8 @@ npm &lt;span class=&quot;nb&quot;&gt;install
 &lt;p&gt;It’s free, and open source (&lt;a href=&quot;http://opensource.org/licenses/MIT&quot;&gt;MIT&lt;/a&gt;).&lt;/p&gt;
 </description>
         <pubDate>Wed, 11 Jun 2014 17:31:19 +0200</pubDate>
-        <link>http://brokengdnb.github.io/blog/jekyll/pixyll/2014/06/11/welcome-to-pixyll/</link>
-        <guid isPermaLink="true">http://brokengdnb.github.io/blog/jekyll/pixyll/2014/06/11/welcome-to-pixyll/</guid>
+        <link>http://brokengdnb.github.io//jekyll/pixyll/2014/06/11/welcome-to-pixyll/</link>
+        <guid isPermaLink="true">http://brokengdnb.github.io//jekyll/pixyll/2014/06/11/welcome-to-pixyll/</guid>
       </item>
     
       <item>
@@ -348,8 +348,8 @@ and &lt;a href=&quot;http://en.wikipedia.org/wiki/Textile_(markup_language)&quot
 &lt;p&gt;Learn more about Jekyll on their &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;website&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Mon, 09 Jun 2014 14:32:18 +0200</pubDate>
-        <link>http://brokengdnb.github.io/blog/jekyll/pixyll/2014/06/09/so-what-is-jekyll/</link>
-        <guid isPermaLink="true">http://brokengdnb.github.io/blog/jekyll/pixyll/2014/06/09/so-what-is-jekyll/</guid>
+        <link>http://brokengdnb.github.io//jekyll/pixyll/2014/06/09/so-what-is-jekyll/</link>
+        <guid isPermaLink="true">http://brokengdnb.github.io//jekyll/pixyll/2014/06/09/so-what-is-jekyll/</guid>
       </item>
     
       <item>
@@ -613,11 +613,11 @@ html(lang=&quot;en&quot;)
 
 &lt;p&gt;The MIT License.&lt;/p&gt;
 
-&lt;p&gt;Copyright (c) 2020 BrokenGě&lt;/p&gt;
+&lt;p&gt;Copyright (c) 2020 BrokenG&lt;/p&gt;
 </description>
         <pubDate>Fri, 30 Aug 2013 00:00:00 +0200</pubDate>
-        <link>http://brokengdnb.github.io/blog/project/2013/08/30/ava-data/</link>
-        <guid isPermaLink="true">http://brokengdnb.github.io/blog/project/2013/08/30/ava-data/</guid>
+        <link>http://brokengdnb.github.io//project/2013/08/30/ava-data/</link>
+        <guid isPermaLink="true">http://brokengdnb.github.io//project/2013/08/30/ava-data/</guid>
       </item>
     
   </channel>

@@ -4,19 +4,19 @@
   "description": "Just another voice outside of group.",
   "icons": [
     {
-      "src": "/blog/splash-512x512.png",
+      "src": "/splash-512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     },
     {
-      "src": "/blog/favicon-192x192.png",
+      "src": "/favicon-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     }
   ],
-  "start_url": "/blog/",
+  "start_url": "/",
   "background_color": "#ffffff",
   "display": "standalone",
-  "scope": "/blog/",
+  "scope": "/",
   "theme_color": "#ffffff"
 }
