@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title></title>
+    <link>http://localhost:4000</link>
+    <description>
+      Just another voice outside of group.
+    </description>
+    
+        
+            <item>
+                <title>Announcing Version 2.0</title>
+                <link>http://localhost:4000/update/2020/09/26/announcing-pixyll-version-2/</link>
+                <content:encoded>
+                    <![CDATA[
+                    <p>I’ve just released version <code class="language-plaintext highlighter-rouge">2.0</code>. of everything. Versions in future will be updated few times per year based on futures and testing. New way of thinking, designing and creating will be faster, more effective and organized.</p>
+
+<p>In this ‘covid-19’ times I make the biggest changes in my life including future path returning me back to school. Music university of sound engineering.</p>
+
+<p>Next year 2021 somewhere in a middle I will be starting personal internet radio, based on free music without licencing. Some personal samples also podcasts with the most interesting people on this planet.</p>
+
+<p>So far I need to put together <code class="language-plaintext highlighter-rouge">Room23</code> earn enough money to move, pay semester, finish and run the whole idea. It will take a time, but I will make it done.</p>
+
+                    ]]>
+                </content:encoded>
+                <guid isPermaLink="false">/update/2020/09/26/announcing-pixyll-version-2/</guid>
+                <description>
+                    
+                    Easy, light, simple
+                    
+                </description>
+                <pubDate>Sat, 26 Sep 2020 00:00:00 +0200</pubDate>
+                <author>BrokenG</author>
+            </item>
+        
+    
+        
+            <item>
+                <title>ME (Markdown Editor)</title>
+                <link>http://localhost:4000/project/2020/03/17/me/</link>
+                <content:encoded>
+                    <![CDATA[
+                    <blockquote>
+  <p>…just another .md editor but just for me!</p>
+</blockquote>
+
+<p><a href="https://github.com/brokengdnb/me" title="preview"><img src="https://github.com/brokengdnb/me/blob/master/about.png?raw=true" alt="preview" title="preview" /></a></p>
+
+<ul>
+  <li>WHY? Because I cannot find any Markdown Editor in “darkmode” but show me that results normaly like the original page (Git). Live preview with double scroll, all needed buttons like WORD or textEdit. Editor who remember (undo) and all those things… which I don’t and who will make it done… for me. So that’s ME.</li>
+  <li>Forked from <a href="https://pandao.github.io/editor.md/en.html" title="editor.md (Live preview)">editor.md (Live preview)</a> and bundled with Electron to act like off-line app… on my Mac. Just an idea but it works very well on daily use.</li>
+</ul>
+
+<hr />
+
+<ul>
+  <li><a href="#demo">Demo</a></li>
+  <li><a href="#downloads">Downloads</a></li>
+  <li><a href="#compilation">Compilation</a></li>
+  <li><a href="#features">Features</a></li>
+  <li><a href="#documentation">Documentation</a></li>
+  <li><a href="#support">Support</a></li>
+  <li><a href="#errors">Errors</a></li>
+  <li><a href="#license">License</a></li>
+</ul>
+
+<h2 id="demo">Demo</h2>
+
+<p><a href="https://github.com/brokengdnb/me" title="demo"><img src="https://github.com/brokengdnb/me/blob/master/demo.gif?raw=true" alt="demo" title="demo" /></a></p>
+
+<h2 id="downloads">Downloads</h2>
+
+<p><a href="https://github.com/brokengdnb/me/releases" title="apple-app"><img src="https://github.com/brokengdnb/me/blob/master/appstore.png?raw=true" alt="apple-app" title="apple-app" /></a></p>
+
+<ul>
+  <li><a href="https://github.com/brokengdnb/me/releases/tag/v1.1">ME-1.1.0.dmg (~70MB) ===&gt; App (~172MB)</a></li>
+</ul>
+
+<blockquote>
+  <p>MD5</p>
+  <ul>
+    <li>abcd9e60072945b7b9aaed886d9638e8</li>
+  </ul>
+</blockquote>
+
+<h2 id="compilation">Compilation</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/brokengdnb/me <span class="o">&amp;&amp;</span> <span class="nb">cd </span>me/
+npm <span class="nb">install
+</span>npm run start
+</code></pre></div></div>
+<blockquote>
+  <p>simple as that…</p>
+</blockquote>
+
+<h2 id="features">Features</h2>
+
+<ul>
+  <li>Dark theme for longer and comfortable time</li>
+  <li>Fullscreen Do-Not-Disturb style</li>
+  <li>App cannot be closed, quited or linked into another page =&gt; safety feature for accidentally quiting app. For quit just kill that run command or force kill by alt.</li>
+  <li>Support Standard Markdown / CommonMark and GFM (GitHub Flavored Markdown)</li>
+  <li>Full-featured: Real-time Preview, Image (cross-domain), Preformatted text/Code blocks/Tables insert, Code fold, Search replace, Themes, Multi-languages, L18n, HTML entities, Code syntax highlighting…</li>
+  <li>Markdown Extras : Support ToC (Table of Contents), Task lists, @Links…</li>
+  <li>Compatible with all major systems</li>
+  <li>Support identification, interpretation, fliter of the HTML tags</li>
+  <li>Support TeX (LaTeX expressions, Based on KaTeX), Flowchart and Sequence Diagram of Markdown extended syntax</li>
+</ul>
+
+<h2 id="documentation">Documentation</h2>
+
+<p><a href="http://editor.md.ipandao.com/examples/index.html" title="Follow the original project page.">Follow the original project page.</a></p>
+
+<h2 id="support">Support</h2>
+
+<ul>
+  <li><strong>OS X (tasted on 10.14.6)</strong></li>
+  <li>Linux</li>
+  <li><del>Windows</del>  =&gt; rcedit.exe failed with exit code null <em>(So I don’t have one and I will <strong>NOT</strong> support this platform. Call Microsoft service in India or your local IT “experts” because I’ll not do that)</em></li>
+</ul>
+
+<h2 id="errors">Errors</h2>
+
+<blockquote>
+  <p>Packaging app for platform win32 x64 using electron v8.0.3
+Could not find “wine64” on your system.</p>
+</blockquote>
+
+<h3 id="plan-a">PLAN A:</h3>
+
+<p><a href="https://apple.stackexchange.com/a/376427" title="Follow white rabbit, good luck!">Follow white rabbit, good luck!</a></p>
+
+<h3 id="plan-b">PLAN B:</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew cask <span class="nb">install </span>wine-stable
+<span class="c"># autoinstall</span>
+winecfg
+</code></pre></div></div>
+
+<p>That will solve the problem of creating App for Microsoft Windows but still that .exe didn’t wokred out nether. After two days of closed code and useless logs I gave on Mincosoft = NO windows.</p>
+
+<p>BUT!!! If you are Mac or Linux user = NO problem.</p>
+
+<h2 id="license">License</h2>
+
+<p>The MIT License.</p>
+
+<p>Copyright (c) 2020 BrokenG</p>
+
+                    ]]>
+                </content:encoded>
+                <guid isPermaLink="false">/project/2020/03/17/me/</guid>
+                <description>
+                    
+                    ...just another .md editor but just for me!
+                    
+                </description>
+                <pubDate>Tue, 17 Mar 2020 00:00:00 +0100</pubDate>
+                <author>BrokenG</author>
+            </item>
+        
+    
+        
+            <item>
+                <title>AVA (TV &amp; Control)</title>
+                <link>http://localhost:4000/project/2018/01/30/ava-tv-control/</link>
+                <content:encoded>
+                    <![CDATA[
+                    <blockquote>
+  <p>Since I got working REST-API server and DJ program as well. I wanted to control video effects on projector behind me or any PC/TV connected to local network on a go so here we go…</p>
+</blockquote>
+
+<hr />
+
+<ul>
+  <li><a href="#demo">Demo</a></li>
+  <li><a href="#downloads">Downloads</a></li>
+  <li><a href="#compilation">Compilation</a></li>
+  <li><a href="#index">Index</a></li>
+  <li><a href="#license">License</a></li>
+</ul>
+
+<h2 id="demo">Demo</h2>
+
+<p><a href="https://github.com/brokengdnb/me" title="demo"><img src="https://github.com/brokengdnb/ava-tv/blob/master/demo.gif?raw=true" alt="demo" title="demo" /></a></p>
+
+<h2 id="downloads">Downloads</h2>
+
+<ul>
+  <li><a href="https://github.com/brokengdnb/ava-tv/releases/tag/v1">AVA-TV-1.0.zip (~70MB)</a></li>
+</ul>
+
+<blockquote>
+  <p>MD5</p>
+  <ul>
+    <li>…</li>
+  </ul>
+</blockquote>
+
+<h2 id="compilation">Compilation</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/brokengdnb/ava-tv <span class="o">&amp;&amp;</span> <span class="nb">cd </span>ava-tv/
+npm <span class="nb">install
+</span>bower <span class="nb">install
+</span>npm run start
+</code></pre></div></div>
+<blockquote>
+  <p>simple as that…</p>
+</blockquote>
+
+<h2 id="index">Index</h2>
+
+<pre><code class="language-jade">
+</code></pre>
+
+<p>As you can see in a “body” tag I’m using just one element and that render whole aplication in one page, then it depands and also the app will request only what is needed at that request. Then all requests are split between front &amp; back end.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
+<h2 id="support">Support</h2>
+
+<ul>
+  <li><strong>OS X (tasted on 10.14.6)</strong></li>
+  <li>Linux</li>
+  <li><del>Windows</del>  =&gt; <em>(I don’t have one and I will <strong>NOT</strong> support this platform. Call Microsoft service in India or your local IT “experts”</em></li>
+</ul>
+
+<h2 id="license">License</h2>
+
+<p>The MIT License.</p>
+
+<p>Copyright (c) 2020 BrokenG</p>
+
+
+                    ]]>
+                </content:encoded>
+                <guid isPermaLink="false">/project/2018/01/30/ava-tv-control/</guid>
+                <description>
+                    
+                    ...making my life easier as a video DJ
+                    
+                </description>
+                <pubDate>Tue, 30 Jan 2018 00:00:00 +0100</pubDate>
+                <author>BrokenG</author>
+            </item>
+        
+    
+        
+            <item>
+                <title>EMI</title>
+                <link>http://localhost:4000/project/2016/11/30/emi/</link>
+                <content:encoded>
+                    <![CDATA[
+                    <blockquote>
+  <p>Never ever lost the passion for acomplishing your dreams, never ever… no matter of what? … omg money? fuck the money… fight for your dreams!</p>
+</blockquote>
+
+<p>So the idea was to create a special cusom high level mappings as well as dual-bind responsible skin to adapt on a events on a go but the point is… limited… number of a buttons… so it’s like layer over the layer… over the another one… based on position in that mixing process. So I started from zero with tottaly different MIDI console, then emigrate but the idea is same and is portable to “any” device that I get under my hands, it just works. In this time “2020” Behringer-CMD serie… and yes, you can separate them and yes each of that console have their own layers and yes it works one by one but together…. omg… hold my beer baby… I will show you something…</p>
+
+<ul>
+  <li><a href="#MIDI">MIDI</a></li>
+  <li><a href="#Screens">Screens</a></li>
+  <li><a href="#Code">Code</a></li>
+  <li><a href="#Future">Future</a></li>
+  <li><a href="#Documentation">Documentation</a></li>
+  <li><a href="#License">License</a></li>
+</ul>
+
+<p>##MIDI</p>
+
+<p><a href="https://github.com/brokengdnb/emi/blob/master/02.jpg?raw=true" title="preview"><img src="https://github.com/brokengdnb/emi/blob/master/02.jpg?raw=true" alt="preview" title="preview" /></a></p>
+
+<h2 id="screens">Screens</h2>
+
+<p><a href="https://github.com/brokengdnb/emi/blob/master/01.png?raw=true" title="preview1"><img src="https://github.com/brokengdnb/emi/blob/master/01.png?raw=true" alt="preview1" title="preview1" /></a></p>
+
+<p><a href="https://github.com/brokengdnb/emi/blob/master/05.png?raw=true" title="preview3"><img src="https://github.com/brokengdnb/emi/blob/master/05.png?raw=true" alt="preview3" title="preview3" /></a></p>
+
+<p><a href="https://github.com/brokengdnb/emi/blob/master/03.png?raw=true" title="preview2"><img src="https://github.com/brokengdnb/emi/blob/master/03.png?raw=true" alt="preview2" title="preview2" /></a></p>
+
+<h2 id="code">Code</h2>
+
+<p>The core is written in C++ by open source comunity Mixxx and I didn’t touched that core, I took care about skin, mappings and comunication between controller, screen and audio. The magic script is written in pure Javasript ES5 with some deep dark energy and the best part is like:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// e = encoder, b = button... c = cue??? no, what only 4 deck? common!</span>
+<span class="kd">function</span> <span class="nx">deckApi</span><span class="p">(</span><span class="nx">channel</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">cc</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">e1</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">e2</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">e3</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">e4</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">e5</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">e6</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">e7</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">e8</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">pitch</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b1</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">b2</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b3</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b4</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b5</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b6</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b7</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b8</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">load</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">lock</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">deck</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">scratch</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">wheel</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">sync</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">tap</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">cue</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">playPause</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">backward</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">forward</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">minus</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">plus</span><span class="dl">'</span><span class="p">];</span>
+
+    <span class="kd">var</span> <span class="nx">rings</span> <span class="o">=</span> <span class="p">[</span><span class="nx">CC</span><span class="p">.</span><span class="nx">E1</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">E2</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">E3</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">E4</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">E5</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">E6</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">E7</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">E8</span><span class="p">];</span>
+
+    <span class="kd">var</span> <span class="nx">buttons</span> <span class="o">=</span> <span class="p">[</span><span class="nx">CC</span><span class="p">.</span><span class="nx">B1</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">B2</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">B3</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">B4</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">B5</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">B6</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">B7</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">B8</span><span class="p">,</span>
+        <span class="nx">CC</span><span class="p">.</span><span class="nx">LOAD</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">LOCK</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">SCRATCH</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">SYNC</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">TAP</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">CUE</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">PLAY_PAUSE</span><span class="p">,</span>
+        <span class="nx">CC</span><span class="p">.</span><span class="nx">BACKWARD</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">FORWARD</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">MINUS</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">PLUS</span><span class="p">];</span>
+
+    <span class="kd">var</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">deck</span> <span class="o">=</span> <span class="p">{};</span>
+    <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">cc</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="nx">deck</span><span class="p">[</span><span class="nx">cc</span><span class="p">[</span><span class="nx">i</span><span class="p">]]</span> <span class="o">=</span> <span class="nx">controlApi</span><span class="p">();</span>
+    <span class="nx">deck</span><span class="p">.</span><span class="nx">pitch</span><span class="p">.</span><span class="nx">led</span> <span class="o">=</span> <span class="nx">pitchLed</span><span class="p">(</span><span class="nx">channel</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">rings</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+      <span class="nx">deck</span><span class="p">[</span><span class="nx">CC_NAME</span><span class="p">[</span><span class="nx">rings</span><span class="p">[</span><span class="nx">i</span><span class="p">]]].</span><span class="nx">led</span> <span class="o">=</span> <span class="nx">encoderLedApi</span><span class="p">(</span><span class="nx">channel</span><span class="p">,</span> <span class="nx">rings</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">buttons</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+      <span class="nx">deck</span><span class="p">[</span><span class="nx">CC_NAME</span><span class="p">[</span><span class="nx">buttons</span><span class="p">[</span><span class="nx">i</span><span class="p">]]].</span><span class="nx">led</span> <span class="o">=</span> <span class="nx">buttonLedApi</span><span class="p">(</span><span class="nx">channel</span><span class="p">,</span> <span class="nx">buttons</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+
+    <span class="k">return</span> <span class="nx">deck</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="future">Future</h2>
+
+<p>Get some single-board mini PC with LCD and create complete custom and standalone player powered by 5V power bank.</p>
+
+<p><a href="https://github.com/brokengdnb/emi/blob/master/board.jpg?raw=true" title="board"><img src="https://github.com/brokengdnb/emi/blob/master/board.jpg?raw=true" alt="board" title="board" /></a></p>
+
+<p><a href="https://github.com/brokengdnb/emi/blob/master/lcd.jpg?raw=true" title="lcd"><img src="https://github.com/brokengdnb/emi/blob/master/lcd.jpg?raw=true" alt="lcd" title="lcd" /></a></p>
+
+<h2 id="documentation">Documentation</h2>
+
+<ul>
+  <li><a href="http://https://mixxx.org/wiki/doku.php/faq" title="FAQ">FAQ</a></li>
+  <li><a href="https://www.mixxx.org/wiki/doku.phphttp://" title="Wiki">Wiki</a></li>
+  <li><a href="https://mixxx.org/wiki/doku.php/creating_skins" title="Skins">Skins</a></li>
+  <li><a href="https://github.com/brokengdnb/emi/blob/master/Mixxx-Manual.pdf" title="Manual">Manual</a></li>
+  <li><a href="https://mixxx.org/wiki/doku.php/mixxxcontrols" title="Controls">Controls</a></li>
+  <li><a href="https://mixxx.org/wiki/doku.php/midi_scripting" title="Scripting">Scripting</a></li>
+  <li><a href="https://mixxx.org/wiki/doku.php/hardware_compatibility" title="HW Compatibility">HW Compatibility</a></li>
+</ul>
+
+<h2 id="license">License</h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td>mixed under Mixxx licence, the GPLv2. See the LICENSE file and edit of a source code under MIT</td>
+      <td>BrokenG</td>
+      <td>2020</td>
+    </tr>
+  </tbody>
+</table>
+
+                    ]]>
+                </content:encoded>
+                <guid isPermaLink="false">/project/2016/11/30/emi/</guid>
+                <description>
+                    
+                    ...Elegant Mixing Interface (DJ App)
+                    
+                </description>
+                <pubDate>Wed, 30 Nov 2016 00:00:00 +0100</pubDate>
+                <author>BrokenG</author>
+            </item>
+        
+    
+        
+            <item>
+                <title>Hello, Pixyll</title>
+                <link>http://localhost:4000/jekyll/pixyll/2014/06/11/welcome-to-pixyll/</link>
+                <content:encoded>
+                    <![CDATA[
+                    <p>Hello.</p>
+
+<p>Pixyll is a simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff. It’s mobile <em>first</em>, fluidly responsive, and delightfully lightweight.</p>
+
+<p>It’s pretty minimal, but leverages large type and drastic contrast to make a statement, on all devices.</p>
+
+<blockquote>
+  <p>
+    Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.
+  </p>
+  <footer><cite title="Antoine de Saint-Exupéry">Antoine de Saint-Exupéry</cite></footer>
+</blockquote>
+
+<h2 id="where-is-it">Where is it?</h2>
+
+<p>Checkout the <a href="https://github.com/johnotander/pixyll">Github repository</a> to download it, request a feature, or report a bug.</p>
+
+<p>It’s free, and open source (<a href="http://opensource.org/licenses/MIT">MIT</a>).</p>
+
+                    ]]>
+                </content:encoded>
+                <guid isPermaLink="false">/jekyll/pixyll/2014/06/11/welcome-to-pixyll/</guid>
+                <description>
+                    
+                    Pixyll is a simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff.
+                    
+                </description>
+                <pubDate>Wed, 11 Jun 2014 17:31:19 +0200</pubDate>
+                <author>BrokenG</author>
+            </item>
+        
+    
+        
+            <item>
+                <title>So, What is Jekyll?</title>
+                <link>http://localhost:4000/jekyll/pixyll/2014/06/09/so-what-is-jekyll/</link>
+                <content:encoded>
+                    <![CDATA[
+                    <p>Jekyll is a tool for transforming your plain text into static websites and 
+blogs. It is simple, static, and blog-aware. Jekyll uses the 
+<a href="http://docs.shopify.com/themes/liquid-basics">Liquid</a> templating
+language and has builtin <a href="http://daringfireball.net/projects/markdown/">Markdown</a>
+and <a href="http://en.wikipedia.org/wiki/Textile_(markup_language)">Textile</a> support.</p>
+
+<p>It also ties in nicely to <a href="https://pages.github.com/">Github Pages</a>.</p>
+
+<p>Learn more about Jekyll on their <a href="http://jekyllrb.com/">website</a>.</p>
+
+                    ]]>
+                </content:encoded>
+                <guid isPermaLink="false">/jekyll/pixyll/2014/06/09/so-what-is-jekyll/</guid>
+                <description>
+                    
+                    Transform your plain text into static websites and blogs. Simple, static, and blog-aware.
+                    
+                </description>
+                <pubDate>Mon, 09 Jun 2014 14:32:18 +0200</pubDate>
+                <author>BrokenG</author>
+            </item>
+        
+    
+        
+            <item>
+                <title>AVA (Data)</title>
+                <link>http://localhost:4000/project/2013/08/30/ava-data/</link>
+                <content:encoded>
+                    <![CDATA[
+                    <blockquote>
+  <p>…ok so let’s create a decent REST API database, with pre/post custom manipulation suited up in Material Design UI and all of that render in 2D map of songs to play seamless mix as a DJ as well as VDJ at once… at glance, not so hard to image but fucking loooong way to take that to reality and here we are…</p>
+</blockquote>
+
+<hr />
+
+<ul>
+  <li><a href="#demo">Demo</a></li>
+  <li><a href="#downloads">Downloads</a></li>
+  <li><a href="#compilation">Compilation</a></li>
+  <li><a href="#index">Index</a></li>
+  <li><a href="#license">License</a></li>
+</ul>
+
+<h2 id="demo">Demo</h2>
+
+<p><a href="https://github.com/brokengdnb/me" title="demo"><img src="https://github.com/brokengdnb/me/blob/master/demo.gif?raw=true" alt="demo" title="demo" /></a></p>
+
+<h2 id="downloads">Downloads</h2>
+
+<ul>
+  <li><a href="https://github.com/brokengdnb/ava-data/releases/tag/v1">AVA-1.0.zip (~70MB)</a></li>
+</ul>
+
+<blockquote>
+  <p>MD5</p>
+  <ul>
+    <li>…</li>
+  </ul>
+</blockquote>
+
+<h2 id="compilation">Compilation</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/brokengdnb/ava-data <span class="o">&amp;&amp;</span> <span class="nb">cd </span>ava-data/
+npm <span class="nb">install
+</span>bower <span class="nb">install
+</span>npm run start
+</code></pre></div></div>
+<blockquote>
+  <p>simple as that…</p>
+</blockquote>
+
+<h2 id="index">Index</h2>
+
+<p>It’s sooo beauty just… so simple and so open for more complexity, plugins, pages and more:</p>
+
+<pre><code class="language-jade">mixin links(names)
+    each name in names
+        link(rel="stylesheet", type="text/css", href=name)
+mixin scripts(names)
+    each name in names
+        script(type="text/javascript", src=name)
+mixin scriptsBowerAngular(names)
+    each name in names
+        script(type="text/javascript", src="/bower_components/"+name+"/"+name+".min.js")
+html(lang="en")
+    head
+        title=appName
+        meta(name="mobile-web-app-capable" content="yes")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        meta(name="theme-color" content="#000")
+
+        +links([
+            "/bower_components/angular-material/angular-material.min.css",
+            "/styles/main.css",
+            "/styles/croppie.css",
+            "/styles/vis.css"
+        ])
+
+        +scriptsBowerAngular([
+            "angular",
+            "angular-animate",
+            "angular-aria",
+            "angular-material",
+            "angular-messages",
+            "angular-resource",
+            "angular-route",
+        ])
+
+        +scripts([
+            "/bower_components/angular-youtube-api-factory/dist/angular-youtube-api-factory.min.js",
+            "/scripts/WSAvcPlayer.js",
+            "/scripts/ng-droplet.min.js",
+            "/scripts/progressbar.min.js",
+            "/scripts/NodePlayer.js",
+            "/scripts/croppie.min.js",
+            "/scripts/angular-croppie.js",
+            "/scripts/socket.io.slim.js",
+            "/scripts/ua-parser.min.js",
+            "/scripts/jquery.min.js",
+            "/scripts/vis.js",
+            "/scripts/app.js",
+            "/scripts/index/component.js",
+            "/scripts/search/component.js",
+            "/scripts/saveAudio/component.js",
+            "/scripts/saveVideo/component.js",
+            "/scripts/local/component.js",
+            "/scripts/move/component.js",
+            "/scripts/home/component.js",
+            "/scripts/movie/component.js",
+            "/scripts/songs/component.js",
+            "/scripts/effects/component.js",
+            "/scripts/csv/component.js",
+            "/scripts/playlists/component.js"
+        ])
+    body(ng-app="ngApp")
+        div(ng-view)
+
+</code></pre>
+
+<p>As you can see in a “body” tag I’m using just one element and that render whole aplication in one page, then it depands and also the app will request only what is needed at that request. Then all requests are split between front &amp; back end.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// definition of front-end routers:</span>
+<span class="nx">$routeProvider</span><span class="p">.</span>
+<span class="nx">when</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+	<span class="na">template</span><span class="p">:</span> <span class="dl">'</span><span class="s1">&lt;home&gt;&lt;/home&gt;</span><span class="dl">'</span><span class="p">,</span>
+	<span class="na">activetab</span><span class="p">:</span> <span class="dl">'</span><span class="s1">home</span><span class="dl">'</span><span class="p">,</span>
+	<span class="na">activename</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Home</span><span class="dl">'</span><span class="p">,</span>
+	<span class="na">reloadOnSearch</span> <span class="p">:</span> <span class="kc">false</span>
+<span class="p">}).</span>
+<span class="nx">when</span><span class="p">(</span><span class="dl">'</span><span class="s1">/search</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+	<span class="na">template</span><span class="p">:</span> <span class="dl">'</span><span class="s1">&lt;search&gt;&lt;/search&gt;</span><span class="dl">'</span><span class="p">,</span>
+	<span class="na">activetab</span><span class="p">:</span> <span class="dl">'</span><span class="s1">search</span><span class="dl">'</span><span class="p">,</span>
+	<span class="na">activename</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Search</span><span class="dl">'</span><span class="p">,</span>
+	<span class="na">reloadOnSearch</span> <span class="p">:</span> <span class="kc">false</span>
+<span class="p">}).</span>
+<span class="nx">when</span><span class="p">(</span><span class="dl">'</span><span class="s1">/index</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+	<span class="c1">// etc... and then back-end API factory</span>
+
+<span class="p">.</span><span class="nx">factory</span><span class="p">(</span><span class="dl">'</span><span class="s1">Songs</span><span class="dl">'</span><span class="p">,</span>
+	<span class="kd">function</span><span class="p">(</span><span class="nx">$resource</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="nx">$resource</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/songs/:id</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">@_id</span><span class="dl">'</span><span class="p">},</span> <span class="p">{</span>
+			<span class="dl">'</span><span class="s1">query</span><span class="dl">'</span><span class="p">:</span>  <span class="p">{</span><span class="na">method</span><span class="p">:</span><span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span> <span class="na">isArray</span><span class="p">:</span><span class="kc">true</span><span class="p">},</span>
+			<span class="dl">'</span><span class="s1">get</span><span class="dl">'</span><span class="p">:</span>    <span class="p">{</span><span class="na">method</span><span class="p">:</span><span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">},</span>
+			<span class="dl">'</span><span class="s1">update</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span><span class="na">method</span><span class="p">:</span><span class="dl">'</span><span class="s1">PUT</span><span class="dl">'</span><span class="p">},</span>
+			<span class="dl">'</span><span class="s1">save</span><span class="dl">'</span><span class="p">:</span>   <span class="p">{</span><span class="na">method</span><span class="p">:</span><span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">},</span>
+			<span class="dl">'</span><span class="s1">remove</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span><span class="na">method</span><span class="p">:</span><span class="dl">'</span><span class="s1">DELETE</span><span class="dl">'</span><span class="p">},</span>
+			<span class="dl">'</span><span class="s1">delete</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span><span class="na">method</span><span class="p">:</span><span class="dl">'</span><span class="s1">DELETE</span><span class="dl">'</span><span class="p">}</span>
+		<span class="p">});</span>
+	<span class="p">}</span>
+<span class="p">).</span><span class="nx">factory</span><span class="p">(</span><span class="dl">'</span><span class="s1">Effects</span><span class="dl">'</span><span class="p">,</span>
+<span class="c1">// etc...</span>
+</code></pre></div></div>
+<p>I tried to keep default model MVC and rendering custom templates on a go as well.</p>
+
+<p><a href="https://github.com/brokengdnb/ava-data" title="preview"><img src="https://github.com/brokengdnb/ava-data/blob/master/mvc.png?raw=true" alt="MVC" title="preview" /></a></p>
+
+<p>as well as REST-API communications on server split on seperate everything:</p>
+
+<p><a href="https://github.com/brokengdnb/me" title="preview"><img src="https://github.com/brokengdnb/ava-data/blob/master/demo.png?raw=true" alt="api" title="preview" /></a></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">(</span><span class="nx">app</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">notes</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">../controllers/note.controller.js</span><span class="dl">'</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">cors</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">cors</span><span class="dl">'</span><span class="p">);</span>
+
+    <span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">cors</span><span class="p">());</span>
+
+    <span class="c1">// Create a new Note</span>
+    <span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/notes</span><span class="dl">'</span><span class="p">,</span> <span class="nx">notes</span><span class="p">.</span><span class="nx">create</span><span class="p">);</span>
+
+    <span class="c1">// Retrieve all Notes</span>
+    <span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/notes</span><span class="dl">'</span><span class="p">,</span> <span class="nx">notes</span><span class="p">.</span><span class="nx">findAll</span><span class="p">);</span>
+
+    <span class="c1">// Retrieve a single Note with noteId</span>
+    <span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/notes/:noteId</span><span class="dl">'</span><span class="p">,</span> <span class="nx">notes</span><span class="p">.</span><span class="nx">findOne</span><span class="p">);</span>
+
+    <span class="c1">// Update a Note with noteId</span>
+    <span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/notes/:noteId</span><span class="dl">'</span><span class="p">,</span> <span class="nx">notes</span><span class="p">.</span><span class="nx">update</span><span class="p">);</span>
+
+    <span class="c1">// Delete a Note with noteId</span>
+    <span class="nx">app</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/notes/:noteId</span><span class="dl">'</span><span class="p">,</span> <span class="nx">notes</span><span class="p">.</span><span class="k">delete</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="support">Support</h2>
+
+<ul>
+  <li><strong>OS X (tasted on 10.14.6)</strong></li>
+  <li>Linux</li>
+  <li><del>Windows</del>  =&gt; <em>(I don’t have one and I will <strong>NOT</strong> support this platform. Call Microsoft service in India or your local IT “experts”</em></li>
+</ul>
+
+<h2 id="license">License</h2>
+
+<p>The MIT License.</p>
+
+<p>Copyright (c) 2020 BrokenG</p>
+
+
+                    ]]>
+                </content:encoded>
+                <guid isPermaLink="false">/project/2013/08/30/ava-data/</guid>
+                <description>
+                    
+                    ...just an idea in the middle of nowhere
+                    
+                </description>
+                <pubDate>Fri, 30 Aug 2013 00:00:00 +0200</pubDate>
+                <author>BrokenG</author>
+            </item>
+        
+    
+  </channel>
+</rss>
