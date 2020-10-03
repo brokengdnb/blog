@@ -544,44 +544,34 @@ html(lang=&quot;en&quot;)
 &lt;p&gt;So the idea is that I have 3 main elements that I would like to mix:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;h3 id=&quot;music-project-emi&quot;&gt;music &lt;a href=&quot;https://github.com/brokengdnb/emi&quot; title=&quot;(project EMI)&quot;&gt;(project EMI)&lt;/a&gt;&lt;/h3&gt;
-  &lt;/li&gt;
+  &lt;li&gt;music &lt;a href=&quot;https://github.com/brokengdnb/emi&quot; title=&quot;(project EMI)&quot;&gt;(project EMI)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/brokengdnb/ava-data/demo-img/emi.png?raw=true&quot; title=&quot;preview&quot;&gt;&lt;img src=&quot;https://github.com/brokengdnb/ava-data/blob/master/demo-img/emi.png?raw=true&quot; alt=&quot;MVC&quot; title=&quot;preview&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;### movies&lt;/li&gt;
+  &lt;li&gt;movies&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/brokengdnb/ava-data/demo-img/movies.png?raw=true&quot; title=&quot;preview&quot;&gt;&lt;img src=&quot;https://github.com/brokengdnb/ava-data/blob/master/demo-img/movies.png?raw=true&quot; alt=&quot;MVC&quot; title=&quot;preview&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;h3 id=&quot;video-effects&quot;&gt;video effects&lt;/h3&gt;
-  &lt;/li&gt;
+  &lt;li&gt;video effects&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/brokengdnb/ava-data/demo-img/effects.png?raw=true&quot; title=&quot;preview&quot;&gt;&lt;img src=&quot;https://github.com/brokengdnb/ava-data/blob/master/demo-img/effects.png?raw=true&quot; alt=&quot;MVC&quot; title=&quot;preview&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;that-can-be-imported-by-3-different-ways&quot;&gt;That can be imported by 3 different ways:&lt;/h2&gt;
 &lt;ul&gt;
-  &lt;li&gt;### online (YouTube, Soundcloud, etc.)&lt;/li&gt;
+  &lt;li&gt;online (YouTube, Soundcloud, etc.)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/brokengdnb/ava-data/demo-img/youtube.png?raw=true&quot; title=&quot;preview&quot;&gt;&lt;img src=&quot;https://github.com/brokengdnb/ava-data/blob/master/demo-img/youtube.png?raw=true&quot; alt=&quot;MVC&quot; title=&quot;preview&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;h3 id=&quot;offline-local&quot;&gt;offline (local)&lt;/h3&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;h3 id=&quot;move&quot;&gt;move&lt;/h3&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;h3 id=&quot;convert&quot;&gt;convert&lt;/h3&gt;
-  &lt;/li&gt;
+  &lt;li&gt;offline (local)&lt;/li&gt;
+  &lt;li&gt;move&lt;/li&gt;
+  &lt;li&gt;convert&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/brokengdnb/ava-data/demo-img/local.png?raw=true&quot; title=&quot;preview&quot;&gt;&lt;img src=&quot;https://github.com/brokengdnb/ava-data/blob/master/demo-img/local.png?raw=true&quot; alt=&quot;MVC&quot; title=&quot;preview&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
@@ -598,7 +588,7 @@ html(lang=&quot;en&quot;)
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/brokengdnb/ava-data/demo-img/edit.png?raw=true&quot; title=&quot;preview&quot;&gt;&lt;img src=&quot;https://github.com/brokengdnb/ava-data/blob/master/demo-img/edit.png?raw=true&quot; alt=&quot;MVC&quot; title=&quot;preview&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;## Todo&lt;/p&gt;
+&lt;h3 id=&quot;todo&quot;&gt;Todo&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;connect automatic searcher for cover images based on title, some open source API for official album &amp;amp; single covers?&lt;/li&gt;

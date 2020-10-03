@@ -621,44 +621,34 @@ html(lang="en")
 <p>So the idea is that I have 3 main elements that I would like to mix:</p>
 
 <ul>
-  <li>
-    <h3 id="music-project-emi">music <a href="https://github.com/brokengdnb/emi" title="(project EMI)">(project EMI)</a></h3>
-  </li>
+  <li>music <a href="https://github.com/brokengdnb/emi" title="(project EMI)">(project EMI)</a></li>
 </ul>
 
 <p><a href="https://github.com/brokengdnb/ava-data/demo-img/emi.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/ava-data/blob/master/demo-img/emi.png?raw=true" alt="MVC" title="preview" /></a></p>
 
 <ul>
-  <li>### movies</li>
+  <li>movies</li>
 </ul>
 
 <p><a href="https://github.com/brokengdnb/ava-data/demo-img/movies.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/ava-data/blob/master/demo-img/movies.png?raw=true" alt="MVC" title="preview" /></a></p>
 
 <ul>
-  <li>
-    <h3 id="video-effects">video effects</h3>
-  </li>
+  <li>video effects</li>
 </ul>
 
 <p><a href="https://github.com/brokengdnb/ava-data/demo-img/effects.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/ava-data/blob/master/demo-img/effects.png?raw=true" alt="MVC" title="preview" /></a></p>
 
 <h2 id="that-can-be-imported-by-3-different-ways">That can be imported by 3 different ways:</h2>
 <ul>
-  <li>### online (YouTube, Soundcloud, etc.)</li>
+  <li>online (YouTube, Soundcloud, etc.)</li>
 </ul>
 
 <p><a href="https://github.com/brokengdnb/ava-data/demo-img/youtube.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/ava-data/blob/master/demo-img/youtube.png?raw=true" alt="MVC" title="preview" /></a></p>
 
 <ul>
-  <li>
-    <h3 id="offline-local">offline (local)</h3>
-  </li>
-  <li>
-    <h3 id="move">move</h3>
-  </li>
-  <li>
-    <h3 id="convert">convert</h3>
-  </li>
+  <li>offline (local)</li>
+  <li>move</li>
+  <li>convert</li>
 </ul>
 
 <p><a href="https://github.com/brokengdnb/ava-data/demo-img/local.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/ava-data/blob/master/demo-img/local.png?raw=true" alt="MVC" title="preview" /></a></p>
@@ -675,7 +665,7 @@ html(lang="en")
 
 <p><a href="https://github.com/brokengdnb/ava-data/demo-img/edit.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/ava-data/blob/master/demo-img/edit.png?raw=true" alt="MVC" title="preview" /></a></p>
 
-<p>## Todo</p>
+<h3 id="todo">Todo</h3>
 
 <ul>
   <li>connect automatic searcher for cover images based on title, some open source API for official album &amp; single covers?</li>
