@@ -3,11 +3,15 @@ title:       Room23
 email:       email@brokeng.com
 author:      BrokenG
 description: "Just another voice outside of group."
-baseurl:     ""
-url:         "http://blog.brokeng.com"
 date_format: "%b %-d, %Y"
 header_pages:
  - about.md
+
+
+root: /blog
+baseurl: /blog
+url: http://brokengdnb.github.io
+destination: /Users/gl/WebstormProjects/blog/docs
 
 # Google services
 google_verification:
