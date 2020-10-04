@@ -7,8 +7,8 @@ date_format: "%B %-d, %Y"
 header_pages:
   - about.md
 
-root:
-baseurl: /blog
+root: /blog
+baseurl: /
 url: http://brokengdnb.github.io
 destination: /Users/gl/WebstormProjects/blog/docs
 

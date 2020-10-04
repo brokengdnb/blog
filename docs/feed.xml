@@ -3,8 +3,8 @@
   <channel>
     <title>BrokenG - Blog</title>
     <description>Just another voice outside of group.</description>
-    <link>http://localhost:4000/blog/</link>
-    <atom:link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:4000//</link>
+    <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>ME (Markdown Editor)</title>
@@ -116,8 +116,8 @@ winecfg
 &lt;p&gt;Copyright (c) 2020 BrokenG&lt;/p&gt;
 </description>
         <pubDate>Tue, 17 Mar 2020 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/blog/project/me</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/project/me</guid>
+        <link>http://localhost:4000//project/me</link>
+        <guid isPermaLink="true">http://localhost:4000//project/me</guid>
       </item>
     
       <item>
@@ -193,8 +193,8 @@ npm &lt;span class=&quot;nb&quot;&gt;install
 
 </description>
         <pubDate>Tue, 30 Jan 2018 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/blog/project/ava-tv</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/project/ava-tv</guid>
+        <link>http://localhost:4000//project/ava-tv</link>
+        <guid isPermaLink="true">http://localhost:4000//project/ava-tv</guid>
       </item>
     
       <item>
@@ -284,8 +284,8 @@ npm &lt;span class=&quot;nb&quot;&gt;install
 &lt;p&gt;BrokenG (2020)&lt;/p&gt;
 </description>
         <pubDate>Wed, 30 Nov 2016 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/blog/project/emi</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/project/emi</guid>
+        <link>http://localhost:4000//project/emi</link>
+        <guid isPermaLink="true">http://localhost:4000//project/emi</guid>
       </item>
     
       <item>
@@ -555,8 +555,8 @@ html(lang=&quot;en&quot;)
 &lt;p&gt;Copyright (c) 2020 BrokenG&lt;/p&gt;
 </description>
         <pubDate>Fri, 30 Aug 2013 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/blog/project/ava-data</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/project/ava-data</guid>
+        <link>http://localhost:4000//project/ava-data</link>
+        <guid isPermaLink="true">http://localhost:4000//project/ava-data</guid>
       </item>
     
       <item>
@@ -625,8 +625,8 @@ html(lang=&quot;en&quot;)
 &lt;/ul&gt;
 </description>
         <pubDate>Sun, 30 Jan 2011 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/blog/urls</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/urls</guid>
+        <link>http://localhost:4000//urls</link>
+        <guid isPermaLink="true">http://localhost:4000//urls</guid>
       </item>
     
   </channel>
