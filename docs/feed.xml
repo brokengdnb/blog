@@ -3,8 +3,122 @@
   <channel>
     <title>BrokenG - Blog</title>
     <description>Just another voice outside of group.</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://brokengdnb.github.io/blog/</link>
+    <atom:link href="http://brokengdnb.github.io/blog/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>ME (Markdown Editor)</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;…just another .md editor but just for me!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/brokengdnb/me&quot; title=&quot;preview&quot;&gt;&lt;img src=&quot;https://github.com/brokengdnb/me/blob/master/about.png?raw=true&quot; alt=&quot;preview&quot; title=&quot;preview&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;WHY? Because I cannot find any Markdown Editor in “darkmode” but show me that results normaly like the original page (Git). Live preview with double scroll, all needed buttons like WORD or textEdit. Editor who remember (undo) and all those things… which I don’t and who will make it done… for me. So that’s ME.&lt;/li&gt;
+  &lt;li&gt;Forked from &lt;a href=&quot;https://pandao.github.io/editor.md/en.html&quot; title=&quot;editor.md (Live preview)&quot;&gt;editor.md (Live preview)&lt;/a&gt; and bundled with Electron to act like off-line app… on my Mac. Just an idea but it works very well on daily use.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#demo&quot;&gt;Demo&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#downloads&quot;&gt;Downloads&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#compilation&quot;&gt;Compilation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#features&quot;&gt;Features&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#documentation&quot;&gt;Documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#support&quot;&gt;Support&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#errors&quot;&gt;Errors&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#license&quot;&gt;License&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;demo&quot;&gt;Demo&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/brokengdnb/me&quot; title=&quot;demo&quot;&gt;&lt;img src=&quot;https://github.com/brokengdnb/me/blob/master/demo.gif?raw=true&quot; alt=&quot;demo&quot; title=&quot;demo&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;downloads&quot;&gt;Downloads&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/brokengdnb/me/releases&quot; title=&quot;apple-app&quot;&gt;&lt;img src=&quot;https://github.com/brokengdnb/me/blob/master/appstore.png?raw=true&quot; alt=&quot;apple-app&quot; title=&quot;apple-app&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/brokengdnb/me/releases/tag/v1.1&quot;&gt;ME-1.1.0.dmg (~70MB) ===&amp;gt; App (~172MB)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;MD5&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;abcd9e60072945b7b9aaed886d9638e8&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;compilation&quot;&gt;Compilation&lt;/h2&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://github.com/brokengdnb/me &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;me/
+npm &lt;span class=&quot;nb&quot;&gt;install
+&lt;/span&gt;npm run start
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;simple as that…&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Dark theme for longer and comfortable time&lt;/li&gt;
+  &lt;li&gt;Fullscreen Do-Not-Disturb style&lt;/li&gt;
+  &lt;li&gt;App cannot be closed, quited or linked into another page =&amp;gt; safety feature for accidentally quiting app. For quit just kill that run command or force kill by alt.&lt;/li&gt;
+  &lt;li&gt;Support Standard Markdown / CommonMark and GFM (GitHub Flavored Markdown)&lt;/li&gt;
+  &lt;li&gt;Full-featured: Real-time Preview, Image (cross-domain), Preformatted text/Code blocks/Tables insert, Code fold, Search replace, Themes, Multi-languages, L18n, HTML entities, Code syntax highlighting…&lt;/li&gt;
+  &lt;li&gt;Markdown Extras : Support ToC (Table of Contents), Task lists, @Links…&lt;/li&gt;
+  &lt;li&gt;Compatible with all major systems&lt;/li&gt;
+  &lt;li&gt;Support identification, interpretation, fliter of the HTML tags&lt;/li&gt;
+  &lt;li&gt;Support TeX (LaTeX expressions, Based on KaTeX), Flowchart and Sequence Diagram of Markdown extended syntax&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;documentation&quot;&gt;Documentation&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://editor.md.ipandao.com/examples/index.html&quot; title=&quot;Follow the original project page.&quot;&gt;Follow the original project page.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;support&quot;&gt;Support&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;OS X (tasted on 10.14.6)&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Linux&lt;/li&gt;
+  &lt;li&gt;&lt;del&gt;Windows&lt;/del&gt;  =&amp;gt; rcedit.exe failed with exit code null &lt;em&gt;(So I don’t have one and I will &lt;strong&gt;NOT&lt;/strong&gt; support this platform. Call Microsoft service in India or your local IT “experts” because I’ll not do that)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;errors&quot;&gt;Errors&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Packaging app for platform win32 x64 using electron v8.0.3
+Could not find “wine64” on your system.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;plan-a&quot;&gt;PLAN A:&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://apple.stackexchange.com/a/376427&quot; title=&quot;Follow white rabbit, good luck!&quot;&gt;Follow white rabbit, good luck!&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;plan-b&quot;&gt;PLAN B:&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;wine-stable
+&lt;span class=&quot;c&quot;&gt;# autoinstall&lt;/span&gt;
+winecfg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;That will solve the problem of creating App for Microsoft Windows but still that .exe didn’t wokred out nether. After two days of closed code and useless logs I gave on Mincosoft = NO windows.&lt;/p&gt;
+
+&lt;p&gt;BUT!!! If you are Mac or Linux user = NO problem.&lt;/p&gt;
+
+&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
+
+&lt;p&gt;The MIT License.&lt;/p&gt;
+
+&lt;p&gt;Copyright (c) 2020 BrokenG&lt;/p&gt;
+</description>
+        <pubDate>Tue, 17 Mar 2020 00:00:00 +0100</pubDate>
+        <link>http://brokengdnb.github.io/blog/project/mye</link>
+        <guid isPermaLink="true">http://brokengdnb.github.io/blog/project/mye</guid>
+      </item>
     
       <item>
         <title>AVA (TV &amp; Control)</title>
@@ -79,8 +193,8 @@ npm &lt;span class=&quot;nb&quot;&gt;install
 
 </description>
         <pubDate>Tue, 30 Jan 2018 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/project/ava-tv</link>
-        <guid isPermaLink="true">http://localhost:4000/project/ava-tv</guid>
+        <link>http://brokengdnb.github.io/blog/project/ava-tv</link>
+        <guid isPermaLink="true">http://brokengdnb.github.io/blog/project/ava-tv</guid>
       </item>
     
       <item>
@@ -170,8 +284,8 @@ npm &lt;span class=&quot;nb&quot;&gt;install
 &lt;p&gt;BrokenG (2020)&lt;/p&gt;
 </description>
         <pubDate>Wed, 30 Nov 2016 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/project/emi</link>
-        <guid isPermaLink="true">http://localhost:4000/project/emi</guid>
+        <link>http://brokengdnb.github.io/blog/project/emi</link>
+        <guid isPermaLink="true">http://brokengdnb.github.io/blog/project/emi</guid>
       </item>
     
       <item>
@@ -441,8 +555,8 @@ html(lang=&quot;en&quot;)
 &lt;p&gt;Copyright (c) 2020 BrokenG&lt;/p&gt;
 </description>
         <pubDate>Fri, 30 Aug 2013 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/project/ava-data</link>
-        <guid isPermaLink="true">http://localhost:4000/project/ava-data</guid>
+        <link>http://brokengdnb.github.io/blog/project/ava-data</link>
+        <guid isPermaLink="true">http://brokengdnb.github.io/blog/project/ava-data</guid>
       </item>
     
       <item>
@@ -479,6 +593,12 @@ html(lang=&quot;en&quot;)
   &lt;li&gt;&lt;a href=&quot;https://youtube-eng.googleblog.com/&quot; title=&quot;Youtube dev blog&quot;&gt;Youtube dev blog&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h2 id=&quot;browser&quot;&gt;Browser&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.powermapper.com/products/sortsite/checks/browser-compatibility&quot;&gt;Website browser Compatibility&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h2 id=&quot;forms&quot;&gt;Forms&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://formspree.io/&quot; title=&quot;Formspree&quot;&gt;Formspree (front-end)&lt;/a&gt;&lt;/li&gt;
@@ -511,8 +631,8 @@ html(lang=&quot;en&quot;)
 &lt;/ul&gt;
 </description>
         <pubDate>Sun, 30 Jan 2011 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/urls</link>
-        <guid isPermaLink="true">http://localhost:4000/urls</guid>
+        <link>http://brokengdnb.github.io/blog/urls</link>
+        <guid isPermaLink="true">http://brokengdnb.github.io/blog/urls</guid>
       </item>
     
   </channel>
