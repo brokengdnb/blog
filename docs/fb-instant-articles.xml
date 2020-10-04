@@ -2,15 +2,84 @@
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title></title>
-    <link>http://localhost:4000</link>
+    <link>http://brokengdnb.github.io/blog</link>
     <description>
       Just another voice outside of group.
     </description>
     
         
             <item>
+                <title>Homepage (BrokenG.com)</title>
+                <link>http://brokengdnb.github.io/blog/project/homepage</link>
+                <content:encoded>
+                    <![CDATA[
+                    <blockquote>
+  <p>just an idea to create as much as possible simple &amp; small website in material design to split pages and links into one multi screen page to proof my skills.</p>
+</blockquote>
+
+<hr />
+
+<ul>
+  <li><a href="#demo">Demo</a></li>
+  <li><a href="#code">Code</a></li>
+  <li><a href="#support">Support</a></li>
+  <li><a href="#license">License</a></li>
+</ul>
+
+<h2 id="demo">Demo</h2>
+
+<p><a href="https://developers.google.com/speed/pagespeed/insights/" title="preview"><img src="https://github.com/brokengdnb/homepage/blob/master/img/loading-03.png?raw=true" alt="loading03" title="preview" /></a></p>
+
+<h3 id="brokengcom"><a href="http://brokeng.com">brokeng.com</a></h3>
+
+<p><a href="https://github.com/brokengdnb/homepage/blob/master/img/demo-pc.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/homepage/blob/master/img/demo-pc.png?raw=true" alt="pc" title="preview" /></a></p>
+
+<p>Website is fully resposive for any type of screen &amp; mobile devices</p>
+
+<p><a href="https://github.com/brokengdnb/homepage/blob/master/img/demo-mobile.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/homepage/blob/master/img/demo-mobile.png?raw=true" alt="mobile" title="preview" /></a></p>
+
+<h2 id="code">Code</h2>
+
+<ul>
+  <li>HTML5, CSS3, ES5</li>
+  <li><a href="http://jquery.org" title="jQuery v3.2.1">jQuery v3.2.1</a></li>
+  <li><a href="http://materializecss.com" title="Materialize">Materialize v0.97.8</a></li>
+  <li><a href="https://material.io/resources/icons/" title="Google Material Icons">Google Material Icons</a></li>
+</ul>
+
+<p>The main goal was to make as low size as posibble to speed up loading. Result is around ~700kB and time +/- 1s… amazing</p>
+
+<p><a href="https://github.com/brokengdnb/homepage/blob/master/img/loading-01.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/homepage/blob/master/img/loading-01.png?raw=true" alt="loading01" title="preview" /></a></p>
+
+<p><a href="https://github.com/brokengdnb/homepage/blob/master/img/loading-02.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/homepage/blob/master/img/loading-02.png?raw=true" alt="loading02" title="preview" /></a></p>
+
+<h2 id="support">Support</h2>
+
+<p><a href="https://github.com/brokengdnb/homepage/blob/master/img/compatibility.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/homepage/blob/master/img/compatibility.png?raw=true" alt="compatibility" title="preview" /></a></p>
+
+<h2 id="license">License</h2>
+
+<p>The MIT License.</p>
+
+<p>Copyright (c) 2020 BrokenG</p>
+
+                    ]]>
+                </content:encoded>
+                <guid isPermaLink="false">/project/homepage</guid>
+                <description>
+                    
+                    Simple, light and tight... 1s loading time
+                    
+                </description>
+                <pubDate>Fri, 04 Sep 2020 00:00:00 +0200</pubDate>
+                <author>BrokenG</author>
+            </item>
+        
+    
+        
+            <item>
                 <title>ME (Markdown Editor)</title>
-                <link>http://localhost:4000/project/mye</link>
+                <link>http://brokengdnb.github.io/blog/project/mye</link>
                 <content:encoded>
                     <![CDATA[
                     <blockquote>
@@ -135,77 +204,8 @@ winecfg
     
         
             <item>
-                <title>Homepage (BrokenG.com)</title>
-                <link>http://localhost:4000/project/homepage</link>
-                <content:encoded>
-                    <![CDATA[
-                    <blockquote>
-  <p>just an idea to create as much as possible simple &amp; small website in material design to split pages and links into one multi screen page to proof my skills.</p>
-</blockquote>
-
-<hr />
-
-<ul>
-  <li><a href="#demo">Demo</a></li>
-  <li><a href="#code">Code</a></li>
-  <li><a href="#support">Support</a></li>
-  <li><a href="#license">License</a></li>
-</ul>
-
-<h2 id="demo">Demo</h2>
-
-<p><a href="https://developers.google.com/speed/pagespeed/insights/" title="preview"><img src="https://github.com/brokengdnb/homepage/blob/master/img/loading-03.png?raw=true" alt="loading03" title="preview" /></a></p>
-
-<h3 id="brokengcom"><a href="http://brokeng.com">brokeng.com</a></h3>
-
-<p><a href="https://github.com/brokengdnb/homepage/blob/master/img/demo-pc.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/homepage/blob/master/img/demo-pc.png?raw=true" alt="pc" title="preview" /></a></p>
-
-<p>Website is fully resposive for any type of screen &amp; mobile devices</p>
-
-<p><a href="https://github.com/brokengdnb/homepage/blob/master/img/demo-mobile.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/homepage/blob/master/img/demo-mobile.png?raw=true" alt="mobile" title="preview" /></a></p>
-
-<h2 id="code">Code</h2>
-
-<ul>
-  <li>HTML5, CSS3, ES5</li>
-  <li><a href="http://jquery.org" title="jQuery v3.2.1">jQuery v3.2.1</a></li>
-  <li><a href="http://materializecss.com" title="Materialize">Materialize v0.97.8</a></li>
-  <li><a href="https://material.io/resources/icons/" title="Google Material Icons">Google Material Icons</a></li>
-</ul>
-
-<p>The main goal was to make as low size as posibble to speed up loading. Result is around ~700kB and time +/- 1s… amazing</p>
-
-<p><a href="https://github.com/brokengdnb/homepage/blob/master/img/loading-01.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/homepage/blob/master/img/loading-01.png?raw=true" alt="loading01" title="preview" /></a></p>
-
-<p><a href="https://github.com/brokengdnb/homepage/blob/master/img/loading-02.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/homepage/blob/master/img/loading-02.png?raw=true" alt="loading02" title="preview" /></a></p>
-
-<h2 id="support">Support</h2>
-
-<p><a href="https://github.com/brokengdnb/homepage/blob/master/img/compatibility.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/homepage/blob/master/img/compatibility.png?raw=true" alt="compatibility" title="preview" /></a></p>
-
-<h2 id="license">License</h2>
-
-<p>The MIT License.</p>
-
-<p>Copyright (c) 2020 BrokenG</p>
-
-                    ]]>
-                </content:encoded>
-                <guid isPermaLink="false">/project/homepage</guid>
-                <description>
-                    
-                    Simple, light and tight... 1s loading time
-                    
-                </description>
-                <pubDate>Tue, 04 Feb 2020 00:00:00 +0100</pubDate>
-                <author>BrokenG</author>
-            </item>
-        
-    
-        
-            <item>
                 <title>AVA (TV &amp; Control)</title>
-                <link>http://localhost:4000/project/ava-tv</link>
+                <link>http://brokengdnb.github.io/blog/project/ava-tv</link>
                 <content:encoded>
                     <![CDATA[
                     <blockquote>
@@ -294,7 +294,7 @@ npm <span class="nb">install
         
             <item>
                 <title>EMI</title>
-                <link>http://localhost:4000/project/emi</link>
+                <link>http://brokengdnb.github.io/blog/project/emi</link>
                 <content:encoded>
                     <![CDATA[
                     <blockquote>
@@ -397,7 +397,7 @@ npm <span class="nb">install
         
             <item>
                 <title>AVA (Data)</title>
-                <link>http://localhost:4000/project/ava-data</link>
+                <link>http://brokengdnb.github.io/blog/project/ava-data</link>
                 <content:encoded>
                     <![CDATA[
                     <blockquote>
@@ -680,7 +680,7 @@ html(lang="en")
         
             <item>
                 <title>Links</title>
-                <link>http://localhost:4000/urls</link>
+                <link>http://brokengdnb.github.io/blog/urls</link>
                 <content:encoded>
                     <![CDATA[
                     <blockquote>
