@@ -10,7 +10,7 @@
         
             <item>
                 <title>ME (Markdown Editor)</title>
-                <link>http://brokengdnb.github.io/blog/project/me</link>
+                <link>http://brokengdnb.github.io/blog/project/mye</link>
                 <content:encoded>
                     <![CDATA[
                     <blockquote>
@@ -122,7 +122,7 @@ winecfg
 
                     ]]>
                 </content:encoded>
-                <guid isPermaLink="false">/project/me</guid>
+                <guid isPermaLink="false">/project/mye</guid>
                 <description>
                     
                     ...just another .md editor but you know, just for me!
