@@ -3,8 +3,8 @@
   <channel>
     <title>BrokenG - Blog</title>
     <description>Just another voice outside of group.</description>
-    <link>http://brokengdnb.github.io/blog/</link>
-    <atom:link href="http://brokengdnb.github.io/blog/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>ME (Markdown Editor)</title>
@@ -116,8 +116,65 @@ winecfg
 &lt;p&gt;Copyright (c) 2020 BrokenG&lt;/p&gt;
 </description>
         <pubDate>Tue, 17 Mar 2020 00:00:00 +0100</pubDate>
-        <link>http://brokengdnb.github.io/blog/project/mye</link>
-        <guid isPermaLink="true">http://brokengdnb.github.io/blog/project/mye</guid>
+        <link>http://localhost:4000/project/mye</link>
+        <guid isPermaLink="true">http://localhost:4000/project/mye</guid>
+      </item>
+    
+      <item>
+        <title>Homepage (BrokenG.com)</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;just an idea to create as much as possible simple &amp;amp; small website in material design to split pages and links into one multi screen page of presentation of responsible skills.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#demo&quot;&gt;Demo&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#code&quot;&gt;Code&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#support&quot;&gt;Support&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#license&quot;&gt;License&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;demo&quot;&gt;Demo&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/speed/pagespeed/insights/&quot; title=&quot;preview&quot;&gt;&lt;img src=&quot;https://github.com/brokengdnb/homepage/blob/master/img/loading-03.png?raw=true&quot; alt=&quot;loading03&quot; title=&quot;preview&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;brokengcom&quot;&gt;&lt;a href=&quot;http://brokeng.com&quot;&gt;brokeng.com&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/brokengdnb/homepage/blob/master/img/demo-pc.png?raw=true&quot; title=&quot;preview&quot;&gt;&lt;img src=&quot;https://github.com/brokengdnb/homepage/blob/master/img/demo-pc.png?raw=true&quot; alt=&quot;pc&quot; title=&quot;preview&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Website is fully resposive for any type of screen &amp;amp; mobile devices&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/brokengdnb/homepage/blob/master/img/demo-mobile.png?raw=true&quot; title=&quot;preview&quot;&gt;&lt;img src=&quot;https://github.com/brokengdnb/homepage/blob/master/img/demo-mobile.png?raw=true&quot; alt=&quot;mobile&quot; title=&quot;preview&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;code&quot;&gt;Code&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;HTML5, CSS3, ES5&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jquery.org&quot; title=&quot;jQuery v3.2.1&quot;&gt;jQuery v3.2.1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://materializecss.com&quot; title=&quot;Materialize&quot;&gt;Materialize v0.97.8&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://material.io/resources/icons/&quot; title=&quot;Google Material Icons&quot;&gt;Google Material Icons&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The main goal was to make as low size as posibble to speed up loading. Result is around ~700kB and time +/- 1s… amazing&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/brokengdnb/homepage/blob/master/img/loading-01.png?raw=true&quot; title=&quot;preview&quot;&gt;&lt;img src=&quot;https://github.com/brokengdnb/homepage/blob/master/img/loading-01.png?raw=true&quot; alt=&quot;loading01&quot; title=&quot;preview&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/brokengdnb/homepage/blob/master/img/loading-02.png?raw=true&quot; title=&quot;preview&quot;&gt;&lt;img src=&quot;https://github.com/brokengdnb/homepage/blob/master/img/loading-02.png?raw=true&quot; alt=&quot;loading02&quot; title=&quot;preview&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;support&quot;&gt;Support&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/brokengdnb/homepage/blob/master/img/compatibility.png?raw=true&quot; title=&quot;preview&quot;&gt;&lt;img src=&quot;https://github.com/brokengdnb/homepage/blob/master/img/compatibility.png?raw=true&quot; alt=&quot;compatibility&quot; title=&quot;preview&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
+
+&lt;p&gt;The MIT License.&lt;/p&gt;
+
+&lt;p&gt;Copyright (c) 2020 BrokenG&lt;/p&gt;
+</description>
+        <pubDate>Tue, 04 Feb 2020 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/project/2020/02/04/homepage/</link>
+        <guid isPermaLink="true">http://localhost:4000/project/2020/02/04/homepage/</guid>
       </item>
     
       <item>
@@ -193,8 +250,8 @@ npm &lt;span class=&quot;nb&quot;&gt;install
 
 </description>
         <pubDate>Tue, 30 Jan 2018 00:00:00 +0100</pubDate>
-        <link>http://brokengdnb.github.io/blog/project/ava-tv</link>
-        <guid isPermaLink="true">http://brokengdnb.github.io/blog/project/ava-tv</guid>
+        <link>http://localhost:4000/project/ava-tv</link>
+        <guid isPermaLink="true">http://localhost:4000/project/ava-tv</guid>
       </item>
     
       <item>
@@ -284,8 +341,8 @@ npm &lt;span class=&quot;nb&quot;&gt;install
 &lt;p&gt;BrokenG (2020)&lt;/p&gt;
 </description>
         <pubDate>Wed, 30 Nov 2016 00:00:00 +0100</pubDate>
-        <link>http://brokengdnb.github.io/blog/project/emi</link>
-        <guid isPermaLink="true">http://brokengdnb.github.io/blog/project/emi</guid>
+        <link>http://localhost:4000/project/emi</link>
+        <guid isPermaLink="true">http://localhost:4000/project/emi</guid>
       </item>
     
       <item>
@@ -555,8 +612,8 @@ html(lang=&quot;en&quot;)
 &lt;p&gt;Copyright (c) 2020 BrokenG&lt;/p&gt;
 </description>
         <pubDate>Fri, 30 Aug 2013 00:00:00 +0200</pubDate>
-        <link>http://brokengdnb.github.io/blog/project/ava-data</link>
-        <guid isPermaLink="true">http://brokengdnb.github.io/blog/project/ava-data</guid>
+        <link>http://localhost:4000/project/ava-data</link>
+        <guid isPermaLink="true">http://localhost:4000/project/ava-data</guid>
       </item>
     
       <item>
@@ -631,8 +688,8 @@ html(lang=&quot;en&quot;)
 &lt;/ul&gt;
 </description>
         <pubDate>Sun, 30 Jan 2011 00:00:00 +0100</pubDate>
-        <link>http://brokengdnb.github.io/blog/urls</link>
-        <guid isPermaLink="true">http://brokengdnb.github.io/blog/urls</guid>
+        <link>http://localhost:4000/urls</link>
+        <guid isPermaLink="true">http://localhost:4000/urls</guid>
       </item>
     
   </channel>
