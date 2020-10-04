@@ -9,7 +9,7 @@ header_pages:
 
 root:
 #baseurl: /
-url: http://brokengdnb.github.io
+url: http://brokengdnb.github.io/blog
 destination: /Users/gl/WebstormProjects/blog/docs
 
 collections:

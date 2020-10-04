@@ -1,1 +1,1 @@
-Sitemap: http://brokengdnb.github.io/sitemap.xml
+Sitemap: http://brokengdnb.github.io/blog/sitemap.xml
