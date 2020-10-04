@@ -4,7 +4,7 @@
     
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Thanks For Your Message &#8211; Room23</title>
+    <title>Thanks For Your Message &#8211; BrokenG - Blog</title>
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
@@ -16,11 +16,11 @@
     <meta name="author" content="BrokenG">
     
     
-    <link rel="canonical" href="http://brokengdnb.github.io/thanks/">
-    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Room23" href="/feed.xml" />
+    <link rel="canonical" href="http://localhost:4000/thanks/">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for BrokenG - Blog" href="/feed.xml" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/pixyll.css?202010032235" type="text/css">
+    <link rel="stylesheet" href="/css/pixyll.css?202010040232" type="text/css">
 
     <!-- Fonts -->
     
@@ -42,10 +42,10 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="Thanks For Your Message">
     <meta property="og:description" content="Just another voice outside of group.">
-    <meta property="og:url" content="http://brokengdnb.github.io/thanks/">
-    <meta property="og:site_name" content="Room23">
+    <meta property="og:url" content="http://localhost:4000/thanks/">
+    <meta property="og:site_name" content="BrokenG - Blog">
     
-    <meta property="og:image" content="http://brokengdnb.github.io/images/me.jpeg">
+    <meta property="og:image" content="http://localhost:4000/images/me.jpeg">
     
 
     <!-- Twitter Card -->
@@ -53,9 +53,9 @@
     
     <meta name="twitter:title" content="Thanks For Your Message" />
     <meta name="twitter:description" content="Just another voice outside of group." />
-    <meta name="twitter:url" content="http://brokengdnb.github.io/thanks/" />
+    <meta name="twitter:url" content="http://localhost:4000/thanks/" />
     
-    <meta name="twitter:image" content="http://brokengdnb.github.io/images/me.jpeg" />
+    <meta name="twitter:image" content="http://localhost:4000/images/me.jpeg" />
     
 
     <!-- Icons -->
@@ -81,12 +81,21 @@
 <body class="site animated fade-in-down">
   
 	
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=419321515706787";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+	
 
   <div class="site-wrap">
     <header class="site-header px2 px-responsive">
   <div class="mt2 wrap">
     <div class="measure">
-      <a href="/" class="site-title">Room23</a>
+      <a href="/" class="site-title">BrokenG - Blog</a>
       <nav class="site-nav">
         
 
@@ -96,11 +105,13 @@
     
     
     
-        <a class="nav-link" href="/links/">Links</a>
+        <a class="nav-link" href="/projects/">Projects</a>
     
 
     
 
+
+<a class="nav-link" href="/urls">Links</a>
 
       </nav>
       <div class="clearfix"></div>
@@ -129,12 +140,17 @@
   <footer class="center">
   <div class="measure">
     <small>
-      Build on Jekyll with theme by <a href="https://github.com/johnotander/pixyll">J. Otander</a>.<br>
+      build on Jekyll<br>
       BrokenG | 2020
     </small>
   </div>
 </footer>
-
+<!-- AnchorJS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.0.0/anchor.min.js"></script>
+<script>
+    anchors.options.visible = 'always';
+    anchors.add('article h2, article h3, article h4, article h5, article h6');
+</script>
 <script type="text/javascript">
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker.register("/sw.js")

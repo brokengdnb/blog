@@ -1,17 +1,28 @@
 # Site settings
-title:       Room23
+title:       BrokenG - Blog
 email:       email@brokeng.com
 author:      BrokenG
 description: "Just another voice outside of group."
-date_format: "%b %-d, %Y"
+date_format: "%B %-d, %Y"
 header_pages:
- - about.md
+  - about.md
 
-
-root: /
-baseurl: /
+root:
+# baseurl: /blog
 url: http://brokengdnb.github.io
 destination: /Users/gl/WebstormProjects/blog/docs
+
+collections:
+  category:
+    output: true
+
+defaults:
+  -
+    scope:
+      path: "/"
+      type: category
+    values:
+      layout: "category"
 
 # Google services
 google_verification:
@@ -30,7 +41,7 @@ show_social_icons:    false
 ajaxify_contact_form: false
 enable_mathjax: false
 extended_fonts: false
-enable_anchorjs: false
+enable_anchorjs: true
 # Preview image for social media aka og:image and twitter:image
 post_preview_image: true
 
@@ -45,8 +56,8 @@ disqus_shortname:
 
 # Facebook Comments plugin
 # (leave blank to disable Facebook Comments, otherwise set it to true)
-facebook_comments:
-facebook_appid:
+facebook_comments: false
+facebook_appid: 419321515706787
 facebook_comments_number: 3
 
 # Social icons
@@ -118,7 +129,7 @@ markdown:     kramdown
 redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data']
 permalink:    pretty
-paginate:     4
+paginate:     9
 sass:
   style: compressed
 plugins:

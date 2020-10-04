@@ -2,8 +2,10 @@
 layout:     post
 title:      AVA (TV & Control)
 date:       2018-01-30
-summary:    ...making my life easier as a video DJ
-categories: project
+summary:    ...Audio & Video Administration (Stream)
+categories: Project
+permalink: "/project/ava-tv"
+
 ---
 
 > Since I got working REST-API server and DJ program as well. I wanted to control video effects on projector behind me or any PC/TV connected to local network on a go so here we go... 

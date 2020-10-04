@@ -1,0 +1,8 @@
+---
+layout: default
+permalink: "/projects"
+---
+
+{% for post in site.categories.Project %}
+<li><span>{{ post.date | date: "%Y" }}</span> &nbsp; <a href="{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}

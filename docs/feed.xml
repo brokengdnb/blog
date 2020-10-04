@@ -1,25 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Room23</title>
+    <title>BrokenG - Blog</title>
     <description>Just another voice outside of group.</description>
-    <link>http://brokengdnb.github.io//</link>
-    <atom:link href="http://brokengdnb.github.io//feed.xml" rel="self" type="application/rss+xml" />
-    
-      <item>
-        <title>Announcing Version 2.0</title>
-        <description>&lt;p&gt;I’ve just released version &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2.0&lt;/code&gt;. of everything. Versions in future will be updated few times per year based on futures and testing. New way of thinking, designing and creating will be faster, more effective and organized.&lt;/p&gt;
-
-&lt;p&gt;In this ‘covid-19’ times I make the biggest changes in my life including future path returning me back to school. Music university of sound engineering.&lt;/p&gt;
-
-&lt;p&gt;Next year 2021 somewhere in a middle I will be starting personal internet radio, based on free music without licencing. Some personal samples also podcasts with the most interesting people on this planet.&lt;/p&gt;
-
-&lt;p&gt;So far I need to put together &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Room23&lt;/code&gt; earn enough money to move, pay semester, finish and run the whole idea. It will take a time, but I will make it done.&lt;/p&gt;
-</description>
-        <pubDate>Sat, 26 Sep 2020 00:00:00 +0200</pubDate>
-        <link>http://brokengdnb.github.io//update/2020/09/26/announcing-pixyll-version-2/</link>
-        <guid isPermaLink="true">http://brokengdnb.github.io//update/2020/09/26/announcing-pixyll-version-2/</guid>
-      </item>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>ME (Markdown Editor)</title>
@@ -131,8 +116,8 @@ winecfg
 &lt;p&gt;Copyright (c) 2020 BrokenG&lt;/p&gt;
 </description>
         <pubDate>Tue, 17 Mar 2020 00:00:00 +0100</pubDate>
-        <link>http://brokengdnb.github.io//project/2020/03/17/me/</link>
-        <guid isPermaLink="true">http://brokengdnb.github.io//project/2020/03/17/me/</guid>
+        <link>http://localhost:4000/project/me</link>
+        <guid isPermaLink="true">http://localhost:4000/project/me</guid>
       </item>
     
       <item>
@@ -208,8 +193,8 @@ npm &lt;span class=&quot;nb&quot;&gt;install
 
 </description>
         <pubDate>Tue, 30 Jan 2018 00:00:00 +0100</pubDate>
-        <link>http://brokengdnb.github.io//project/2018/01/30/ava-tv-control/</link>
-        <guid isPermaLink="true">http://brokengdnb.github.io//project/2018/01/30/ava-tv-control/</guid>
+        <link>http://localhost:4000/project/ava-tv</link>
+        <guid isPermaLink="true">http://localhost:4000/project/ava-tv</guid>
       </item>
     
       <item>
@@ -218,18 +203,18 @@ npm &lt;span class=&quot;nb&quot;&gt;install
   &lt;p&gt;Never ever lost the passion for acomplishing your dreams, never ever… no matter of what? … omg money? fuck the money… fight for your dreams!&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;So the idea was to create a special cusom high level mappings as well as dual-bind responsible skin to adapt on a events on a go but the point is… limited… number of a buttons… so it’s like layer over the layer… over the another one… based on position in that mixing process. So I started from zero with tottaly different MIDI console, then emigrate but the idea is same and is portable to “any” device that I get under my hands, it just works. In this time “2020” Behringer-CMD serie… and yes, you can separate them and yes each of that console have their own layers and yes it works one by one but together…. omg… hold my beer baby… I will show you something…&lt;/p&gt;
+&lt;p&gt;So the idea was to create a special cusom high level mappings as well as dual-bind responsible skin to adapt on a event on a go, but the point is… limited number of a buttons, so it’s like layer over the layer… over the another one, and the other one based on position in that mixing process. Solution is portable to “any” MIDI or HID device, it just works. In this case Behringer CMD series… and yes, you can separate them and yes each of them have their own layers and yes it works one by one but together…. omg, breaking the rules!&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#MIDI&quot;&gt;MIDI&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#Screens&quot;&gt;Screens&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#Code&quot;&gt;Code&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#Future&quot;&gt;Future&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#Documentation&quot;&gt;Documentation&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#License&quot;&gt;License&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#midi&quot;&gt;MIDI&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#screens&quot;&gt;Screens&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#code&quot;&gt;Code&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#future&quot;&gt;Future&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#documentation&quot;&gt;Documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#license&quot;&gt;License&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;##MIDI&lt;/p&gt;
+&lt;h2 id=&quot;midi&quot;&gt;MIDI&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/brokengdnb/emi/blob/master/02.jpg?raw=true&quot; title=&quot;preview&quot;&gt;&lt;img src=&quot;https://github.com/brokengdnb/emi/blob/master/02.jpg?raw=true&quot; alt=&quot;preview&quot; title=&quot;preview&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -294,62 +279,13 @@ npm &lt;span class=&quot;nb&quot;&gt;install
 
 &lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
 
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;mixed under Mixxx licence, the GPLv2. See the LICENSE file and edit of a source code under MIT&lt;/td&gt;
-      &lt;td&gt;BrokenG&lt;/td&gt;
-      &lt;td&gt;2020&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;See the LICENSE file.&lt;/p&gt;
+
+&lt;p&gt;BrokenG (2020)&lt;/p&gt;
 </description>
         <pubDate>Wed, 30 Nov 2016 00:00:00 +0100</pubDate>
-        <link>http://brokengdnb.github.io//project/2016/11/30/emi/</link>
-        <guid isPermaLink="true">http://brokengdnb.github.io//project/2016/11/30/emi/</guid>
-      </item>
-    
-      <item>
-        <title>Hello, Pixyll</title>
-        <description>&lt;p&gt;Hello.&lt;/p&gt;
-
-&lt;p&gt;Pixyll is a simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff. It’s mobile &lt;em&gt;first&lt;/em&gt;, fluidly responsive, and delightfully lightweight.&lt;/p&gt;
-
-&lt;p&gt;It’s pretty minimal, but leverages large type and drastic contrast to make a statement, on all devices.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;
-    Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.
-  &lt;/p&gt;
-  &lt;footer&gt;&lt;cite title=&quot;Antoine de Saint-Exupéry&quot;&gt;Antoine de Saint-Exupéry&lt;/cite&gt;&lt;/footer&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;where-is-it&quot;&gt;Where is it?&lt;/h2&gt;
-
-&lt;p&gt;Checkout the &lt;a href=&quot;https://github.com/johnotander/pixyll&quot;&gt;Github repository&lt;/a&gt; to download it, request a feature, or report a bug.&lt;/p&gt;
-
-&lt;p&gt;It’s free, and open source (&lt;a href=&quot;http://opensource.org/licenses/MIT&quot;&gt;MIT&lt;/a&gt;).&lt;/p&gt;
-</description>
-        <pubDate>Wed, 11 Jun 2014 17:31:19 +0200</pubDate>
-        <link>http://brokengdnb.github.io//jekyll/pixyll/2014/06/11/welcome-to-pixyll/</link>
-        <guid isPermaLink="true">http://brokengdnb.github.io//jekyll/pixyll/2014/06/11/welcome-to-pixyll/</guid>
-      </item>
-    
-      <item>
-        <title>So, What is Jekyll?</title>
-        <description>&lt;p&gt;Jekyll is a tool for transforming your plain text into static websites and 
-blogs. It is simple, static, and blog-aware. Jekyll uses the 
-&lt;a href=&quot;http://docs.shopify.com/themes/liquid-basics&quot;&gt;Liquid&lt;/a&gt; templating
-language and has builtin &lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot;&gt;Markdown&lt;/a&gt;
-and &lt;a href=&quot;http://en.wikipedia.org/wiki/Textile_(markup_language)&quot;&gt;Textile&lt;/a&gt; support.&lt;/p&gt;
-
-&lt;p&gt;It also ties in nicely to &lt;a href=&quot;https://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Learn more about Jekyll on their &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;website&lt;/a&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 09 Jun 2014 14:32:18 +0200</pubDate>
-        <link>http://brokengdnb.github.io//jekyll/pixyll/2014/06/09/so-what-is-jekyll/</link>
-        <guid isPermaLink="true">http://brokengdnb.github.io//jekyll/pixyll/2014/06/09/so-what-is-jekyll/</guid>
+        <link>http://localhost:4000/project/emi</link>
+        <guid isPermaLink="true">http://localhost:4000/project/emi</guid>
       </item>
     
       <item>
@@ -569,9 +505,12 @@ html(lang=&quot;en&quot;)
 &lt;p&gt;&lt;a href=&quot;https://github.com/brokengdnb/ava-data/demo-img/youtube.png?raw=true&quot; title=&quot;preview&quot;&gt;&lt;img src=&quot;https://github.com/brokengdnb/ava-data/blob/master/demo-img/youtube.png?raw=true&quot; alt=&quot;MVC&quot; title=&quot;preview&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;offline (local)&lt;/li&gt;
-  &lt;li&gt;move&lt;/li&gt;
-  &lt;li&gt;convert&lt;/li&gt;
+  &lt;li&gt;offline (local)
+    &lt;ul&gt;
+      &lt;li&gt;move&lt;/li&gt;
+      &lt;li&gt;convert&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/brokengdnb/ava-data/demo-img/local.png?raw=true&quot; title=&quot;preview&quot;&gt;&lt;img src=&quot;https://github.com/brokengdnb/ava-data/blob/master/demo-img/local.png?raw=true&quot; alt=&quot;MVC&quot; title=&quot;preview&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
@@ -616,8 +555,78 @@ html(lang=&quot;en&quot;)
 &lt;p&gt;Copyright (c) 2020 BrokenG&lt;/p&gt;
 </description>
         <pubDate>Fri, 30 Aug 2013 00:00:00 +0200</pubDate>
-        <link>http://brokengdnb.github.io//project/2013/08/30/ava-data/</link>
-        <guid isPermaLink="true">http://brokengdnb.github.io//project/2013/08/30/ava-data/</guid>
+        <link>http://localhost:4000/project/ava-data</link>
+        <guid isPermaLink="true">http://localhost:4000/project/ava-data</guid>
+      </item>
+    
+      <item>
+        <title>Links</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;Never memorize something that you can look up.&lt;/p&gt;
+
+  &lt;p&gt;― Albert Einstein&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#3d&quot;&gt;3D&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#blogs&quot;&gt;Blogs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#forms&quot;&gt;Forms&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#podcasts&quot;&gt;Podcasts&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#radios&quot;&gt;Radios&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#resume&quot;&gt;Resume&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#external&quot;&gt;External&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;3d&quot;&gt;3D&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://alicevision.org&quot;&gt;Alicevision&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;blogs&quot;&gt;Blogs&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.bbc.co.uk/rd/blog&quot; title=&quot;BBC Research and Development&quot;&gt;BBC Research and Development&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://https://netflixtechblog.com/&quot; title=&quot;Neflix developer blog&quot;&gt;Neflix dev blog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://youtube-eng.googleblog.com/&quot; title=&quot;Youtube dev blog&quot;&gt;Youtube dev blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;forms&quot;&gt;Forms&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://formspree.io/&quot; title=&quot;Formspree&quot;&gt;Formspree (front-end)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;podcasts&quot;&gt;Podcasts&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://simplecast.com/&quot;&gt;Simplecast&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;radios&quot;&gt;Radios&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://icecast8.play.cz/color128.mp3&quot; title=&quot;Color Music Radio (Czech Republic)&quot;&gt;Color Music Radio (Czech Republic)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://trace.dnbradio.com:8000/dnbradio_main.mp3&quot; title=&quot;Drum &amp;amp; Bass (England)&quot;&gt;Drum &amp;amp; Bass (England)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;resume&quot;&gt;Resume&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://novoresume.com/&quot; title=&quot;Novorésumé&quot;&gt;Novorésumé&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;external&quot;&gt;External&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ebu/awesome-broadcasting&quot; title=&quot;Awesome Broadcasting (git)&quot;&gt;Awesome Broadcasting (git)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/awesome-selfhosted/awesome-selfhosted&quot; title=&quot;Awesome-Selfhosted&quot;&gt;Awesome Selfhosted (git)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sun, 30 Jan 2011 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/urls</link>
+        <guid isPermaLink="true">http://localhost:4000/urls</guid>
       </item>
     
   </channel>

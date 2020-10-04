@@ -2,42 +2,15 @@
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title></title>
-    <link>http://brokengdnb.github.io</link>
+    <link>http://localhost:4000</link>
     <description>
       Just another voice outside of group.
     </description>
     
         
             <item>
-                <title>Announcing Version 2.0</title>
-                <link>http://brokengdnb.github.io/update/2020/09/26/announcing-pixyll-version-2/</link>
-                <content:encoded>
-                    <![CDATA[
-                    <p>I’ve just released version <code class="language-plaintext highlighter-rouge">2.0</code>. of everything. Versions in future will be updated few times per year based on futures and testing. New way of thinking, designing and creating will be faster, more effective and organized.</p>
-
-<p>In this ‘covid-19’ times I make the biggest changes in my life including future path returning me back to school. Music university of sound engineering.</p>
-
-<p>Next year 2021 somewhere in a middle I will be starting personal internet radio, based on free music without licencing. Some personal samples also podcasts with the most interesting people on this planet.</p>
-
-<p>So far I need to put together <code class="language-plaintext highlighter-rouge">Room23</code> earn enough money to move, pay semester, finish and run the whole idea. It will take a time, but I will make it done.</p>
-
-                    ]]>
-                </content:encoded>
-                <guid isPermaLink="false">/update/2020/09/26/announcing-pixyll-version-2/</guid>
-                <description>
-                    
-                    Easy, light, simple
-                    
-                </description>
-                <pubDate>Sat, 26 Sep 2020 00:00:00 +0200</pubDate>
-                <author>BrokenG</author>
-            </item>
-        
-    
-        
-            <item>
                 <title>ME (Markdown Editor)</title>
-                <link>http://brokengdnb.github.io/project/2020/03/17/me/</link>
+                <link>http://localhost:4000/project/me</link>
                 <content:encoded>
                     <![CDATA[
                     <blockquote>
@@ -149,10 +122,10 @@ winecfg
 
                     ]]>
                 </content:encoded>
-                <guid isPermaLink="false">/project/2020/03/17/me/</guid>
+                <guid isPermaLink="false">/project/me</guid>
                 <description>
                     
-                    ...just another .md editor but just for me!
+                    ...just another .md editor but you know, just for me!
                     
                 </description>
                 <pubDate>Tue, 17 Mar 2020 00:00:00 +0100</pubDate>
@@ -163,7 +136,7 @@ winecfg
         
             <item>
                 <title>AVA (TV &amp; Control)</title>
-                <link>http://brokengdnb.github.io/project/2018/01/30/ava-tv-control/</link>
+                <link>http://localhost:4000/project/ava-tv</link>
                 <content:encoded>
                     <![CDATA[
                     <blockquote>
@@ -238,10 +211,10 @@ npm <span class="nb">install
 
                     ]]>
                 </content:encoded>
-                <guid isPermaLink="false">/project/2018/01/30/ava-tv-control/</guid>
+                <guid isPermaLink="false">/project/ava-tv</guid>
                 <description>
                     
-                    ...making my life easier as a video DJ
+                    ...Audio &amp; Video Administration (Stream)
                     
                 </description>
                 <pubDate>Tue, 30 Jan 2018 00:00:00 +0100</pubDate>
@@ -252,25 +225,25 @@ npm <span class="nb">install
         
             <item>
                 <title>EMI</title>
-                <link>http://brokengdnb.github.io/project/2016/11/30/emi/</link>
+                <link>http://localhost:4000/project/emi</link>
                 <content:encoded>
                     <![CDATA[
                     <blockquote>
   <p>Never ever lost the passion for acomplishing your dreams, never ever… no matter of what? … omg money? fuck the money… fight for your dreams!</p>
 </blockquote>
 
-<p>So the idea was to create a special cusom high level mappings as well as dual-bind responsible skin to adapt on a events on a go but the point is… limited… number of a buttons… so it’s like layer over the layer… over the another one… based on position in that mixing process. So I started from zero with tottaly different MIDI console, then emigrate but the idea is same and is portable to “any” device that I get under my hands, it just works. In this time “2020” Behringer-CMD serie… and yes, you can separate them and yes each of that console have their own layers and yes it works one by one but together…. omg… hold my beer baby… I will show you something…</p>
+<p>So the idea was to create a special cusom high level mappings as well as dual-bind responsible skin to adapt on a event on a go, but the point is… limited number of a buttons, so it’s like layer over the layer… over the another one, and the other one based on position in that mixing process. Solution is portable to “any” MIDI or HID device, it just works. In this case Behringer CMD series… and yes, you can separate them and yes each of them have their own layers and yes it works one by one but together…. omg, breaking the rules!</p>
 
 <ul>
-  <li><a href="#MIDI">MIDI</a></li>
-  <li><a href="#Screens">Screens</a></li>
-  <li><a href="#Code">Code</a></li>
-  <li><a href="#Future">Future</a></li>
-  <li><a href="#Documentation">Documentation</a></li>
-  <li><a href="#License">License</a></li>
+  <li><a href="#midi">MIDI</a></li>
+  <li><a href="#screens">Screens</a></li>
+  <li><a href="#code">Code</a></li>
+  <li><a href="#future">Future</a></li>
+  <li><a href="#documentation">Documentation</a></li>
+  <li><a href="#license">License</a></li>
 </ul>
 
-<p>##MIDI</p>
+<h2 id="midi">MIDI</h2>
 
 <p><a href="https://github.com/brokengdnb/emi/blob/master/02.jpg?raw=true" title="preview"><img src="https://github.com/brokengdnb/emi/blob/master/02.jpg?raw=true" alt="preview" title="preview" /></a></p>
 
@@ -335,22 +308,16 @@ npm <span class="nb">install
 
 <h2 id="license">License</h2>
 
-<table>
-  <tbody>
-    <tr>
-      <td>mixed under Mixxx licence, the GPLv2. See the LICENSE file and edit of a source code under MIT</td>
-      <td>BrokenG</td>
-      <td>2020</td>
-    </tr>
-  </tbody>
-</table>
+<p>See the LICENSE file.</p>
+
+<p>BrokenG (2020)</p>
 
                     ]]>
                 </content:encoded>
-                <guid isPermaLink="false">/project/2016/11/30/emi/</guid>
+                <guid isPermaLink="false">/project/emi</guid>
                 <description>
                     
-                    ...Elegant Mixing Interface (DJ App)
+                    ...Elegant Mixing Interface (custom DJ app)
                     
                 </description>
                 <pubDate>Wed, 30 Nov 2016 00:00:00 +0100</pubDate>
@@ -360,75 +327,8 @@ npm <span class="nb">install
     
         
             <item>
-                <title>Hello, Pixyll</title>
-                <link>http://brokengdnb.github.io/jekyll/pixyll/2014/06/11/welcome-to-pixyll/</link>
-                <content:encoded>
-                    <![CDATA[
-                    <p>Hello.</p>
-
-<p>Pixyll is a simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff. It’s mobile <em>first</em>, fluidly responsive, and delightfully lightweight.</p>
-
-<p>It’s pretty minimal, but leverages large type and drastic contrast to make a statement, on all devices.</p>
-
-<blockquote>
-  <p>
-    Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.
-  </p>
-  <footer><cite title="Antoine de Saint-Exupéry">Antoine de Saint-Exupéry</cite></footer>
-</blockquote>
-
-<h2 id="where-is-it">Where is it?</h2>
-
-<p>Checkout the <a href="https://github.com/johnotander/pixyll">Github repository</a> to download it, request a feature, or report a bug.</p>
-
-<p>It’s free, and open source (<a href="http://opensource.org/licenses/MIT">MIT</a>).</p>
-
-                    ]]>
-                </content:encoded>
-                <guid isPermaLink="false">/jekyll/pixyll/2014/06/11/welcome-to-pixyll/</guid>
-                <description>
-                    
-                    Pixyll is a simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff.
-                    
-                </description>
-                <pubDate>Wed, 11 Jun 2014 17:31:19 +0200</pubDate>
-                <author>BrokenG</author>
-            </item>
-        
-    
-        
-            <item>
-                <title>So, What is Jekyll?</title>
-                <link>http://brokengdnb.github.io/jekyll/pixyll/2014/06/09/so-what-is-jekyll/</link>
-                <content:encoded>
-                    <![CDATA[
-                    <p>Jekyll is a tool for transforming your plain text into static websites and 
-blogs. It is simple, static, and blog-aware. Jekyll uses the 
-<a href="http://docs.shopify.com/themes/liquid-basics">Liquid</a> templating
-language and has builtin <a href="http://daringfireball.net/projects/markdown/">Markdown</a>
-and <a href="http://en.wikipedia.org/wiki/Textile_(markup_language)">Textile</a> support.</p>
-
-<p>It also ties in nicely to <a href="https://pages.github.com/">Github Pages</a>.</p>
-
-<p>Learn more about Jekyll on their <a href="http://jekyllrb.com/">website</a>.</p>
-
-                    ]]>
-                </content:encoded>
-                <guid isPermaLink="false">/jekyll/pixyll/2014/06/09/so-what-is-jekyll/</guid>
-                <description>
-                    
-                    Transform your plain text into static websites and blogs. Simple, static, and blog-aware.
-                    
-                </description>
-                <pubDate>Mon, 09 Jun 2014 14:32:18 +0200</pubDate>
-                <author>BrokenG</author>
-            </item>
-        
-    
-        
-            <item>
                 <title>AVA (Data)</title>
-                <link>http://brokengdnb.github.io/project/2013/08/30/ava-data/</link>
+                <link>http://localhost:4000/project/ava-data</link>
                 <content:encoded>
                     <![CDATA[
                     <blockquote>
@@ -646,9 +546,12 @@ html(lang="en")
 <p><a href="https://github.com/brokengdnb/ava-data/demo-img/youtube.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/ava-data/blob/master/demo-img/youtube.png?raw=true" alt="MVC" title="preview" /></a></p>
 
 <ul>
-  <li>offline (local)</li>
-  <li>move</li>
-  <li>convert</li>
+  <li>offline (local)
+    <ul>
+      <li>move</li>
+      <li>convert</li>
+    </ul>
+  </li>
 </ul>
 
 <p><a href="https://github.com/brokengdnb/ava-data/demo-img/local.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/ava-data/blob/master/demo-img/local.png?raw=true" alt="MVC" title="preview" /></a></p>
@@ -694,13 +597,95 @@ html(lang="en")
 
                     ]]>
                 </content:encoded>
-                <guid isPermaLink="false">/project/2013/08/30/ava-data/</guid>
+                <guid isPermaLink="false">/project/ava-data</guid>
                 <description>
                     
-                    ...just an idea in the middle of nowhere
+                    ...Audio &amp; Video Administration (Database)
                     
                 </description>
                 <pubDate>Fri, 30 Aug 2013 00:00:00 +0200</pubDate>
+                <author>BrokenG</author>
+            </item>
+        
+    
+        
+            <item>
+                <title>Links</title>
+                <link>http://localhost:4000/urls</link>
+                <content:encoded>
+                    <![CDATA[
+                    <blockquote>
+  <p>Never memorize something that you can look up.</p>
+
+  <p>― Albert Einstein</p>
+</blockquote>
+
+<ul>
+  <li><a href="#3d">3D</a></li>
+  <li><a href="#blogs">Blogs</a></li>
+  <li><a href="#forms">Forms</a></li>
+  <li><a href="#podcasts">Podcasts</a></li>
+  <li><a href="#radios">Radios</a></li>
+  <li><a href="#resume">Resume</a></li>
+  <li><a href="#external">External</a></li>
+</ul>
+
+<hr />
+
+<h2 id="3d">3D</h2>
+
+<ul>
+  <li><a href="https://alicevision.org">Alicevision</a></li>
+</ul>
+
+<h2 id="blogs">Blogs</h2>
+
+<ul>
+  <li><a href="https://www.bbc.co.uk/rd/blog" title="BBC Research and Development">BBC Research and Development</a></li>
+  <li><a href="http://https://netflixtechblog.com/" title="Neflix developer blog">Neflix dev blog</a></li>
+  <li><a href="https://youtube-eng.googleblog.com/" title="Youtube dev blog">Youtube dev blog</a></li>
+</ul>
+
+<h2 id="forms">Forms</h2>
+<ul>
+  <li><a href="https://formspree.io/" title="Formspree">Formspree (front-end)</a></li>
+</ul>
+
+<h2 id="podcasts">Podcasts</h2>
+
+<ul>
+  <li><a href="https://simplecast.com/">Simplecast</a></li>
+</ul>
+
+<h2 id="radios">Radios</h2>
+
+<ul>
+  <li><a href="http://icecast8.play.cz/color128.mp3" title="Color Music Radio (Czech Republic)">Color Music Radio (Czech Republic)</a></li>
+  <li><a href="http://trace.dnbradio.com:8000/dnbradio_main.mp3" title="Drum &amp; Bass (England)">Drum &amp; Bass (England)</a></li>
+</ul>
+
+<h2 id="resume">Resume</h2>
+
+<ul>
+  <li><a href="https://novoresume.com/" title="Novorésumé">Novorésumé</a></li>
+</ul>
+
+<h3 id="external">External</h3>
+
+<ul>
+  <li><a href="https://github.com/ebu/awesome-broadcasting" title="Awesome Broadcasting (git)">Awesome Broadcasting (git)</a></li>
+  <li><a href="https://github.com/awesome-selfhosted/awesome-selfhosted" title="Awesome-Selfhosted">Awesome Selfhosted (git)</a></li>
+</ul>
+
+                    ]]>
+                </content:encoded>
+                <guid isPermaLink="false">/urls</guid>
+                <description>
+                    
+                    ...collection of all interesting sites &amp; projects
+                    
+                </description>
+                <pubDate>Sun, 30 Jan 2011 00:00:00 +0100</pubDate>
                 <author>BrokenG</author>
             </item>
         
