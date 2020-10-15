@@ -1627,20 +1627,18 @@ npm <span class="nb">install
   <p>…ok so let’s create a decent REST API database server, with pre &amp; post custom data manipulation, suited up in Material Design (UI) and all of that render in 2D map to visualise songs in a mix &amp; playlists, why? because my memory does not work so I create one…</p>
 </blockquote>
 
-<blockquote>
-  <p>As a DJ as well as VDJ in one… 3,2,1 and here… we… go…</p>
-</blockquote>
-
 <hr />
 
 <ul>
   <li><a href="#demo">Demo</a></li>
   <li><a href="#code">Code</a></li>
+  <li><a href="#dependencies">Dependencies</a></li>
   <li><a href="#run">Run</a></li>
   <li><a href="#index">Index</a></li>
   <li><a href="#idea">Idea</a></li>
   <li><a href="#todo">TODO</a></li>
   <li><a href="#support">Support</a></li>
+  <li><a href="#ava-tv">AVA-TV</a></li>
   <li><a href="#license">License</a></li>
 </ul>
 
@@ -1659,6 +1657,16 @@ npm <span class="nb">install
   </ul>
 </blockquote>
 
+<h2 id="dependencies">Dependencies</h2>
+
+<ul>
+  <li><a href="https://github.com">git</a> backup system</li>
+  <li><a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/">MongoDB</a> database</li>
+  <li><a href="https://nodejs.org/en/download/">Node.js &amp; NPM</a> API &amp; Web server</li>
+  <li><a href="http://ffmpeg.org/download.html">ffmpeg</a> for local import</li>
+  <li><a href="https://ytdl-org.github.io/youtube-dl/index.html">youtube-dl</a> for external import (YouTube)</li>
+</ul>
+
 <h2 id="run">Run</h2>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/brokengdnb/ava-data <span class="o">&amp;&amp;</span> <span class="nb">cd </span>ava-data/
@@ -1667,10 +1675,10 @@ npm <span class="nb">install
 </span>npm run start
 </code></pre></div></div>
 <blockquote>
-  <p>woala just like that… and is on <a href="http://localhost:3000/" title="http://localhost:3000/">http://localhost:3000/</a></p>
+  <p>woala just like that… and is on <a href="http://localhost:3000/" title="http://localhost:3000/">http://localhost:3000/</a> only problem is to create first random item to be able see graph… bug/feature import/rewrite data anyway</p>
 </blockquote>
 
-<p><a href="https://github.com/brokengdnb/ava-data/demo-img/home.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/ava-data/blob/master/demo-img/home.png?raw=true" alt="MVC" title="preview" /></a></p>
+<p><img src="https://github.com/brokengdnb/ava-data/blob/049a611a016264ab49724ab2e496cde696179d0d/demo-img/home.png?raw=true" alt="home" title="home" /></p>
 
 <h2 id="index">Index</h2>
 
@@ -1819,13 +1827,13 @@ html(lang="en")
 <p><a href="https://github.com/brokengdnb/ava-data/demo-img/emi.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/ava-data/blob/master/demo-img/emi.png?raw=true" alt="MVC" title="preview" /></a></p>
 
 <ul>
-  <li>movies</li>
+  <li>movies (cinema mode)</li>
 </ul>
 
 <p><a href="https://github.com/brokengdnb/ava-data/demo-img/movies.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/ava-data/blob/master/demo-img/movies.png?raw=true" alt="MVC" title="preview" /></a></p>
 
 <ul>
-  <li>video effects</li>
+  <li>video effects (DJ mode)</li>
 </ul>
 
 <p><a href="https://github.com/brokengdnb/ava-data/demo-img/effects.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/ava-data/blob/master/demo-img/effects.png?raw=true" alt="MVC" title="preview" /></a></p>
@@ -1880,6 +1888,12 @@ html(lang="en")
   <li>Linux</li>
   <li><del>Windows</del>  =&gt; <em>(I don’t have one and I will <strong>NOT</strong> support this platform, never ever)”</em></li>
 </ul>
+
+<h2 id="ava-tv">AVA-TV</h2>
+
+<p>This AVA-DATA is the base and “data-centrum” for another project AVA-TV focusing on real-time streaming on multiple devices with changes on a go… //simplify <a href="https://github.com/brokengdnb/ava-tv/">AVA-TV</a></p>
+
+<p><a href="https://github.com/brokengdnb/ava-tv/demo/ava-TV-beamer.png?raw=true" title="beamer"><img src="https://github.com/brokengdnb/ava-tv/blob/master/demo/ava-TV-beamer.png?raw=true" alt="beamer" title="beamer" /></a></p>
 
 <h2 id="license">License</h2>
 

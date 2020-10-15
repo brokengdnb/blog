@@ -1550,20 +1550,18 @@ npm &lt;span class=&quot;nb&quot;&gt;install
   &lt;p&gt;…ok so let’s create a decent REST API database server, with pre &amp;amp; post custom data manipulation, suited up in Material Design (UI) and all of that render in 2D map to visualise songs in a mix &amp;amp; playlists, why? because my memory does not work so I create one…&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;As a DJ as well as VDJ in one… 3,2,1 and here… we… go…&lt;/p&gt;
-&lt;/blockquote&gt;
-
 &lt;hr /&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;#demo&quot;&gt;Demo&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#code&quot;&gt;Code&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#dependencies&quot;&gt;Dependencies&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#run&quot;&gt;Run&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#index&quot;&gt;Index&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#idea&quot;&gt;Idea&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#todo&quot;&gt;TODO&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#support&quot;&gt;Support&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#ava-tv&quot;&gt;AVA-TV&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#license&quot;&gt;License&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -1582,6 +1580,16 @@ npm &lt;span class=&quot;nb&quot;&gt;install
   &lt;/ul&gt;
 &lt;/blockquote&gt;
 
+&lt;h2 id=&quot;dependencies&quot;&gt;Dependencies&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com&quot;&gt;git&lt;/a&gt; backup system&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/&quot;&gt;MongoDB&lt;/a&gt; database&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/download/&quot;&gt;Node.js &amp;amp; NPM&lt;/a&gt; API &amp;amp; Web server&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://ffmpeg.org/download.html&quot;&gt;ffmpeg&lt;/a&gt; for local import&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ytdl-org.github.io/youtube-dl/index.html&quot;&gt;youtube-dl&lt;/a&gt; for external import (YouTube)&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h2 id=&quot;run&quot;&gt;Run&lt;/h2&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://github.com/brokengdnb/ava-data &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;ava-data/
@@ -1590,10 +1598,10 @@ npm &lt;span class=&quot;nb&quot;&gt;install
 &lt;/span&gt;npm run start
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;blockquote&gt;
-  &lt;p&gt;woala just like that… and is on &lt;a href=&quot;http://localhost:3000/&quot; title=&quot;http://localhost:3000/&quot;&gt;http://localhost:3000/&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;woala just like that… and is on &lt;a href=&quot;http://localhost:3000/&quot; title=&quot;http://localhost:3000/&quot;&gt;http://localhost:3000/&lt;/a&gt; only problem is to create first random item to be able see graph… bug/feature import/rewrite data anyway&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/brokengdnb/ava-data/demo-img/home.png?raw=true&quot; title=&quot;preview&quot;&gt;&lt;img src=&quot;https://github.com/brokengdnb/ava-data/blob/master/demo-img/home.png?raw=true&quot; alt=&quot;MVC&quot; title=&quot;preview&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/brokengdnb/ava-data/blob/049a611a016264ab49724ab2e496cde696179d0d/demo-img/home.png?raw=true&quot; alt=&quot;home&quot; title=&quot;home&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;index&quot;&gt;Index&lt;/h2&gt;
 
@@ -1742,13 +1750,13 @@ html(lang=&quot;en&quot;)
 &lt;p&gt;&lt;a href=&quot;https://github.com/brokengdnb/ava-data/demo-img/emi.png?raw=true&quot; title=&quot;preview&quot;&gt;&lt;img src=&quot;https://github.com/brokengdnb/ava-data/blob/master/demo-img/emi.png?raw=true&quot; alt=&quot;MVC&quot; title=&quot;preview&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;movies&lt;/li&gt;
+  &lt;li&gt;movies (cinema mode)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/brokengdnb/ava-data/demo-img/movies.png?raw=true&quot; title=&quot;preview&quot;&gt;&lt;img src=&quot;https://github.com/brokengdnb/ava-data/blob/master/demo-img/movies.png?raw=true&quot; alt=&quot;MVC&quot; title=&quot;preview&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;video effects&lt;/li&gt;
+  &lt;li&gt;video effects (DJ mode)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/brokengdnb/ava-data/demo-img/effects.png?raw=true&quot; title=&quot;preview&quot;&gt;&lt;img src=&quot;https://github.com/brokengdnb/ava-data/blob/master/demo-img/effects.png?raw=true&quot; alt=&quot;MVC&quot; title=&quot;preview&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
@@ -1803,6 +1811,12 @@ html(lang=&quot;en&quot;)
   &lt;li&gt;Linux&lt;/li&gt;
   &lt;li&gt;&lt;del&gt;Windows&lt;/del&gt;  =&amp;gt; &lt;em&gt;(I don’t have one and I will &lt;strong&gt;NOT&lt;/strong&gt; support this platform, never ever)”&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2 id=&quot;ava-tv&quot;&gt;AVA-TV&lt;/h2&gt;
+
+&lt;p&gt;This AVA-DATA is the base and “data-centrum” for another project AVA-TV focusing on real-time streaming on multiple devices with changes on a go… //simplify &lt;a href=&quot;https://github.com/brokengdnb/ava-tv/&quot;&gt;AVA-TV&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/brokengdnb/ava-tv/demo/ava-TV-beamer.png?raw=true&quot; title=&quot;beamer&quot;&gt;&lt;img src=&quot;https://github.com/brokengdnb/ava-tv/blob/master/demo/ava-TV-beamer.png?raw=true&quot; alt=&quot;beamer&quot; title=&quot;beamer&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
 
