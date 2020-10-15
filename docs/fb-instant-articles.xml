@@ -1037,7 +1037,9 @@
                 <link>http://brokengdnb.github.io/blog/cache</link>
                 <content:encoded>
                     <![CDATA[
-                    <blockquote>
+                    <p><a href="https://github.com/brokengdnb/blog/blob/master/images/cache.jpg?raw=true" title="beamer"><img src="https://github.com/brokengdnb/blog/blob/master/images/cache.jpg?raw=true" alt="cache" title="beamer" /></a></p>
+
+<blockquote>
   <p>There are only two hard things in Computer Science: cache invalidation and naming things.</p>
 
   <p>Phil Karlton</p>

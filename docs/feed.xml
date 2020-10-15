@@ -1008,7 +1008,9 @@
     
       <item>
         <title>Cache</title>
-        <description>&lt;blockquote&gt;
+        <description>&lt;p&gt;&lt;a href=&quot;https://github.com/brokengdnb/blog/blob/master/images/cache.jpg?raw=true&quot; title=&quot;beamer&quot;&gt;&lt;img src=&quot;https://github.com/brokengdnb/blog/blob/master/images/cache.jpg?raw=true&quot; alt=&quot;cache&quot; title=&quot;beamer&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
   &lt;p&gt;There are only two hard things in Computer Science: cache invalidation and naming things.&lt;/p&gt;
 
   &lt;p&gt;Phil Karlton&lt;/p&gt;
