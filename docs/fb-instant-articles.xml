@@ -1164,24 +1164,26 @@ winecfg
                 <content:encoded>
                     <![CDATA[
                     <blockquote>
-  <p>Since I got working REST-API server and DJ program as well. I wanted to control video effects on projector behind me or any PC/TV connected to local network on a go so here we go…</p>
+  <p>Then I take AVA &amp; EMI for a walk… we talk and end up in some random room of unlimited posibilities… as a DJ as well as video DJ in one… 3,2,1 and here… we… go…</p>
 </blockquote>
 
 <hr />
 
 <ul>
   <li><a href="#demo">Demo</a></li>
-  <li><a href="#downloads">Downloads</a></li>
-  <li><a href="#compilation">Compilation</a></li>
+  <li><a href="#download">Download</a></li>
+  <li><a href="#dependencies">Dependencies</a></li>
+  <li><a href="#run">Run</a></li>
   <li><a href="#index">Index</a></li>
+  <li><a href="#idea">Idea</a></li>
+  <li><a href="#todo">TODO</a></li>
+  <li><a href="#support">Support</a></li>
   <li><a href="#license">License</a></li>
 </ul>
 
 <h2 id="demo">Demo</h2>
 
-<p><a href="https://github.com/brokengdnb/me" title="demo"><img src="https://github.com/brokengdnb/ava-tv/blob/master/demo.gif?raw=true" alt="demo" title="demo" /></a></p>
-
-<h2 id="downloads">Downloads</h2>
+<h2 id="download">Download</h2>
 
 <ul>
   <li><a href="https://github.com/brokengdnb/ava-tv/releases/tag/v1">AVA-TV-1.0.zip (~70MB)</a></li>
@@ -1194,7 +1196,13 @@ winecfg
   </ul>
 </blockquote>
 
-<h2 id="compilation">Compilation</h2>
+<h2 id="dependencies">Dependencies</h2>
+
+<ul>
+  <li>AVA-Data</li>
+</ul>
+
+<h2 id="run">Run</h2>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/brokengdnb/ava-tv <span class="o">&amp;&amp;</span> <span class="nb">cd </span>ava-tv/
 npm <span class="nb">install
@@ -1202,28 +1210,138 @@ npm <span class="nb">install
 </span>npm run start
 </code></pre></div></div>
 <blockquote>
-  <p>simple as that…</p>
+  <p>just like that… TV &amp; Control runs on <a href="http://localhost/" title="http://localhost/">http://localhost/</a> but first you need to start AVA-Data on port 3000 to have some data to stream…</p>
 </blockquote>
 
 <h2 id="index">Index</h2>
 
-<pre><code class="language-jade">
-</code></pre>
+<p>Is split in two parts:</p>
 
-<p>As you can see in a “body” tag I’m using just one element and that render whole aplication in one page, then it depands and also the app will request only what is needed at that request. Then all requests are split between front &amp; back end.</p>
+<ul>
+  <li>TV / Projector</li>
+</ul>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<p><a href="https://github.com/brokengdnb/ava-tv/demo/ava-TV-beamer.png?raw=true" title="beamer"><img src="https://github.com/brokengdnb/ava-tv/blob/master/demo/ava-TV-beamer.png?raw=true" alt="beamer" title="beamer" /></a></p>
+
+<ul>
+  <li>Controller</li>
+</ul>
+
+<p><a href="https://github.com/brokengdnb/ava-tv/demo/ava-tv-iphone.png?raw=true" title="beamer"><img src="https://github.com/brokengdnb/ava-tv/blob/master/demo/ava-tv-iphone.png?raw=true" alt="iphone" title="beamer" /></a></p>
+
+<p>TV will generate random ID for a room &amp; controller link to connect each other. Each of them can be multiplied by sharing URL link to diferent devices or scanning QR code:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// qr code is changing on a go by IP address of a streaming server and ID of a room</span>
+<span class="nx">$scope</span><span class="p">.</span><span class="nx">idInputChange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">newData</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">$http</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/localIP</span><span class="dl">'</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">$scope</span><span class="p">.</span><span class="nx">QRurl</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">http://</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">data</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">local</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">/</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">newData</span><span class="p">.</span><span class="nx">idRoom</span><span class="p">;</span>
+	<span class="p">});</span>
+<span class="p">};</span>
+
 </code></pre></div></div>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<p>The app will get it’s own IP adsress from local network as well as IP of database so we can have many televisions connected to one controller as well as we can have many controllers that control one TV, for example if you cannot find your TV remote control… just create new one from your phone/tablet or am I going from bedroom to kitchen? so I transform my phone/control into TV so I can continue on a go while I’m doing something else in somewhere else.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// server.js get requsted /roomID and render front-end (control.html)</span>
+<span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/:room</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">given_room</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">room</span><span class="p">;</span>
+	<span class="nx">res</span><span class="p">.</span><span class="nx">sendFile</span><span class="p">(</span><span class="nx">__dirname</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">/control.html</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// where basic JS get roomID, transoport to angularJS and socket.IO do the rest</span>
+<span class="kd">let</span> <span class="nx">urlParam</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span><span class="p">;</span>
+<span class="nx">$scope</span><span class="p">.</span><span class="nx">roomIDparam</span> <span class="o">=</span> <span class="nx">urlParam</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 </code></pre></div></div>
+
+<p>Then we got a ‘roomID’ where all is heppening. So the ID of a room can be a string or number or combination of both [a-Z, 1-9] set or randomly generated for each room where is some number of TVs and some number of connected controlers. Hope you catching my drift:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Sync video data throw all connected devices</span>
+<span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">sync video</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nx">io</span><span class="p">.</span><span class="nx">sockets</span><span class="p">.</span><span class="nx">adapter</span><span class="p">.</span><span class="nx">rooms</span><span class="p">[</span><span class="dl">'</span><span class="s1">room-</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">socket</span><span class="p">.</span><span class="nx">roomnum</span><span class="p">]</span> <span class="o">!==</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+		<span class="kd">let</span> <span class="nx">roomnum</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">room</span>
+		<span class="kd">let</span> <span class="nx">currTime</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">time</span>
+		<span class="kd">let</span> <span class="nx">state</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">state</span>
+		<span class="kd">let</span> <span class="nx">videoId</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">videoId</span>
+
+		<span class="c1">// 0 = YouTube, 1 = Daily Motion, 2 = Vimeo, 3 = local file</span>
+		<span class="kd">let</span> <span class="nx">playerId</span> <span class="o">=</span> <span class="mi">3</span>
+
+		<span class="c1">// var videoId = io.sockets.adapter.rooms['room-'+roomnum].currVideo</span>
+		<span class="nx">io</span><span class="p">.</span><span class="nx">sockets</span><span class="p">.</span><span class="k">in</span><span class="p">(</span><span class="dl">"</span><span class="s2">room-</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">roomnum</span><span class="p">).</span><span class="nx">emit</span><span class="p">(</span><span class="dl">'</span><span class="s1">syncVideoClient</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+			<span class="na">time</span><span class="p">:</span> <span class="nx">currTime</span><span class="p">,</span>
+			<span class="na">state</span><span class="p">:</span> <span class="nx">state</span><span class="p">,</span>
+			<span class="na">videoId</span><span class="p">:</span> <span class="nx">videoId</span><span class="p">,</span>
+			<span class="na">playerId</span><span class="p">:</span> <span class="nx">playerId</span>
+		<span class="p">})</span>
+	<span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>This syncing room ID then time, state (play/pause), file URL and playerId (YouTube,DM,Vimeo or local) stream… not the media itself and that is different. So you can be wacher (user) or you can be admin of the same stream on a go, change URL, seek throw or pause/play… but there is only one admin who can control the main stream at one time for “unlimited” number of users. And every user can be switched to be an admin and takeover main stream for the other users. Ja? Like dat:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Change host</span>
+    <span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">change host</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">io</span><span class="p">.</span><span class="nx">sockets</span><span class="p">.</span><span class="nx">adapter</span><span class="p">.</span><span class="nx">rooms</span><span class="p">[</span><span class="dl">'</span><span class="s1">room-</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">socket</span><span class="p">.</span><span class="nx">roomnum</span><span class="p">]</span> <span class="o">!==</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">io</span><span class="p">.</span><span class="nx">sockets</span><span class="p">.</span><span class="nx">adapter</span><span class="p">.</span><span class="nx">rooms</span><span class="p">[</span><span class="dl">'</span><span class="s1">room-</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">socket</span><span class="p">.</span><span class="nx">roomnum</span><span class="p">])</span>
+            <span class="kd">let</span> <span class="nx">roomnum</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">room</span>
+            <span class="kd">let</span> <span class="nx">newHost</span> <span class="o">=</span> <span class="nx">socket</span><span class="p">.</span><span class="nx">id</span>
+            <span class="kd">let</span> <span class="nx">currHost</span> <span class="o">=</span> <span class="nx">io</span><span class="p">.</span><span class="nx">sockets</span><span class="p">.</span><span class="nx">adapter</span><span class="p">.</span><span class="nx">rooms</span><span class="p">[</span><span class="dl">'</span><span class="s1">room-</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">socket</span><span class="p">.</span><span class="nx">roomnum</span><span class="p">].</span><span class="nx">host</span>
+
+            <span class="c1">// If socket is already the host or not!</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">newHost</span> <span class="o">!=</span> <span class="nx">currHost</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">I want to be the host and my socket id is: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">newHost</span><span class="p">);</span>
+                <span class="c1">//console.log(io.sockets.adapter.rooms['room-' + socket.roomnum])</span>
+
+                <span class="c1">// Broadcast to current host and set false</span>
+                <span class="nx">socket</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">.</span><span class="nx">to</span><span class="p">(</span><span class="nx">currHost</span><span class="p">).</span><span class="nx">emit</span><span class="p">(</span><span class="dl">'</span><span class="s1">unSetHost</span><span class="dl">'</span><span class="p">)</span>
+                <span class="c1">// Reset host</span>
+                <span class="nx">io</span><span class="p">.</span><span class="nx">sockets</span><span class="p">.</span><span class="nx">adapter</span><span class="p">.</span><span class="nx">rooms</span><span class="p">[</span><span class="dl">'</span><span class="s1">room-</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">socket</span><span class="p">.</span><span class="nx">roomnum</span><span class="p">].</span><span class="nx">host</span> <span class="o">=</span> <span class="nx">newHost</span>
+                <span class="c1">// Broadcast to new host and set true</span>
+                <span class="nx">socket</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="dl">'</span><span class="s1">setHost</span><span class="dl">'</span><span class="p">)</span>
+
+                <span class="nx">io</span><span class="p">.</span><span class="nx">sockets</span><span class="p">.</span><span class="nx">adapter</span><span class="p">.</span><span class="nx">rooms</span><span class="p">[</span><span class="dl">'</span><span class="s1">room-</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">socket</span><span class="p">.</span><span class="nx">roomnum</span><span class="p">].</span><span class="nx">hostName</span> <span class="o">=</span> <span class="nx">socket</span><span class="p">.</span><span class="nx">username</span>
+                <span class="c1">// Update host label in all sockets</span>
+                <span class="nx">io</span><span class="p">.</span><span class="nx">sockets</span><span class="p">.</span><span class="k">in</span><span class="p">(</span><span class="dl">"</span><span class="s2">room-</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">roomnum</span><span class="p">).</span><span class="nx">emit</span><span class="p">(</span><span class="dl">'</span><span class="s1">changeHostLabel</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+                    <span class="na">username</span><span class="p">:</span> <span class="nx">socket</span><span class="p">.</span><span class="nx">username</span>
+                <span class="p">})</span>
+                <span class="c1">// Notify alert</span>
+                <span class="nx">socket</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="dl">'</span><span class="s1">notify alerts</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+                    <span class="na">alert</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="na">user</span><span class="p">:</span> <span class="nx">socket</span><span class="p">.</span><span class="nx">username</span>
+                <span class="p">})</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+</code></pre></div></div>
+
+<h2 id="idea">Idea</h2>
+
+<blockquote>
+  <p>The idea started in January 2018, technology and libraries comes by summer thanks to project Vynchronize, the idea is simple… control multiple end-points (AUDIO &amp; VIDEO) from multiple devices in multiple “rooms” and if you can, please render my playlists as well… so far only 2D but I already found a libraries for 360 VR… that will take a time but turtle will always win a race…</p>
+</blockquote>
+
+<p><a href="https://github.com/brokengdnb/ava-data/demo-img/emi.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/ava-data/blob/master/demo-img/emi.png?raw=true" alt="MVC" title="preview" /></a></p>
+
+<h3 id="todo">Todo</h3>
+<ul>
+  <li>add effects (fade in/out) between changes of a stream… soft does not work, so hard one into media itself? Or with implementing other players do effect between them as well?</li>
+  <li>add dual-bind connection into EMI for getting time / syncing decks and loading songs into selected deck from this project / playlist</li>
+  <li>add list of connected devices localy in room &amp; globaly for all</li>
+  <li>add function for changing player on go, like between local server and youtube</li>
+  <li>remotely control MUTE function of TVs and selecting wich one in wich room</li>
+  <li>update cache button / new data request</li>
+  <li>export selected playlist for offline local use (PWA?) without database</li>
+  <li>fix favourites new URL data</li>
+  <li>fix song’s connected nodes</li>
+</ul>
 
 <h2 id="support">Support</h2>
 
 <ul>
-  <li><strong>OS X (tasted on 10.14.6)</strong></li>
-  <li>Linux</li>
-  <li><del>Windows</del>  =&gt; <em>(I don’t have one and I will <strong>NOT</strong> support this platform. Call Microsoft service in India or your local IT “experts”</em></li>
+  <li><strong>OS X (tested on Mojave 10.14.6)</strong></li>
+  <li><strong>iOS &gt; 10 (tested on iPhone 5)</strong></li>
+  <li>Linux &amp; Android &gt; 6</li>
+  <li><del>Windows</del>  =&gt; <em>(I don’t have one and I will <strong>NOT</strong> support this platform, never ever, your choise = your problem)”</em></li>
 </ul>
 
 <h2 id="license">License</h2>
@@ -1231,7 +1349,6 @@ npm <span class="nb">install
 <p>The MIT License.</p>
 
 <p>Copyright (c) 2020 BrokenG</p>
-
 
                     ]]>
                 </content:encoded>
