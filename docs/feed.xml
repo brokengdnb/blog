@@ -1571,6 +1571,7 @@ html(lang=&quot;en&quot;)
   &lt;li&gt;&lt;a href=&quot;#3d&quot;&gt;3D&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#blogs&quot;&gt;Blogs&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#forms&quot;&gt;Forms&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#generators&quot;&gt;Generators&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#podcasts&quot;&gt;Podcasts&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#radios&quot;&gt;Radios&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#resume&quot;&gt;Resume&lt;/a&gt;&lt;/li&gt;
@@ -1599,6 +1600,11 @@ html(lang=&quot;en&quot;)
   &lt;li&gt;&lt;a href=&quot;https://www.powermapper.com/products/sortsite/checks/browser-compatibility&quot;&gt;Website browser Compatibility&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h2 id=&quot;generators&quot;&gt;Generators&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jakebathman.github.io/Markdown-Table-Generator/&quot;&gt;.md table&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h2 id=&quot;forms&quot;&gt;Forms&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://formspree.io/&quot; title=&quot;Formspree&quot;&gt;Formspree (front-end)&lt;/a&gt;&lt;/li&gt;
@@ -1615,6 +1621,7 @@ html(lang=&quot;en&quot;)
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://icecast8.play.cz/color128.mp3&quot; title=&quot;Color Music Radio (Czech Republic)&quot;&gt;Color Music Radio (Czech Republic)&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://trace.dnbradio.com:8000/dnbradio_main.mp3&quot; title=&quot;Drum &amp;amp; Bass (England)&quot;&gt;Drum &amp;amp; Bass (England)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/AzuraCast/AzuraCast&quot;&gt;AzuraCast&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;resume&quot;&gt;Resume&lt;/h2&gt;
@@ -1623,12 +1630,31 @@ html(lang=&quot;en&quot;)
   &lt;li&gt;&lt;a href=&quot;https://novoresume.com/&quot; title=&quot;Novorésumé&quot;&gt;Novorésumé&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h2 id=&quot;tv&quot;&gt;TV&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.nederland.tv/&quot;&gt;Netherlands TV&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h3 id=&quot;external&quot;&gt;External&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/ebu/awesome-broadcasting&quot; title=&quot;Awesome Broadcasting (git)&quot;&gt;Awesome Broadcasting (git)&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/awesome-selfhosted/awesome-selfhosted&quot; title=&quot;Awesome-Selfhosted&quot;&gt;Awesome Selfhosted (git)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2 id=&quot;nodejs&quot;&gt;Node.js&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/JakubKrizka/available-disk-space-nodejs/blob/master/index.js&quot;&gt;Disk Space&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;angularjs&quot;&gt;Angular.js&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://codepen.io/danemacaulay/pen/PZpWMg&quot;&gt;Swipe to right&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
 </description>
         <pubDate>Sun, 30 Jan 2011 00:00:00 +0100</pubDate>
         <link>http://brokengdnb.github.io/blog/urls</link>

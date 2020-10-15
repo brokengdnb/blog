@@ -1648,6 +1648,7 @@ html(lang="en")
   <li><a href="#3d">3D</a></li>
   <li><a href="#blogs">Blogs</a></li>
   <li><a href="#forms">Forms</a></li>
+  <li><a href="#generators">Generators</a></li>
   <li><a href="#podcasts">Podcasts</a></li>
   <li><a href="#radios">Radios</a></li>
   <li><a href="#resume">Resume</a></li>
@@ -1676,6 +1677,11 @@ html(lang="en")
   <li><a href="https://www.powermapper.com/products/sortsite/checks/browser-compatibility">Website browser Compatibility</a></li>
 </ul>
 
+<h2 id="generators">Generators</h2>
+<ul>
+  <li><a href="https://jakebathman.github.io/Markdown-Table-Generator/">.md table</a></li>
+</ul>
+
 <h2 id="forms">Forms</h2>
 <ul>
   <li><a href="https://formspree.io/" title="Formspree">Formspree (front-end)</a></li>
@@ -1692,6 +1698,7 @@ html(lang="en")
 <ul>
   <li><a href="http://icecast8.play.cz/color128.mp3" title="Color Music Radio (Czech Republic)">Color Music Radio (Czech Republic)</a></li>
   <li><a href="http://trace.dnbradio.com:8000/dnbradio_main.mp3" title="Drum &amp; Bass (England)">Drum &amp; Bass (England)</a></li>
+  <li><a href="https://github.com/AzuraCast/AzuraCast">AzuraCast</a></li>
 </ul>
 
 <h2 id="resume">Resume</h2>
@@ -1700,12 +1707,31 @@ html(lang="en")
   <li><a href="https://novoresume.com/" title="Novorésumé">Novorésumé</a></li>
 </ul>
 
+<h2 id="tv">TV</h2>
+
+<ul>
+  <li><a href="https://www.nederland.tv/">Netherlands TV</a></li>
+</ul>
+
 <h3 id="external">External</h3>
 
 <ul>
   <li><a href="https://github.com/ebu/awesome-broadcasting" title="Awesome Broadcasting (git)">Awesome Broadcasting (git)</a></li>
   <li><a href="https://github.com/awesome-selfhosted/awesome-selfhosted" title="Awesome-Selfhosted">Awesome Selfhosted (git)</a></li>
 </ul>
+
+<h2 id="nodejs">Node.js</h2>
+
+<ul>
+  <li><a href="https://github.com/JakubKrizka/available-disk-space-nodejs/blob/master/index.js">Disk Space</a></li>
+</ul>
+
+<h2 id="angularjs">Angular.js</h2>
+
+<ul>
+  <li><a href="https://codepen.io/danemacaulay/pen/PZpWMg">Swipe to right</a></li>
+</ul>
+
 
                     ]]>
                 </content:encoded>
