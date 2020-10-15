@@ -1310,6 +1310,237 @@ winecfg
     
         
             <item>
+                <title>ffmpeg</title>
+                <link>http://brokengdnb.github.io/blog/ffmpeg</link>
+                <content:encoded>
+                    <![CDATA[
+                    <ul>
+  <li><a href="#cover">Cover</a></li>
+  <li><a href="#chapters">Chapters</a></li>
+  <li><a href="#screenshot">Screenshot</a></li>
+  <li><a href="#subtitles">Subtitles</a></li>
+  <li><a href="#watermark">Watermark</a></li>
+</ul>
+
+<hr />
+
+<h2 id="cover">Cover</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># add cover image</span>
+ffmpeg <span class="nt">-i</span> input.mp4 <span class="nt">-i</span> cover.png <span class="nt">-map</span> 1 <span class="nt">-map</span> 0 <span class="nt">-c</span> copy <span class="nt">-c</span>:v:1 png <span class="nt">-disposition</span>:0 attached_pic out.mp4
+
+</code></pre></div></div>
+
+<h2 id="chapters">Chapters</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">;</span>FFMETADATA1
+<span class="nv">title</span><span class="o">=</span>bike<span class="se">\\</span>shed
+<span class="p">;</span>this is a comment
+<span class="nv">artist</span><span class="o">=</span>FFmpeg troll team
+
+<span class="o">[</span>CHAPTER]
+<span class="nv">TIMEBASE</span><span class="o">=</span>1/1000
+<span class="nv">START</span><span class="o">=</span>0
+<span class="c">#chapter ends at 0:01:00</span>
+<span class="nv">END</span><span class="o">=</span>60000
+<span class="nv">title</span><span class="o">=</span>chapter <span class="se">\#</span>1
+<span class="o">[</span>STREAM]
+<span class="nv">title</span><span class="o">=</span>multi<span class="se">\</span>
+line
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffmpeg <span class="nt">-i</span> movie.mov <span class="nt">-i</span> FFMETADATAFILE <span class="nt">-map_metadata</span> 1 <span class="nt">-map_chapters</span> 1 <span class="nt">-codec</span> copy OUTPUT.mp4
+</code></pre></div></div>
+
+<h2 id="screenshot">Screenshot</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffmpeg <span class="nt">-ss</span> 01:23:45 <span class="nt">-i</span> input <span class="nt">-vframes</span> 1 <span class="nt">-q</span>:v 2 output.jpg
+</code></pre></div></div>
+
+<p>…but let’s be honest, something better than this? <a href="https://github.com/transitive-bullshit/ffmpeg-generate-video-preview">ffmpeg-generate-video-preview</a> as a command/modul in node.js as well +1</p>
+
+<h2 id="stream">Stream</h2>
+
+<p>Macbook mid 2012 WEBCAM possibilites (-video_size &amp; -framerate parameter)</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><strong>Resolution</strong></th>
+      <th style="text-align: center"><strong>FPS</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">160x120</td>
+      <td style="text-align: center">29.970000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">160x120</td>
+      <td style="text-align: center">25.000000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">160x120</td>
+      <td style="text-align: center">23.999981</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">160x120</td>
+      <td style="text-align: center">14.999993</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">176x144</td>
+      <td style="text-align: center">29.970000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">176x144</td>
+      <td style="text-align: center">25.000000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">176x144</td>
+      <td style="text-align: center">23.999981</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">176x144</td>
+      <td style="text-align: center">14.999993</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">320x240</td>
+      <td style="text-align: center">29.970000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">320x240</td>
+      <td style="text-align: center">25.000000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">320x240</td>
+      <td style="text-align: center">23.999981</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">320x240</td>
+      <td style="text-align: center">14.999993</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">352x288</td>
+      <td style="text-align: center">29.970000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">352x288</td>
+      <td style="text-align: center">25.000000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">352x288</td>
+      <td style="text-align: center">23.999981</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">352x288</td>
+      <td style="text-align: center">14.999993</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">640x480</td>
+      <td style="text-align: center">29.970000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">640x480</td>
+      <td style="text-align: center">25.000000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">640x480</td>
+      <td style="text-align: center">23.999981</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">640x480</td>
+      <td style="text-align: center">14.999993</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">960x540</td>
+      <td style="text-align: center">29.970000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">960x540</td>
+      <td style="text-align: center">25.000000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">960x540</td>
+      <td style="text-align: center">23.999981</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">960x540</td>
+      <td style="text-align: center">14.999993</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1024x576</td>
+      <td style="text-align: center">29.970000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1024x576</td>
+      <td style="text-align: center">25.000000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1024x576</td>
+      <td style="text-align: center">23.999981</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1024x576</td>
+      <td style="text-align: center">14.999993</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1280x720</td>
+      <td style="text-align: center">29.970000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1280x720</td>
+      <td style="text-align: center">25.000000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1280x720</td>
+      <td style="text-align: center">23.999981</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1280x720</td>
+      <td style="text-align: center">14.999993</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># get info</span>
+ffmpeg <span class="nt">-f</span> avfoundation <span class="nt">-list_devices</span> <span class="nb">true</span> <span class="nt">-i</span> <span class="s2">""</span>
+
+<span class="c"># stream</span>
+ffmpeg <span class="nt">-f</span> avfoundation <span class="nt">-framerate</span> 25 <span class="nt">-video_size</span> 640x480 <span class="nt">-i</span> <span class="s2">"0:none"</span> <span class="nt">-vcodec</span> libx264 <span class="nt">-preset</span> ultrafast <span class="nt">-tune</span> zerolatency <span class="nt">-pix_fmt</span> yuv422p <span class="nt">-f</span> mpegts udp://localhost:12345
+</code></pre></div></div>
+
+<p><a href="https://developer.aliyun.com/mirror/npm/package/node-multi-media-server" title="-&gt; for example there (node-multi-media-server)">-&gt; for example there (node-multi-media-server)</a></p>
+
+<h2 id="subtitles">Subtitles</h2>
+
+<p><a href="https://blog.brokeng.com/language-codes"> List of language codes</a></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffmpeg <span class="nt">-i</span> input.mp4 <span class="nt">-sub_charenc</span> CP1252 <span class="nt">-i</span> subtitle.srt <span class="nt">-map</span> 0:v <span class="nt">-map</span> 0:a <span class="nt">-c</span> copy <span class="nt">-map</span> 1 <span class="nt">-c</span>:s:0 srt <span class="nt">-metadata</span>:s:s:0 <span class="nv">language</span><span class="o">=</span>eng output.mp4
+</code></pre></div></div>
+
+<h2 id="watermark">Watermark</h2>
+
+<p><a href="https://www.reddit.com/r/ffmpeg/comments/j8s3c4/watermark_that_starts_and_stops_intermittently/" title="topic-watermark">topic</a></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># a 15 minute "chunks", enabling for the first 5 minutes (while t % 15min is less than 5 min) of each 15 minute chunk</span>
+ffmpeg <span class="nt">-i</span> movie.mov  <span class="nt">-i</span> watermark.png <span class="nt">-filter_complex</span> <span class="s2">"[0:v][1:v] overlay='enable=lt(mod(t</span><span class="se">\,</span><span class="s2">15*60)</span><span class="se">\,</span><span class="s2">5*60</span><span class="se">\)</span><span class="s2">'"</span> output.mp4
+</code></pre></div></div>
+
+                    ]]>
+                </content:encoded>
+                <guid isPermaLink="false">/ffmpeg</guid>
+                <description>
+                    
+                    ...collection of useful commands
+                    
+                </description>
+                <pubDate>Tue, 30 Jul 2019 00:00:00 +0200</pubDate>
+                <author>BrokenG</author>
+            </item>
+        
+    
+        
+            <item>
                 <title>AVA (TV &amp; Control)</title>
                 <link>http://brokengdnb.github.io/blog/project/ava-tv</link>
                 <content:encoded>
@@ -1660,11 +1891,11 @@ npm <span class="nb">install
 <h2 id="dependencies">Dependencies</h2>
 
 <ul>
-  <li><a href="https://github.com">git</a> backup system</li>
-  <li><a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/">MongoDB</a> database</li>
-  <li><a href="https://nodejs.org/en/download/">Node.js &amp; NPM</a> API &amp; Web server</li>
-  <li><a href="http://ffmpeg.org/download.html">ffmpeg</a> for local import</li>
-  <li><a href="https://ytdl-org.github.io/youtube-dl/index.html">youtube-dl</a> for external import (YouTube)</li>
+  <li><a href="https://github.com">git</a></li>
+  <li><a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/">MongoDB</a></li>
+  <li><a href="https://nodejs.org/en/download/">Node.js &amp; NPM</a></li>
+  <li><a href="http://ffmpeg.org/download.html">ffmpeg</a></li>
+  <li><a href="https://ytdl-org.github.io/youtube-dl/index.html">youtube-dl</a></li>
 </ul>
 
 <h2 id="run">Run</h2>
@@ -1891,9 +2122,9 @@ html(lang="en")
 
 <h2 id="ava-tv">AVA-TV</h2>
 
-<p>This AVA-DATA is the base and “data-centrum” for another project AVA-TV focusing on real-time streaming on multiple devices with changes on a go… //simplify <a href="https://github.com/brokengdnb/ava-tv/">AVA-TV</a></p>
+<p>This project AVA-DATA is the base and “data-centrum” for another project AVA-TV focusing on real-time streaming on multiple devices with changes on a go… //simplify <a href="https://github.com/brokengdnb/ava-tv/">AVA-TV</a></p>
 
-<p><a href="https://github.com/brokengdnb/ava-tv/demo/ava-TV-beamer.png?raw=true" title="beamer"><img src="https://github.com/brokengdnb/ava-tv/blob/master/demo/ava-TV-beamer.png?raw=true" alt="beamer" title="beamer" /></a></p>
+<p><a href="https://github.com/brokengdnb/ava-tv/" title="ava-tv"><img src="https://github.com/brokengdnb/ava-tv/blob/master/demo/ava-TV-beamer.png?raw=true" alt="beamer" title="ava-tv" /></a></p>
 
 <h2 id="license">License</h2>
 

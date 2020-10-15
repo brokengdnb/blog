@@ -1260,6 +1260,225 @@ winecfg
       </item>
     
       <item>
+        <title>ffmpeg</title>
+        <description>&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#cover&quot;&gt;Cover&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#chapters&quot;&gt;Chapters&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#screenshot&quot;&gt;Screenshot&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#subtitles&quot;&gt;Subtitles&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#watermark&quot;&gt;Watermark&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;cover&quot;&gt;Cover&lt;/h2&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# add cover image&lt;/span&gt;
+ffmpeg &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; input.mp4 &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; cover.png &lt;span class=&quot;nt&quot;&gt;-map&lt;/span&gt; 1 &lt;span class=&quot;nt&quot;&gt;-map&lt;/span&gt; 0 &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; copy &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt;:v:1 png &lt;span class=&quot;nt&quot;&gt;-disposition&lt;/span&gt;:0 attached_pic out.mp4
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;chapters&quot;&gt;Chapters&lt;/h2&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;FFMETADATA1
+&lt;span class=&quot;nv&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;bike&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;shed
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;this is a comment
+&lt;span class=&quot;nv&quot;&gt;artist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;FFmpeg troll team
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;CHAPTER]
+&lt;span class=&quot;nv&quot;&gt;TIMEBASE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1/1000
+&lt;span class=&quot;nv&quot;&gt;START&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0
+&lt;span class=&quot;c&quot;&gt;#chapter ends at 0:01:00&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;END&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;60000
+&lt;span class=&quot;nv&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;chapter &lt;span class=&quot;se&quot;&gt;\#&lt;/span&gt;1
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;STREAM]
+&lt;span class=&quot;nv&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;multi&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+line
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ffmpeg &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; movie.mov &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; FFMETADATAFILE &lt;span class=&quot;nt&quot;&gt;-map_metadata&lt;/span&gt; 1 &lt;span class=&quot;nt&quot;&gt;-map_chapters&lt;/span&gt; 1 &lt;span class=&quot;nt&quot;&gt;-codec&lt;/span&gt; copy OUTPUT.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;screenshot&quot;&gt;Screenshot&lt;/h2&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ffmpeg &lt;span class=&quot;nt&quot;&gt;-ss&lt;/span&gt; 01:23:45 &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; input &lt;span class=&quot;nt&quot;&gt;-vframes&lt;/span&gt; 1 &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt;:v 2 output.jpg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;…but let’s be honest, something better than this? &lt;a href=&quot;https://github.com/transitive-bullshit/ffmpeg-generate-video-preview&quot;&gt;ffmpeg-generate-video-preview&lt;/a&gt; as a command/modul in node.js as well +1&lt;/p&gt;
+
+&lt;h2 id=&quot;stream&quot;&gt;Stream&lt;/h2&gt;
+
+&lt;p&gt;Macbook mid 2012 WEBCAM possibilites (-video_size &amp;amp; -framerate parameter)&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Resolution&lt;/strong&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;FPS&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;160x120&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;29.970000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;160x120&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;25.000000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;160x120&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;23.999981&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;160x120&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;14.999993&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;176x144&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;29.970000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;176x144&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;25.000000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;176x144&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;23.999981&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;176x144&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;14.999993&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;320x240&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;29.970000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;320x240&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;25.000000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;320x240&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;23.999981&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;320x240&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;14.999993&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;352x288&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;29.970000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;352x288&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;25.000000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;352x288&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;23.999981&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;352x288&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;14.999993&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;640x480&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;29.970000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;640x480&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;25.000000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;640x480&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;23.999981&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;640x480&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;14.999993&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;960x540&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;29.970000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;960x540&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;25.000000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;960x540&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;23.999981&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;960x540&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;14.999993&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1024x576&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;29.970000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1024x576&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;25.000000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1024x576&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;23.999981&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1024x576&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;14.999993&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1280x720&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;29.970000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1280x720&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;25.000000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1280x720&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;23.999981&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1280x720&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;14.999993&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# get info&lt;/span&gt;
+ffmpeg &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; avfoundation &lt;span class=&quot;nt&quot;&gt;-list_devices&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# stream&lt;/span&gt;
+ffmpeg &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; avfoundation &lt;span class=&quot;nt&quot;&gt;-framerate&lt;/span&gt; 25 &lt;span class=&quot;nt&quot;&gt;-video_size&lt;/span&gt; 640x480 &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;0:none&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-vcodec&lt;/span&gt; libx264 &lt;span class=&quot;nt&quot;&gt;-preset&lt;/span&gt; ultrafast &lt;span class=&quot;nt&quot;&gt;-tune&lt;/span&gt; zerolatency &lt;span class=&quot;nt&quot;&gt;-pix_fmt&lt;/span&gt; yuv422p &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; mpegts udp://localhost:12345
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developer.aliyun.com/mirror/npm/package/node-multi-media-server&quot; title=&quot;-&amp;gt; for example there (node-multi-media-server)&quot;&gt;-&amp;gt; for example there (node-multi-media-server)&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;subtitles&quot;&gt;Subtitles&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.brokeng.com/language-codes&quot;&gt; List of language codes&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ffmpeg &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; input.mp4 &lt;span class=&quot;nt&quot;&gt;-sub_charenc&lt;/span&gt; CP1252 &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; subtitle.srt &lt;span class=&quot;nt&quot;&gt;-map&lt;/span&gt; 0:v &lt;span class=&quot;nt&quot;&gt;-map&lt;/span&gt; 0:a &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; copy &lt;span class=&quot;nt&quot;&gt;-map&lt;/span&gt; 1 &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt;:s:0 srt &lt;span class=&quot;nt&quot;&gt;-metadata&lt;/span&gt;:s:s:0 &lt;span class=&quot;nv&quot;&gt;language&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;eng output.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;watermark&quot;&gt;Watermark&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.reddit.com/r/ffmpeg/comments/j8s3c4/watermark_that_starts_and_stops_intermittently/&quot; title=&quot;topic-watermark&quot;&gt;topic&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# a 15 minute &quot;chunks&quot;, enabling for the first 5 minutes (while t % 15min is less than 5 min) of each 15 minute chunk&lt;/span&gt;
+ffmpeg &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; movie.mov  &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; watermark.png &lt;span class=&quot;nt&quot;&gt;-filter_complex&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;[0:v][1:v] overlay='enable=lt(mod(t&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;15*60)&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;5*60&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;'&quot;&lt;/span&gt; output.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Tue, 30 Jul 2019 00:00:00 +0200</pubDate>
+        <link>http://brokengdnb.github.io/blog/ffmpeg</link>
+        <guid isPermaLink="true">http://brokengdnb.github.io/blog/ffmpeg</guid>
+      </item>
+    
+      <item>
         <title>AVA (TV &amp; Control)</title>
         <description>&lt;blockquote&gt;
   &lt;p&gt;Then I take AVA &amp;amp; EMI for a walk… we talk and end up in some random room of unlimited posibilities… as a DJ as well as video DJ in one… 3,2,1 and here… we… go…&lt;/p&gt;
@@ -1583,11 +1802,11 @@ npm &lt;span class=&quot;nb&quot;&gt;install
 &lt;h2 id=&quot;dependencies&quot;&gt;Dependencies&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com&quot;&gt;git&lt;/a&gt; backup system&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/&quot;&gt;MongoDB&lt;/a&gt; database&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/download/&quot;&gt;Node.js &amp;amp; NPM&lt;/a&gt; API &amp;amp; Web server&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://ffmpeg.org/download.html&quot;&gt;ffmpeg&lt;/a&gt; for local import&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://ytdl-org.github.io/youtube-dl/index.html&quot;&gt;youtube-dl&lt;/a&gt; for external import (YouTube)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com&quot;&gt;git&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/&quot;&gt;MongoDB&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/download/&quot;&gt;Node.js &amp;amp; NPM&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://ffmpeg.org/download.html&quot;&gt;ffmpeg&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ytdl-org.github.io/youtube-dl/index.html&quot;&gt;youtube-dl&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;run&quot;&gt;Run&lt;/h2&gt;
@@ -1814,9 +2033,9 @@ html(lang=&quot;en&quot;)
 
 &lt;h2 id=&quot;ava-tv&quot;&gt;AVA-TV&lt;/h2&gt;
 
-&lt;p&gt;This AVA-DATA is the base and “data-centrum” for another project AVA-TV focusing on real-time streaming on multiple devices with changes on a go… //simplify &lt;a href=&quot;https://github.com/brokengdnb/ava-tv/&quot;&gt;AVA-TV&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This project AVA-DATA is the base and “data-centrum” for another project AVA-TV focusing on real-time streaming on multiple devices with changes on a go… //simplify &lt;a href=&quot;https://github.com/brokengdnb/ava-tv/&quot;&gt;AVA-TV&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/brokengdnb/ava-tv/demo/ava-TV-beamer.png?raw=true&quot; title=&quot;beamer&quot;&gt;&lt;img src=&quot;https://github.com/brokengdnb/ava-tv/blob/master/demo/ava-TV-beamer.png?raw=true&quot; alt=&quot;beamer&quot; title=&quot;beamer&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/brokengdnb/ava-tv/&quot; title=&quot;ava-tv&quot;&gt;&lt;img src=&quot;https://github.com/brokengdnb/ava-tv/blob/master/demo/ava-TV-beamer.png?raw=true&quot; alt=&quot;beamer&quot; title=&quot;ava-tv&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
 
