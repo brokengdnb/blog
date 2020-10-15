@@ -1037,9 +1037,7 @@
                 <link>http://brokengdnb.github.io/blog/cache</link>
                 <content:encoded>
                     <![CDATA[
-                    <p><a href="https://github.com/brokengdnb/blog/blob/master/images/cache.jpg?raw=true" title="beamer"><img src="https://github.com/brokengdnb/blog/blob/master/images/cache.jpg?raw=true" alt="cache" title="beamer" /></a></p>
-
-<blockquote>
+                    <blockquote>
   <p>There are only two hard things in Computer Science: cache invalidation and naming things.</p>
 
   <p>Phil Karlton</p>
@@ -1047,11 +1045,22 @@
 
 <p><a href="https://en.wikipedia.org/wiki/Web_cache">Wiki - Web cache</a></p>
 
+<p><a href="https://github.com/brokengdnb/blog/blob/master/images/cache.jpg?raw=true" title="beamer"><img src="https://github.com/brokengdnb/blog/blob/master/images/cache.jpg?raw=true" alt="cache" title="cache" /></a></p>
+
 <p>If you cannot see new posts or updates try to reload your <a href="https://en.wikipedia.org/wiki/Wikipedia:Bypass_your_cache">local cache…</a> but Github CDN “should” reload cache every 10 minutes or so.</p>
+
+<ul>
+  <li><a href="#chrome">Chrome</a></li>
+  <li><a href="#safari">Safari</a></li>
+  <li><a href="#firefox">Firefox</a></li>
+  <li><a href="#opera">Opera</a></li>
+  <li><a href="#konqueror">Konqueror</a></li>
+  <li><a href="#edge">Edge</a></li>
+</ul>
 
 <hr />
 
-<h3 id="google-chrome">Google Chrome</h3>
+<h3 id="chrome">Chrome</h3>
 
 <p>On Windows and Linux, use one of the following:</p>
 
@@ -1074,21 +1083,24 @@
 
 <hr />
 
-<h3 id="microsoft-edge">Microsoft Edge</h3>
+<h3 id="safari">Safari</h3>
 
-<p>On Windows:</p>
+<p>For version 4 and newer:</p>
 
 <ul>
-  <li>Hold the Ctrl key and press the F5 key.</li>
+  <li>Hold down the ⇧ Shift key and click the Reload toolbar button</li>
 </ul>
 
-<p>Internet Explorer</p>
-
-<p>Use one of the following:</p>
+<p>or</p>
 
 <ul>
-  <li>Hold the Ctrl key and press the F5 key.</li>
-  <li>Hold the Ctrl key and click the “Refresh” button on the toolbar.</li>
+  <li>Use keyboard shortcut ⌥ Opt+⌘ Cmd+R to clear cache.</li>
+</ul>
+
+<p>For version 3 and older:</p>
+
+<ul>
+  <li>Hold down the ⌘ Cmd key and press R. This kind of “regular” reload will usually bypass the cache.</li>
 </ul>
 
 <hr />
@@ -1116,28 +1128,6 @@
 
 <hr />
 
-<h3 id="safari">Safari</h3>
-
-<p>For version 4 and newer:</p>
-
-<ul>
-  <li>Hold down the ⇧ Shift key and click the Reload toolbar button</li>
-</ul>
-
-<p>or</p>
-
-<ul>
-  <li>Use keyboard shortcut ⌥ Opt+⌘ Cmd+R to clear cache.</li>
-</ul>
-
-<p>For version 3 and older:</p>
-
-<ul>
-  <li>Hold down the ⌘ Cmd key and press R. This kind of “regular” reload will usually bypass the cache.</li>
-</ul>
-
-<hr />
-
 <h3 id="opera">Opera</h3>
 
 <p>Use one of the following:</p>
@@ -1157,6 +1147,27 @@
   <li>Press F5 or click the “Reload” button on the toolbar.
 Unlike other browsers, Konqueror seems to bypass its cache whenever you reload a page.</li>
 </ul>
+
+<hr />
+
+<h3 id="edge">Edge</h3>
+
+<p>On Windows:</p>
+
+<ul>
+  <li>Hold the Ctrl key and press the F5 key.</li>
+</ul>
+
+<h4 id="internet-explorer">Internet Explorer</h4>
+
+<p>Use one of the following:</p>
+
+<ul>
+  <li>Hold the Ctrl key and press the F5 key.</li>
+  <li>Hold the Ctrl key and click the “Refresh” button on the toolbar.</li>
+</ul>
+
+<p><a href="https://github.com/brokengdnb/blog/blob/master/images/cache-2.jpg?raw=true" title="beamer"><img src="https://github.com/brokengdnb/blog/blob/master/images/cache-2.jpg?raw=true" alt="cache2" title="cache2" /></a></p>
 
                     ]]>
                 </content:encoded>
