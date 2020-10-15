@@ -1007,6 +1007,132 @@
       </item>
     
       <item>
+        <title>Cache</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;There are only two hard things in Computer Science: cache invalidation and naming things.&lt;/p&gt;
+
+  &lt;p&gt;Phil Karlton&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Web_cache&quot;&gt;Wiki - Web cache&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;If you cannot see new posts or updates try to reload your &lt;a href=&quot;https://en.wikipedia.org/wiki/Wikipedia:Bypass_your_cache&quot;&gt;local cache…&lt;/a&gt; but Github CDN “should” reload cache every 10 minutes or so.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;google-chrome&quot;&gt;Google Chrome&lt;/h3&gt;
+
+&lt;p&gt;On Windows and Linux, use one of the following:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Hold the Ctrl key and press the F5 key.&lt;/li&gt;
+  &lt;li&gt;Hold the ⇧ Shift key and press the F5 key.&lt;/li&gt;
+  &lt;li&gt;Hold the Ctrl key and press the R key.&lt;/li&gt;
+  &lt;li&gt;Hold the ⇧ Shift key and press the R key.&lt;/li&gt;
+  &lt;li&gt;Hold the Ctrl key and click the Reload button on the navigation toolbar.&lt;/li&gt;
+  &lt;li&gt;Hold the ⇧ Shift key and click the Reload button on the navigation toolbar.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;On macOS:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Hold both the ⌘ Cmd and ⇧ Shift keys and press the R key.&lt;/li&gt;
+  &lt;li&gt;Hold the ⇧ Shift key and click the Reload button on the navigation toolbar.&lt;/li&gt;
+  &lt;li&gt;Hold the Ctrl key and click the Reload button on the navigation toolbar.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;microsoft-edge&quot;&gt;Microsoft Edge&lt;/h3&gt;
+
+&lt;p&gt;On Windows:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Hold the Ctrl key and press the F5 key.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Internet Explorer&lt;/p&gt;
+
+&lt;p&gt;Use one of the following:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Hold the Ctrl key and press the F5 key.&lt;/li&gt;
+  &lt;li&gt;Hold the Ctrl key and click the “Refresh” button on the toolbar.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;firefox&quot;&gt;Firefox&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;These instructions work for Firefox, SeaMonkey, and other related browsers.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;On Windows and Linux, use one of the following:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Hold both the Ctrl and ⇧ Shift keys and then press R.&lt;/li&gt;
+  &lt;li&gt;Hold the ⇧ Shift key and click the Reload button on the navigation toolbar.&lt;/li&gt;
+  &lt;li&gt;Hold the Ctrl key and press the F5 key.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;On macOS, use one of the following:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Hold both the ⌘ Cmd and ⇧ Shift keys and then press R.&lt;/li&gt;
+  &lt;li&gt;Hold the ⇧ Shift key and click the Reload button on the navigation toolbar.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;safari&quot;&gt;Safari&lt;/h3&gt;
+
+&lt;p&gt;For version 4 and newer:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Hold down the ⇧ Shift key and click the Reload toolbar button&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;or&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Use keyboard shortcut ⌥ Opt+⌘ Cmd+R to clear cache.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For version 3 and older:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Hold down the ⌘ Cmd key and press R. This kind of “regular” reload will usually bypass the cache.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;opera&quot;&gt;Opera&lt;/h3&gt;
+
+&lt;p&gt;Use one of the following:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Hold the Ctrl key and press the F5 key.&lt;/li&gt;
+  &lt;li&gt;Hold the ⇧ Shift key and click the Reload button on the navigation toolbar.&lt;/li&gt;
+  &lt;li&gt;Hold the Ctrl key and click the Reload button on the navigation toolbar.&lt;/li&gt;
+  &lt;li&gt;Hold the ⇧ Shift key and press the F5 key.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;konqueror&quot;&gt;Konqueror&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Press F5 or click the “Reload” button on the toolbar.
+Unlike other browsers, Konqueror seems to bypass its cache whenever you reload a page.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 01 Aug 2020 00:00:00 +0200</pubDate>
+        <link>http://brokengdnb.github.io/blog/cache</link>
+        <guid isPermaLink="true">http://brokengdnb.github.io/blog/cache</guid>
+      </item>
+    
+      <item>
         <title>ME (Markdown Editor)</title>
         <description>&lt;blockquote&gt;
   &lt;p&gt;…just another .md editor but just for me!&lt;/p&gt;
@@ -1158,7 +1284,7 @@ winecfg
 &lt;h2 id=&quot;dependencies&quot;&gt;Dependencies&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;AVA-Data&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.brokeng.com/project/ava-data&quot;&gt;AVA-Data&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;run&quot;&gt;Run&lt;/h2&gt;

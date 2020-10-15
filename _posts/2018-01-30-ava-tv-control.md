@@ -35,7 +35,7 @@ permalink: "/project/ava-tv"
 
 ## Dependencies
 
- - AVA-Data
+ - [AVA-Data](https://blog.brokeng.com/project/ava-data)
 
 ## Run
 

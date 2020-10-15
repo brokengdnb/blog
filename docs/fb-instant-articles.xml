@@ -1033,6 +1033,144 @@
     
         
             <item>
+                <title>Cache</title>
+                <link>http://brokengdnb.github.io/blog/cache</link>
+                <content:encoded>
+                    <![CDATA[
+                    <blockquote>
+  <p>There are only two hard things in Computer Science: cache invalidation and naming things.</p>
+
+  <p>Phil Karlton</p>
+</blockquote>
+
+<p><a href="https://en.wikipedia.org/wiki/Web_cache">Wiki - Web cache</a></p>
+
+<p>If you cannot see new posts or updates try to reload your <a href="https://en.wikipedia.org/wiki/Wikipedia:Bypass_your_cache">local cache…</a> but Github CDN “should” reload cache every 10 minutes or so.</p>
+
+<hr />
+
+<h3 id="google-chrome">Google Chrome</h3>
+
+<p>On Windows and Linux, use one of the following:</p>
+
+<ul>
+  <li>Hold the Ctrl key and press the F5 key.</li>
+  <li>Hold the ⇧ Shift key and press the F5 key.</li>
+  <li>Hold the Ctrl key and press the R key.</li>
+  <li>Hold the ⇧ Shift key and press the R key.</li>
+  <li>Hold the Ctrl key and click the Reload button on the navigation toolbar.</li>
+  <li>Hold the ⇧ Shift key and click the Reload button on the navigation toolbar.</li>
+</ul>
+
+<p>On macOS:</p>
+
+<ul>
+  <li>Hold both the ⌘ Cmd and ⇧ Shift keys and press the R key.</li>
+  <li>Hold the ⇧ Shift key and click the Reload button on the navigation toolbar.</li>
+  <li>Hold the Ctrl key and click the Reload button on the navigation toolbar.</li>
+</ul>
+
+<hr />
+
+<h3 id="microsoft-edge">Microsoft Edge</h3>
+
+<p>On Windows:</p>
+
+<ul>
+  <li>Hold the Ctrl key and press the F5 key.</li>
+</ul>
+
+<p>Internet Explorer</p>
+
+<p>Use one of the following:</p>
+
+<ul>
+  <li>Hold the Ctrl key and press the F5 key.</li>
+  <li>Hold the Ctrl key and click the “Refresh” button on the toolbar.</li>
+</ul>
+
+<hr />
+
+<h3 id="firefox">Firefox</h3>
+
+<ul>
+  <li>These instructions work for Firefox, SeaMonkey, and other related browsers.</li>
+</ul>
+
+<p>On Windows and Linux, use one of the following:</p>
+
+<ul>
+  <li>Hold both the Ctrl and ⇧ Shift keys and then press R.</li>
+  <li>Hold the ⇧ Shift key and click the Reload button on the navigation toolbar.</li>
+  <li>Hold the Ctrl key and press the F5 key.</li>
+</ul>
+
+<p>On macOS, use one of the following:</p>
+
+<ul>
+  <li>Hold both the ⌘ Cmd and ⇧ Shift keys and then press R.</li>
+  <li>Hold the ⇧ Shift key and click the Reload button on the navigation toolbar.</li>
+</ul>
+
+<hr />
+
+<h3 id="safari">Safari</h3>
+
+<p>For version 4 and newer:</p>
+
+<ul>
+  <li>Hold down the ⇧ Shift key and click the Reload toolbar button</li>
+</ul>
+
+<p>or</p>
+
+<ul>
+  <li>Use keyboard shortcut ⌥ Opt+⌘ Cmd+R to clear cache.</li>
+</ul>
+
+<p>For version 3 and older:</p>
+
+<ul>
+  <li>Hold down the ⌘ Cmd key and press R. This kind of “regular” reload will usually bypass the cache.</li>
+</ul>
+
+<hr />
+
+<h3 id="opera">Opera</h3>
+
+<p>Use one of the following:</p>
+
+<ul>
+  <li>Hold the Ctrl key and press the F5 key.</li>
+  <li>Hold the ⇧ Shift key and click the Reload button on the navigation toolbar.</li>
+  <li>Hold the Ctrl key and click the Reload button on the navigation toolbar.</li>
+  <li>Hold the ⇧ Shift key and press the F5 key.</li>
+</ul>
+
+<hr />
+
+<h3 id="konqueror">Konqueror</h3>
+
+<ul>
+  <li>Press F5 or click the “Reload” button on the toolbar.
+Unlike other browsers, Konqueror seems to bypass its cache whenever you reload a page.</li>
+</ul>
+
+                    ]]>
+                </content:encoded>
+                <guid isPermaLink="false">/cache</guid>
+                <description>
+                    
+                    ...only problems since 1969
+                    
+                </description>
+                <pubDate>Sat, 01 Aug 2020 00:00:00 +0200</pubDate>
+                <author>BrokenG</author>
+            </item>
+        
+    
+        
+            <item>
                 <title>ME (Markdown Editor)</title>
                 <link>http://brokengdnb.github.io/blog/project/mye</link>
                 <content:encoded>
@@ -1199,7 +1337,7 @@ winecfg
 <h2 id="dependencies">Dependencies</h2>
 
 <ul>
-  <li>AVA-Data</li>
+  <li><a href="https://blog.brokeng.com/project/ava-data">AVA-Data</a></li>
 </ul>
 
 <h2 id="run">Run</h2>
