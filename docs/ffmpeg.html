@@ -21,11 +21,11 @@
 
     
     <meta name="keywords" content="Cheatsheet">
-    <link rel="canonical" href="http://brokengdnb.github.io/blog/ffmpeg">
+    <link rel="canonical" href="http://localhost:4000/ffmpeg">
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for BrokenG - Blog" href="/feed.xml" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/pixyll.css?202010150604" type="text/css">
+    <link rel="stylesheet" href="/css/pixyll.css?202103100055" type="text/css">
 
     <!-- Fonts -->
     
@@ -52,10 +52,10 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="ffmpeg">
     <meta property="og:description" content="Just another voice outside of group.">
-    <meta property="og:url" content="http://brokengdnb.github.io/blog/ffmpeg">
+    <meta property="og:url" content="http://localhost:4000/ffmpeg">
     <meta property="og:site_name" content="BrokenG - Blog">
     
-    <meta property="og:image" content="http://brokengdnb.github.io/blog/images/me.jpeg">
+    <meta property="og:image" content="http://localhost:4000/images/me.jpeg">
     
 
     <!-- Twitter Card -->
@@ -63,9 +63,9 @@
     
     <meta name="twitter:title" content="ffmpeg" />
     <meta name="twitter:description" content="...collection of useful commands" />
-    <meta name="twitter:url" content="http://brokengdnb.github.io/blog/ffmpeg" />
+    <meta name="twitter:url" content="http://localhost:4000/ffmpeg" />
     
-    <meta name="twitter:image" content="http://brokengdnb.github.io/blog/images/me.jpeg" />
+    <meta name="twitter:image" content="http://localhost:4000/images/me.jpeg" />
     
 
     <!-- Icons -->
@@ -174,7 +174,16 @@ ffmpeg <span class="nt">-i</span> input.mp4 <span class="nt">-i</span> cover.png
 line
 </code></pre></div></div>
 
+<ul>
+  <li>remove chapters &amp; metadata</li>
+</ul>
+
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffmpeg <span class="nt">-i</span> movie.mov <span class="nt">-i</span> FFMETADATAFILE <span class="nt">-map_metadata</span> 1 <span class="nt">-map_chapters</span> 1 <span class="nt">-codec</span> copy OUTPUT.mp4
+</code></pre></div></div>
+
+<h3 id="remove-chapters--metadata">Remove Chapters &amp; Metadata</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffmpeg <span class="nt">-i</span> movie.mp4 <span class="nt">-map_chapters</span> <span class="nt">-1</span> <span class="nt">-map_metadata</span> <span class="nt">-1</span> <span class="nt">-c</span> copy output.mp4
 </code></pre></div></div>
 
 <h2 id="screenshot">Screenshot</h2>
@@ -331,16 +340,21 @@ line
 ffmpeg <span class="nt">-f</span> avfoundation <span class="nt">-list_devices</span> <span class="nb">true</span> <span class="nt">-i</span> <span class="s2">""</span>
 
 <span class="c"># stream</span>
+
+ffmpeg <span class="nt">-f</span> avfoundation <span class="nt">-framerate</span> 25  <span class="nt">-i</span> <span class="s2">"0"</span> <span class="nt">-f</span> rawvideo <span class="nt">-pix_fmt</span> argb <span class="nt">-c</span>:v libx264 <span class="nt">-preset</span> veryfast <span class="nt">-tune</span> zerolatency <span class="nt">-c</span>:a aac <span class="nt">-ar</span> 44100 <span class="nt">-r</span> 25 <span class="nt">-filter</span>:v <span class="nv">fps</span><span class="o">=</span><span class="nv">fps</span><span class="o">=</span>25 <span class="nt">-f</span> flv rtmp://localhost/live/test
+
 ffmpeg <span class="nt">-f</span> avfoundation <span class="nt">-framerate</span> 25 <span class="nt">-video_size</span> 640x480 <span class="nt">-i</span> <span class="s2">"0:none"</span> <span class="nt">-vcodec</span> libx264 <span class="nt">-preset</span> ultrafast <span class="nt">-tune</span> zerolatency <span class="nt">-pix_fmt</span> yuv422p <span class="nt">-f</span> mpegts udp://localhost:12345
 </code></pre></div></div>
 
-<p><a href="https://developer.aliyun.com/mirror/npm/package/node-multi-media-server" title="-&gt; for example there (node-multi-media-server)">-&gt; for example there (node-multi-media-server)</a></p>
+<ul>
+  <li><a href="https://github.com/illuspas/Node-Media-Server" title="other link">-&gt; for example there (Node-Media-Server)</a></li>
+</ul>
 
 <h2 id="subtitles">Subtitles</h2>
 
 <p><a href="https://blog.brokeng.com/language-codes"> List of language codes</a></p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffmpeg <span class="nt">-i</span> input.mp4 <span class="nt">-sub_charenc</span> CP1252 <span class="nt">-i</span> subtitle.srt <span class="nt">-map</span> 0:v <span class="nt">-map</span> 0:a <span class="nt">-c</span> copy <span class="nt">-map</span> 1 <span class="nt">-c</span>:s:0 srt <span class="nt">-metadata</span>:s:s:0 <span class="nv">language</span><span class="o">=</span>eng output.mp4
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffmpeg <span class="nt">-i</span> input.mp4 <span class="nt">-sub_charenc</span> CP1252 <span class="nt">-i</span> subtitle.srt <span class="nt">-map</span> 0:v <span class="nt">-map</span> 0:a <span class="nt">-c</span> copy <span class="nt">-map</span> 1 <span class="nt">-c</span>:s:0 mov_text <span class="nt">-metadata</span>:s:s:0 <span class="nv">language</span><span class="o">=</span>eng output.mp4
 </code></pre></div></div>
 
 <h2 id="watermark">Watermark</h2>

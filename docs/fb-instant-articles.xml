@@ -2,15 +2,105 @@
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title></title>
-    <link>http://brokengdnb.github.io/blog</link>
+    <link>http://localhost:4000</link>
     <description>
       Just another voice outside of group.
     </description>
     
         
             <item>
+                <title>WD MyBook Live (hack)</title>
+                <link>http://localhost:4000/project/wd-mybook-live-</link>
+                <content:encoded>
+                    <![CDATA[
+                    <blockquote>
+  <p>…adding torrent server</p>
+</blockquote>
+
+<hr />
+
+<ul>
+  <li><a href="#warning">Warning</a></li>
+  <li><a href="#ip">DNS or IP</a></li>
+  <li><a href="#ssh">SSH</a></li>
+  <li><a href="#dependencies">Dependencies</a></li>
+  <li><a href="#installation">Installation</a></li>
+  <li><a href="#license">License</a></li>
+</ul>
+
+<h2 id="warning">Warning</h2>
+
+<p>All editations and instalations are done on your own risk. Have a back-up and be ready to brick your NAS. I’m not responsible for any SW or HW demage.</p>
+
+<h2 id="dns-or-ip">DNS or IP</h2>
+
+<p>First get ip address of your WD MBL. Default is <a href="http://mybooklive.local/UI/login">http://mybooklive.local/UI/login</a> or on OSX open terminal and type:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>arp <span class="nt">-a</span>
+</code></pre></div></div>
+<p><em>getting something like:</em></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mybooklive.local <span class="o">(</span>169.254.6.109<span class="o">)</span> at 0:90:a9:b2:3e:4c on en0 <span class="o">[</span>ethernet]
+6s.local <span class="o">(</span>169.254.4x.xxx<span class="o">)</span> at 3a:ca:da:ac:xx:xx on en6 <span class="o">[</span>ethernet]
+? <span class="o">(</span>224.0.0.251<span class="o">)</span> at 1:0:5e:0:0:xx on en6 ifscope permanent <span class="o">[</span>ethernet]
+</code></pre></div></div>
+
+<h2 id="ssh">SSH</h2>
+
+<p><img src="https://github.com/brokengdnb/blog/blob/master/images/wd-ssh.png?raw=true" alt="ssh" title="ssh" /></p>
+
+<p>After <a href="http://mybooklive.local/UI/login">/UI/login</a> =&gt; open: <a href="http://mybooklive.local/UI/ssh">/UI/ssh</a> to activate SSH access and login to Linux server:</p>
+
+<p><img src="https://github.com/brokengdnb/blog/blob/master/images/wd-ssh-login.png?raw=true" alt="ssh-login" title="ssh" /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
+<h2 id="dependencies">Dependencies</h2>
+
+<ul>
+  <li><a href="https://github.com">git</a></li>
+  <li><a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/">MongoDB</a></li>
+  <li><a href="https://nodejs.org/en/download/">Node.js &amp; NPM</a></li>
+  <li><a href="http://ffmpeg.org/download.html">ffmpeg</a></li>
+  <li><a href="https://ytdl-org.github.io/youtube-dl/index.html">youtube-dl</a></li>
+</ul>
+
+<h2 id="installation">Installation</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/brokengdnb/ava-data <span class="o">&amp;&amp;</span> <span class="nb">cd </span>ava-data/
+npm <span class="nb">install
+</span>bower <span class="nb">install
+</span>npm run start
+</code></pre></div></div>
+<blockquote>
+  <p>woala just like that… and is on <a href="http://localhost:3000/" title="http://localhost:3000/">http://localhost:3000/</a> only problem is to create first random item to be able see graph… bug/feature import/rewrite data anyway</p>
+</blockquote>
+
+<p><img src="https://github.com/brokengdnb/ava-data/blob/049a611a016264ab49724ab2e496cde696179d0d/demo-img/home.png?raw=true" alt="home" title="home" /></p>
+
+<h2 id="license">License</h2>
+
+<p>The MIT License.</p>
+
+<p>Copyright (c) 2020 BrokenG</p>
+
+                    ]]>
+                </content:encoded>
+                <guid isPermaLink="false">/project/wd-mybook-live-</guid>
+                <description>
+                    
+                    ...adding torrent server functionality (Transmision)
+                    
+                </description>
+                <pubDate>Sun, 28 Feb 2021 00:00:00 +0100</pubDate>
+                <author>BrokenG</author>
+            </item>
+        
+    
+        
+            <item>
                 <title>Language Codes</title>
-                <link>http://brokengdnb.github.io/blog/language-codes</link>
+                <link>http://localhost:4000/language-codes</link>
                 <content:encoded>
                     <![CDATA[
                     <p>This table is based on the ISO 2 letter (Alpha-2 code, ISO 639-1) and 3 letter (Alpha-3 code, ISO 639-2) Standard Codes for the Representation of Names of Languages.</p>
@@ -965,7 +1055,7 @@
         
             <item>
                 <title>Homepage (BrokenG.com)</title>
-                <link>http://brokengdnb.github.io/blog/project/homepage</link>
+                <link>http://localhost:4000/project/homepage</link>
                 <content:encoded>
                     <![CDATA[
                     <blockquote>
@@ -1034,7 +1124,7 @@
         
             <item>
                 <title>Cache</title>
-                <link>http://brokengdnb.github.io/blog/cache</link>
+                <link>http://localhost:4000/cache</link>
                 <content:encoded>
                     <![CDATA[
                     <blockquote>
@@ -1185,7 +1275,7 @@ Unlike other browsers, Konqueror seems to bypass its cache whenever you reload a
         
             <item>
                 <title>ME (Markdown Editor)</title>
-                <link>http://brokengdnb.github.io/blog/project/mye</link>
+                <link>http://localhost:4000/project/mye</link>
                 <content:encoded>
                     <![CDATA[
                     <blockquote>
@@ -1311,7 +1401,7 @@ winecfg
         
             <item>
                 <title>ffmpeg</title>
-                <link>http://brokengdnb.github.io/blog/ffmpeg</link>
+                <link>http://localhost:4000/ffmpeg</link>
                 <content:encoded>
                     <![CDATA[
                     <ul>
@@ -1349,7 +1439,16 @@ ffmpeg <span class="nt">-i</span> input.mp4 <span class="nt">-i</span> cover.png
 line
 </code></pre></div></div>
 
+<ul>
+  <li>remove chapters &amp; metadata</li>
+</ul>
+
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffmpeg <span class="nt">-i</span> movie.mov <span class="nt">-i</span> FFMETADATAFILE <span class="nt">-map_metadata</span> 1 <span class="nt">-map_chapters</span> 1 <span class="nt">-codec</span> copy OUTPUT.mp4
+</code></pre></div></div>
+
+<h3 id="remove-chapters--metadata">Remove Chapters &amp; Metadata</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffmpeg <span class="nt">-i</span> movie.mp4 <span class="nt">-map_chapters</span> <span class="nt">-1</span> <span class="nt">-map_metadata</span> <span class="nt">-1</span> <span class="nt">-c</span> copy output.mp4
 </code></pre></div></div>
 
 <h2 id="screenshot">Screenshot</h2>
@@ -1506,16 +1605,21 @@ line
 ffmpeg <span class="nt">-f</span> avfoundation <span class="nt">-list_devices</span> <span class="nb">true</span> <span class="nt">-i</span> <span class="s2">""</span>
 
 <span class="c"># stream</span>
+
+ffmpeg <span class="nt">-f</span> avfoundation <span class="nt">-framerate</span> 25  <span class="nt">-i</span> <span class="s2">"0"</span> <span class="nt">-f</span> rawvideo <span class="nt">-pix_fmt</span> argb <span class="nt">-c</span>:v libx264 <span class="nt">-preset</span> veryfast <span class="nt">-tune</span> zerolatency <span class="nt">-c</span>:a aac <span class="nt">-ar</span> 44100 <span class="nt">-r</span> 25 <span class="nt">-filter</span>:v <span class="nv">fps</span><span class="o">=</span><span class="nv">fps</span><span class="o">=</span>25 <span class="nt">-f</span> flv rtmp://localhost/live/test
+
 ffmpeg <span class="nt">-f</span> avfoundation <span class="nt">-framerate</span> 25 <span class="nt">-video_size</span> 640x480 <span class="nt">-i</span> <span class="s2">"0:none"</span> <span class="nt">-vcodec</span> libx264 <span class="nt">-preset</span> ultrafast <span class="nt">-tune</span> zerolatency <span class="nt">-pix_fmt</span> yuv422p <span class="nt">-f</span> mpegts udp://localhost:12345
 </code></pre></div></div>
 
-<p><a href="https://developer.aliyun.com/mirror/npm/package/node-multi-media-server" title="-&gt; for example there (node-multi-media-server)">-&gt; for example there (node-multi-media-server)</a></p>
+<ul>
+  <li><a href="https://github.com/illuspas/Node-Media-Server" title="other link">-&gt; for example there (Node-Media-Server)</a></li>
+</ul>
 
 <h2 id="subtitles">Subtitles</h2>
 
 <p><a href="https://blog.brokeng.com/language-codes"> List of language codes</a></p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffmpeg <span class="nt">-i</span> input.mp4 <span class="nt">-sub_charenc</span> CP1252 <span class="nt">-i</span> subtitle.srt <span class="nt">-map</span> 0:v <span class="nt">-map</span> 0:a <span class="nt">-c</span> copy <span class="nt">-map</span> 1 <span class="nt">-c</span>:s:0 srt <span class="nt">-metadata</span>:s:s:0 <span class="nv">language</span><span class="o">=</span>eng output.mp4
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffmpeg <span class="nt">-i</span> input.mp4 <span class="nt">-sub_charenc</span> CP1252 <span class="nt">-i</span> subtitle.srt <span class="nt">-map</span> 0:v <span class="nt">-map</span> 0:a <span class="nt">-c</span> copy <span class="nt">-map</span> 1 <span class="nt">-c</span>:s:0 mov_text <span class="nt">-metadata</span>:s:s:0 <span class="nv">language</span><span class="o">=</span>eng output.mp4
 </code></pre></div></div>
 
 <h2 id="watermark">Watermark</h2>
@@ -1542,7 +1646,7 @@ ffmpeg <span class="nt">-i</span> movie.mov  <span class="nt">-i</span> watermar
         
             <item>
                 <title>AVA (TV &amp; Control)</title>
-                <link>http://brokengdnb.github.io/blog/project/ava-tv</link>
+                <link>http://localhost:4000/project/ava-tv</link>
                 <content:encoded>
                     <![CDATA[
                     <blockquote>
@@ -1748,7 +1852,7 @@ npm <span class="nb">install
         
             <item>
                 <title>EMI</title>
-                <link>http://brokengdnb.github.io/blog/project/emi</link>
+                <link>http://localhost:4000/project/emi</link>
                 <content:encoded>
                     <![CDATA[
                     <blockquote>
@@ -1851,7 +1955,7 @@ npm <span class="nb">install
         
             <item>
                 <title>AVA (Data)</title>
-                <link>http://brokengdnb.github.io/blog/project/ava-data</link>
+                <link>http://localhost:4000/project/ava-data</link>
                 <content:encoded>
                     <![CDATA[
                     <blockquote>
@@ -2148,7 +2252,7 @@ html(lang="en")
         
             <item>
                 <title>Links</title>
-                <link>http://brokengdnb.github.io/blog/urls</link>
+                <link>http://localhost:4000/urls</link>
                 <content:encoded>
                     <![CDATA[
                     <blockquote>
@@ -2157,16 +2261,31 @@ html(lang="en")
   <p>― Albert Einstein</p>
 </blockquote>
 
-<ul>
-  <li><a href="#3d">3D</a></li>
-  <li><a href="#blogs">Blogs</a></li>
-  <li><a href="#forms">Forms</a></li>
-  <li><a href="#generators">Generators</a></li>
-  <li><a href="#podcasts">Podcasts</a></li>
-  <li><a href="#radios">Radios</a></li>
-  <li><a href="#resume">Resume</a></li>
-  <li><a href="#external">External</a></li>
-</ul>
+<details><summary>Click to expand menu</summary>
+
+
+- [3D](#3d)
+- [Blogs](#blogs)
+- [Browser](#browser)
+- [Buy](#buy)
+- [CDN](#cdn)
+- [Courses](#courses)
+- [Electron](#electron)
+- [Forms](#forms)
+- [Generators](#generators)
+- [Jobs](#jobs)
+- [Logo](#logo)
+- [Passwords](#passwords)
+- [Podcasts](#podcasts)
+- [Radios](#radios)
+- [Resume](#resume)
+- [Safari](#safari)
+- [SBC](#sbc)
+- [Themes](#themes)
+- [TV](#tv)
+- [External](#external)
+
+</details>
 
 <hr />
 
@@ -2175,6 +2294,14 @@ html(lang="en")
 <ul>
   <li><a href="https://alicevision.org">Alicevision</a></li>
   <li><a href="https://glitch.com/~aframe-gallery">360 change gallery base</a></li>
+  <li><a href="https://quixel.com">quixel - 3D objects for Epic games</a></li>
+  <li><a href="https://www.unrealengine.com/id/login?client_id=17ce2d2864834898ab71847859286c81&amp;response_type=code">unreal epin engine</a></li>
+</ul>
+
+<h2 id="best">Best</h2>
+
+<ul>
+  <li><a href="https://www.10bestdesign.com/firms/app/">10 Best App Developers companies</a></li>
 </ul>
 
 <h2 id="blogs">Blogs</h2>
@@ -2191,20 +2318,87 @@ html(lang="en")
   <li><a href="https://www.powermapper.com/products/sortsite/checks/browser-compatibility">Website browser Compatibility</a></li>
 </ul>
 
+<h2 id="buy">Buy</h2>
+
+<ul>
+  <li><a href="https://www.amazon.co.uk/gp/offer-listing/B00DW5N99Y/ref=dp_olp_new_mbc?ie=UTF8&amp;condition=new">Behringer CMD LC-1</a>
+    <ul>
+      <li><a href="https://github.com/mpiraux/CMD-LC-1-Ableton-9-Control-Surface-Script">CMD LC-1 Ableton 9 Control surface script</a></li>
+      <li><a href="https://github.com/mpiraux/CMD-DC-1-Ableton-9-Control-Surface-Script">CMD DC-1 Ableton 9 Control surface script</a></li>
+    </ul>
+  </li>
+  <li><a href="https://www.thomann.de/nl/behringer_x_touch_one.htm">Behringer X-TOUCH ONE</a></li>
+  <li><a href="https://www.dennisdeal.com/products/5mx1-5m-woodland-camouflage-camo-net-for-camping-military-photography">Woodland Camouflage Camo Net</a></li>
+  <li><a href="https://www.sossolutions.nl/ipazzport-met-laserpointer">Portable Keyboard</a></li>
+  <li><a href="https://www.banggood.com/nl/7-Inch-Full-View-LCD-IPS-Touch-Screen-1024+600-800+480-HD-HDMI-Display-Monitor-for-Raspberry-Pi-p-1633584.html?akmClientCountry=NL&amp;rmmds=search&amp;ID=514801&amp;cur_warehouse=CN">7 Inch Full View LCD IPS Touchscreen</a></li>
+  <li><a href="https://www.banggood.com/nl/10-inch-2560x1600P-2K-FHD-Monitor-IPS-Wide-Angle-Display-Screen-with-Protective-Case-for-Raspberry-Pi-4-Model-B-3-Model-Bplus-Pi3-PS3-PS4-WiiU-Xbox360-p-1472776.html?rmmds=detail-left-hotproducts__12&amp;cur_warehouse=CZ">10 Inch 2K LCD</a></li>
+  <li><a href="https://www.bol.com/nl/p/razer-sila-gaming-router-3000-mbps/9200000100294206/?Referrer=ADVNLGOO002013-G-49170246635-S-472333311995-9200000100294206&amp;gclid=EAIaIQobChMI2MOnlpnI5wIVQeh3Ch1mEAQQEAQYAiABEgLnt_D_BwE#product_specifications">Razer Sila - Gaming Router - 3000 Mbps</a></li>
+  <li><a href="https://reolink.com/outdoor-motion-activated-camera/#part1">Hidden Outdoor Motion Activated Cameras</a></li>
+  <li><a href="https://rolls69.com/en/home">smoking</a></li>
+  <li><a href="https://www.ebay.nl/itm/233008730915">SONY LF-B20 Location Free Base Station</a></li>
+  <li><a href="https://www.megekko.nl/product/0/953459/TP-LINK-TL-WN722N">TP-LINK TL-WN722N - wifi hacking</a></li>
+</ul>
+
+<h2 id="cdn">CDN</h2>
+
+<ul>
+  <li><a href="https://render.com/pricing">Free instant Deploys For static, git, database, nodejs</a></li>
+</ul>
+
+<h2 id="courses">Courses</h2>
+
+<ul>
+  <li><a href="https://www.classcentral.com/subject/programming-and-software-development?page=2">Programming</a></li>
+  <li><a href="https://www.coursera.org/learn/vital-signs">Body vital language</a></li>
+</ul>
+
+<h2 id="electron">Electron</h2>
+
+<ul>
+  <li><a href="https://github.com/sindresorhus/electron-context-menu">context menu</a></li>
+  <li><a href="https://github.com/pouchdb/pouchdb">offline/online sync database</a></li>
+  <li><a href="https://github.com/typicode/json-server">full fake REST API</a></li>
+</ul>
+
+<h2 id="forms">Forms</h2>
+
+<ul>
+  <li><a href="https://formspree.io/" title="Formspree">Formspree (front-end)</a></li>
+  <li><a href="https://www.smashingmagazine.com/2018/08/ux-html5-mobile-form-part-2/">Mobile form development</a></li>
+</ul>
+
 <h2 id="generators">Generators</h2>
+
 <ul>
   <li><a href="https://jakebathman.github.io/Markdown-Table-Generator/">.md table</a></li>
 </ul>
 
-<h2 id="forms">Forms</h2>
+<h2 id="jobs">Jobs</h2>
+
+<p>(IT)</p>
+
 <ul>
-  <li><a href="https://formspree.io/" title="Formspree">Formspree (front-end)</a></li>
+  <li><a href="https://www.honeypot.io/lp/join">Honeypot</a></li>
+  <li><a href="https://jobs.smartrecruiters.com/?keyword=netherlands">SmartRecruiters</a></li>
+</ul>
+
+<h2 id="logo">LOGO</h2>
+
+<ul>
+  <li><a href="https://www.brandcrowd.com">BrandCrowd</a></li>
+</ul>
+
+<h2 id="passwords">Passwords</h2>
+
+<ul>
+  <li><a href="https://bitwarden.com/pricing/">Bitwarden</a></li>
 </ul>
 
 <h2 id="podcasts">Podcasts</h2>
 
 <ul>
   <li><a href="https://simplecast.com/">Simplecast</a></li>
+  <li><a href="https://www.10bestdesign.com/podcast/">Audio 9 Design</a></li>
 </ul>
 
 <h2 id="radios">Radios</h2>
@@ -2212,6 +2406,8 @@ html(lang="en")
 <ul>
   <li><a href="http://icecast8.play.cz/color128.mp3" title="Color Music Radio (Czech Republic)">Color Music Radio (Czech Republic)</a></li>
   <li><a href="http://trace.dnbradio.com:8000/dnbradio_main.mp3" title="Drum &amp; Bass (England)">Drum &amp; Bass (England)</a></li>
+  <li><a href="https://dnbradio.hardcoding.nl/dnbradio_main.mp3">Drum &amp; Bass backup url</a></li>
+  <li><a href="https://www.radiozenders.fm/drum-and-bass-radio">Netherlands Radios</a></li>
   <li><a href="https://github.com/AzuraCast/AzuraCast">AzuraCast</a></li>
 </ul>
 
@@ -2221,10 +2417,47 @@ html(lang="en")
   <li><a href="https://novoresume.com/" title="Novorésumé">Novorésumé</a></li>
 </ul>
 
+<h2 id="safari">Safari</h2>
+
+<ul>
+  <li><a href="https://github.com/ashchan/safarikai">JP translator</a></li>
+</ul>
+
+<h2 id="sbc">SBC</h2>
+
+<p>(Single Board Computer)</p>
+
+<ul>
+  <li><a href="https://pine64.com/?product=rockpro64-2gb-single-board-computer&amp;v=0446c16e2e66">ROCKPro64 2GB - 60$</a>
+    <ul>
+      <li><a href="https://www.sossolutions.nl/pine64-rock64-audio-pot-board">Stereo Audio DAC add-on 192kHz / 24bit</a></li>
+    </ul>
+  </li>
+  <li><a href="http://www.orangepi.org/OrangePiWin_WinPlus/">Orange Pi Win</a></li>
+</ul>
+
+<h2 id="svg">SVG</h2>
+
+<ul>
+  <li><a href="https://www.iloveimg.com/download/t3zh88jskp1tr4Ad9Am9w5kdccgxmxdAyzyrj8z34ngjAhcp9r8yzdk08xk6c9hfj0z2q1hkkjsbtspjm1tgd9r2r82pvnq5q2zbrlwg0s7m3nd6zjdpn2n8wxmx2rw4yqAbgsx0p49kpf9kqpfxly7zxxyfk4gjdqwshxt6tq5r9f0cwwh1/4">resize</a></li>
+</ul>
+
+<h2 id="themes">Themes</h2>
+
+<ul>
+  <li><a href="https://github.com/mmistakes/minimal-mistakes">Jekkyl - minimal-mistakes</a></li>
+</ul>
+
 <h2 id="tv">TV</h2>
 
 <ul>
   <li><a href="https://www.nederland.tv/">Netherlands TV</a></li>
+</ul>
+
+<h2 id="tools">Tools</h2>
+
+<ul>
+  <li><a href="https://www.10bestdesign.com/tools/">beautifying and formatting JS code</a></li>
 </ul>
 
 <h3 id="external">External</h3>
@@ -2234,16 +2467,27 @@ html(lang="en")
   <li><a href="https://github.com/awesome-selfhosted/awesome-selfhosted" title="Awesome-Selfhosted">Awesome Selfhosted (git)</a></li>
 </ul>
 
-<h2 id="nodejs">Node.js</h2>
+<h3 id="nodejs">Node.js</h3>
 
 <ul>
   <li><a href="https://github.com/JakubKrizka/available-disk-space-nodejs/blob/master/index.js">Disk Space</a></li>
+  <li><a href="https://www.npmjs.com/package/updated-youtube-info">Youtube video metada info</a></li>
+  <li><a href="https://www.npmjs.com/package/open-graph-scraper">Open Graph metadata reader 1</a></li>
+  <li><a href="https://www.npmjs.com/package/html-metadata-parser">HTML Graph metadata reader 2</a></li>
 </ul>
 
-<h2 id="angularjs">Angular.js</h2>
+<h3 id="angularjs">Angular.js</h3>
 
 <ul>
   <li><a href="https://codepen.io/danemacaulay/pen/PZpWMg">Swipe to right</a></li>
+  <li><a href="https://codepen.io/sunnygleason/pen/jrwEXy">Text-Speech - pubnub</a></li>
+</ul>
+
+<h3 id="material-design">Material Design</h3>
+
+<ul>
+  <li><a href="https://codepen.io/DiEH/pen/jOPPzLV">Cards</a></li>
+  <li><a href="https://codepen.io/ettrics/pen/VvxmPV">Gallery</a></li>
 </ul>
 
 
