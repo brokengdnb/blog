@@ -10,7 +10,7 @@
         
             <item>
                 <title>WD MyBook Live (hack)</title>
-                <link>http://brokengdnb.github.io/blog/wd-mybooklive</link>
+                <link>http://brokengdnb.github.io/blog/project/wd-mybook</link>
                 <content:encoded>
                     <![CDATA[
                     <blockquote>
@@ -282,7 +282,7 @@ reboot
 
                     ]]>
                 </content:encoded>
-                <guid isPermaLink="false">/wd-mybooklive</guid>
+                <guid isPermaLink="false">/project/wd-mybook</guid>
                 <description>
                     
                     ...adding torrent server functionality (Transmission)

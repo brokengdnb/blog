@@ -7,6 +7,7 @@ date_format: "%B %-d, %Y"
 header_pages:
   - about.md
 
+future: true
 root:
 #baseurl: /
 url: http://brokengdnb.github.io/blog
