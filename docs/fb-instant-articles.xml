@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title></title>
-    <link>http://localhost:4000</link>
+    <link>http://brokengdnb.github.io/blog</link>
     <description>
       Just another voice outside of group.
     </description>
@@ -10,7 +10,7 @@
         
             <item>
                 <title>WD MyBook Live (hack)</title>
-                <link>http://localhost:4000/project/wd-mybook-live-</link>
+                <link>http://brokengdnb.github.io/blog/wd-mybooklive</link>
                 <content:encoded>
                     <![CDATA[
                     <blockquote>
@@ -282,10 +282,10 @@ reboot
 
                     ]]>
                 </content:encoded>
-                <guid isPermaLink="false">/project/wd-mybook-live-</guid>
+                <guid isPermaLink="false">/wd-mybooklive</guid>
                 <description>
                     
-                    ...adding torrent server functionality (Transmision)
+                    ...adding torrent server functionality (Transmission)
                     
                 </description>
                 <pubDate>Sun, 28 Feb 2021 00:00:00 +0100</pubDate>
@@ -296,7 +296,7 @@ reboot
         
             <item>
                 <title>Language Codes</title>
-                <link>http://localhost:4000/language-codes</link>
+                <link>http://brokengdnb.github.io/blog/language-codes</link>
                 <content:encoded>
                     <![CDATA[
                     <p>This table is based on the ISO 2 letter (Alpha-2 code, ISO 639-1) and 3 letter (Alpha-3 code, ISO 639-2) Standard Codes for the Representation of Names of Languages.</p>
@@ -1251,7 +1251,7 @@ reboot
         
             <item>
                 <title>Homepage (BrokenG.com)</title>
-                <link>http://localhost:4000/project/homepage</link>
+                <link>http://brokengdnb.github.io/blog/project/homepage</link>
                 <content:encoded>
                     <![CDATA[
                     <blockquote>
@@ -1320,7 +1320,7 @@ reboot
         
             <item>
                 <title>Cache</title>
-                <link>http://localhost:4000/cache</link>
+                <link>http://brokengdnb.github.io/blog/cache</link>
                 <content:encoded>
                     <![CDATA[
                     <blockquote>
@@ -1471,7 +1471,7 @@ Unlike other browsers, Konqueror seems to bypass its cache whenever you reload a
         
             <item>
                 <title>ME (Markdown Editor)</title>
-                <link>http://localhost:4000/project/mye</link>
+                <link>http://brokengdnb.github.io/blog/project/mye</link>
                 <content:encoded>
                     <![CDATA[
                     <blockquote>
@@ -1597,7 +1597,7 @@ winecfg
         
             <item>
                 <title>ffmpeg</title>
-                <link>http://localhost:4000/ffmpeg</link>
+                <link>http://brokengdnb.github.io/blog/ffmpeg</link>
                 <content:encoded>
                     <![CDATA[
                     <ul>
@@ -1842,7 +1842,7 @@ ffmpeg <span class="nt">-i</span> movie.mov  <span class="nt">-i</span> watermar
         
             <item>
                 <title>AVA (TV &amp; Control)</title>
-                <link>http://localhost:4000/project/ava-tv</link>
+                <link>http://brokengdnb.github.io/blog/project/ava-tv</link>
                 <content:encoded>
                     <![CDATA[
                     <blockquote>
@@ -2048,7 +2048,7 @@ npm <span class="nb">install
         
             <item>
                 <title>EMI</title>
-                <link>http://localhost:4000/project/emi</link>
+                <link>http://brokengdnb.github.io/blog/project/emi</link>
                 <content:encoded>
                     <![CDATA[
                     <blockquote>
@@ -2151,7 +2151,7 @@ npm <span class="nb">install
         
             <item>
                 <title>AVA (Data)</title>
-                <link>http://localhost:4000/project/ava-data</link>
+                <link>http://brokengdnb.github.io/blog/project/ava-data</link>
                 <content:encoded>
                     <![CDATA[
                     <blockquote>
@@ -2448,7 +2448,7 @@ html(lang="en")
         
             <item>
                 <title>Links</title>
-                <link>http://localhost:4000/urls</link>
+                <link>http://brokengdnb.github.io/blog/urls</link>
                 <content:encoded>
                     <![CDATA[
                     <blockquote>
