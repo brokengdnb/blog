@@ -2,13 +2,13 @@
 
 [blog.brokeng.com](http://blog.brokeng.com)
 
-![wd](https://github.com/brokengdnb/blog/blob/master/images/blog-demo-01.png?raw=true "wd")
+![01](https://github.com/brokengdnb/blog/blob/master/images/blog-demo-01.png?raw=true "01")
 
-![wd](https://github.com/brokengdnb/blog/blob/master/images/blog-demo-02.png?raw=true "wd")
+![02](https://github.com/brokengdnb/blog/blob/master/images/blog-demo-02.png?raw=true "02")
 
-![wd](https://github.com/brokengdnb/blog/blob/master/images/blog-demo-03.png?raw=true "wd")
+![03](https://github.com/brokengdnb/blog/blob/master/images/blog-demo-03.png?raw=true "03")
 
-![wd](https://github.com/brokengdnb/blog/blob/master/images/blog-demo-04.png?raw=true "wd")
+![04](https://github.com/brokengdnb/blog/blob/master/images/blog-demo-04.png?raw=true "04")
 
 Based on Jekyll & Pixyll... is a simple, beautiful theme that emphasizes content rather than aesthetic fluff. It's mobile _first_, fluidly responsive, and delightfully lightweight.
 
