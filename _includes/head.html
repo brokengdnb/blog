@@ -69,12 +69,14 @@
     <meta property="og:locale" content="{{ site.text.og_locale | default: "en_US" }}">
     <meta property="og:type" content="article">
     <meta property="og:title" content="{% if page.title %}{{ page.title | xml_escape }}{% else %}{{ site.title | xml_escape }}{% endif %}">
-    <meta property="og:description" content="{% if page.description %}{{ page.description | xml_escape }}{% else %}{{ site.description | xml_escape }}{% endif %}">
     <meta property="og:url" content="{{ site.url }}{{ page.url }}">
     <meta property="og:site_name" content="{{ site.title | xml_escape }}">
-    {% if site.post_preview_image %}
-    <meta property="og:image" content="{{ site.url }}/images/me.jpeg">
+
+    {% if page.header-img %}
+    <meta property="og:image" content="{{ page.header-img }}" />
     {% endif %}
+
+    <meta property="og:description" content="{{ page.subtitle }}" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary" />
@@ -83,10 +85,12 @@
         <meta name="twitter:creator" content="@{{ site.twitter_username }}" />
     {% endif %}
     <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
-    <meta name="twitter:description" content="{% if page.summary %}{{ page.summary }}{% else %}{{ site.description }}{% endif %}" />
+    <meta name="twitter:description" content="{{ page.subtitle }}" />
+
     <meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
-    {% if site.post_preview_image %}
-    <meta name="twitter:image" content="{{ site.url }}/images/me.jpeg" />
+
+    {% if page.header-img %}
+    <meta property="twitter:image" content="{{ page.header-img }}" />
     {% endif %}
 
     <!-- Icons -->
