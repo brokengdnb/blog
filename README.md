@@ -1,37 +1,25 @@
-# Pixyll
+# Blog
 
-[pixyll.com](http://www.pixyll.com)
+[blog.brokeng.com](http://blog.brokeng.com)
 
-![Pixyll screenshot](./screenshot.png)
+![wd](https://github.com/brokengdnb/blog/blob/master/images/blog-demo-01.jpeg?raw=true "wd")
 
-Pixyll is a simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff. It's mobile _first_, fluidly responsive, and delightfully lightweight.
+![wd](https://github.com/brokengdnb/blog/blob/master/images/blog-demo-02.jpeg?raw=true "wd")
+
+![wd](https://github.com/brokengdnb/blog/blob/master/images/blog-demo-03.jpeg?raw=true "wd")
+
+![wd](https://github.com/brokengdnb/blog/blob/master/images/blog-demo-04.jpeg?raw=true "wd")
+
+Based on Jekyll & Pixyll... is a simple, beautiful theme that emphasizes content rather than aesthetic fluff. It's mobile _first_, fluidly responsive, and delightfully lightweight.
 
 It's pretty minimal, but leverages large type and drastic contrast to make a statement, on all devices.
 
-This Jekyll theme was crafted with <3 by [John Otander](http://johnotander.com)
-([@4lpine](https://twitter.com/4lpine)).
+This Jekyll theme was crafted with ❤️ by [John Otander](http://johnotander.com)
 
-中文版 <https://github.com/ee0703/pixyll-zh-cn>.
 
 ## Getting Started
 
 If you're completely new to Jekyll, I recommend checking out the documentation at <http://jekyllrb.com> or there's a tutorial by [Smashing Magazine](http://www.smashingmagazine.com/2014/08/01/build-blog-jekyll-github-pages/).
-
-```
-$ git clone git@github.com:johnotander/pixyll.git
-$ cd pixyll
-$ gem install bundler # If you don't have bundler installed
-$ bundle install
-```
-
-#### Verify your Jekyll version
-
-It's important to also check your version of Jekyll since this project uses new `baseurl` features that are [only supported in 3.3+](https://jekyllrb.com/news/2016/10/06/jekyll-3-3-is-here/).
-
-### Fork, then clone
-
-Fork the repo, and then clone it so you've got the code locally.
-
 
 ### Modify the `_config.yml`
 
@@ -53,15 +41,36 @@ permalink: pretty
 paginate: 3
 ```
 
-### Jekyll Serve
+### Serve
 
 Then, start the Jekyll Server. I always like to give the `--watch` option so it updates the generated HTML when I make changes.
 
-```
-$ jekyll serve --watch
+```bash
+jekyll serve --watch
 ```
 
 Now you can navigate to `localhost:4000` in your browser to see the site.
+
+### Errors
+
+```
+# You have already activated X, but your Gemfile requires Y
+bundle clean --force
+# re-build jekyll and woala
+jekyll build --verbose
+```
+
+```
+# block in materialize': Could not find concurrent-ruby-1.1.7 in any of the sources...
+rm Gemfile.lock
+bundle
+
+```
+
+```
+# Sometimes after SERVE or BUILD command changes are not apply. Remove _site_ or docs folder. Re-build and woala.
+jekyll build --verbose
+```
 
 ### Using Github Pages
 
@@ -116,10 +125,6 @@ The contact form uses <http://formspree.io>. It will require you to fill the for
 More setup instructions and advanced options can be found at [http://formspree.io](http://formspree.io/)
 
 
-### Disqus
-
-To configure Disqus, set up a [Disqus site](https://disqus.com/admin/create/) with the same name as your site. Then, in `_config.yml`, edit the `disqus_shortname` value to enable Disqus.
-
 ### Customizing the CSS
 
 All variables can be found in the `_sass/_variables.scss` file, toggle these as you'd like to change the look and feel of Pixyll.
@@ -127,23 +132,6 @@ All variables can be found in the `_sass/_variables.scss` file, toggle these as 
 ### Page Animation
 
 If you would like to add a [fade-in-down effect](http://daneden.github.io/animate.css/), you can add `animated: true` to your `_config.yml`.
-
-### AnchorJS
-
-[AnchorJS](https://github.com/bryanbraun/anchorjs): _A JavaScript utility for adding deep anchor links to existing page content. AnchorJS is lightweight, accessible, and has no dependencies._ You can turn it on by toggling `enable_anchorjs`. Because it offers many ways for customization, tweaks should be done in `_includes/footer.html`. Default settings after turning AnchorJS on are:
-
-```html
-<script>
-    anchors.options.visible = 'always';
-    anchors.add('article h2, article h3, article h4, article h5, article h6');
-</script>
-```
-
-See [documentation](http://bryanbraun.github.io/anchorjs/#basic-usage) for more options.
-
-### Put in a Pixyll Plug
-
-If you want to give credit to the Pixyll theme with a link to <http://pixyll.com> or my personal website <http://johnotander.com> somewhere, that'd be awesome. No worries if you don't.
 
 ### Web analytics and search engines
 
@@ -194,25 +182,6 @@ For more information on PWAs:
 
 I hope you enjoy using Pixyll. If you encounter any issues, please feel free to let me know by creating an [issue](https://github.com/johnotander/pixyll/issues). I'd love to help.
 
-## Upgrading Pixyll
-
-Pixyll is always being improved by its users, so sometimes one may need to upgrade.
-
-#### Ensure there's an upstream remote
-
-If `git remote -v` doesn't have an upstream listed, you can do the following to add it:
-
-```
-git remote add upstream https://github.com/johnotander/pixyll.git
-```
-
-#### Pull in the latest changes
-
-```
-git pull upstream master
-```
-
-There may be merge conflicts, so be sure to fix the files that git lists if they occur. That's it!
 
 ## Thanks to the following
 
@@ -221,15 +190,3 @@ There may be merge conflicts, so be sure to fix the files that git lists if they
 * [Refills](http://refills.bourbon.io/)
 * [Solarized](http://ethanschoonover.com/solarized)
 * [Animate.css](http://daneden.github.io/animate.css/)
-
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
-
-## Forking
-
-There is a [guide to forking Pixyll](http://pixyll.com/jekyll/pixyll/2019/01/26/guide-to-forking-pixyll/).
