@@ -330,10 +330,27 @@ reboot
 apt-get update
 
 <span class="c"># dep</span>
-apt-get <span class="nb">install </span>rrdtool perl libwww-perl libmailtools-perl libmime-lite-perl librrds-perl libdbi-perl libxml-simple-perl libhttp-server-simple-perl libconfig-general-perl libio-socket-ssl-perl
+apt-get <span class="nb">install </span>rrdtool perl libwww-perl libmailtools-perl libmime-lite-perl librrds-perl libdbi-perl libxml-simple-perl libhttp-server-simple-perl libconfig-general-perl libio-socket-ssl-perl libxml-libxml-perl libxml-libxml-common-perl
+
+<span class="c"># hot fix</span>
+apt-get <span class="nt">-f</span> <span class="nb">install</span>
 </code></pre></div></div>
 
-<p>Download: <a href="https://github.com/brokengdnb/blog/blob/master/images/wd/monitorix_3.13.1-izzy1_all.deb">monitorix_3.13.1-izzy1_all.deb</a></p>
+<p>Download: <a href="https://github.com/brokengdnb/blog/blob/master/images/wd/monitorix_3.13.1-izzy1_all.deb?raw=true">monitorix_3.13.1-izzy1_all.deb</a>, put it some where like: ‘DataVolume/shares/Public/’ and run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># install</span>
+dpkg <span class="nt">-i</span> monitorix_3.13.1-izzy1_all.deb 
+</code></pre></div></div>
+
+<p>…in case of “ERROR: while graphing /var/lib/monitorix/www//imgs/” just create folder:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> /var/lib/monitorix/www/imgs
+</code></pre></div></div>
+
+<p><a href="http://wd.local:8080/monitorix">http://wd.local:8080/monitorix</a></p>
+
+<h3 id="demo-1">Demo</h3>
+<p><img src="https://github.com/brokengdnb/blog/blob/master/images/wd/monitorix.png?raw=true" alt="demo-monitorix" title="demo monitorix" /></p>
 
 
                     ]]>

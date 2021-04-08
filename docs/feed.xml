@@ -325,10 +325,27 @@ reboot
 apt-get update
 
 &lt;span class=&quot;c&quot;&gt;# dep&lt;/span&gt;
-apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;rrdtool perl libwww-perl libmailtools-perl libmime-lite-perl librrds-perl libdbi-perl libxml-simple-perl libhttp-server-simple-perl libconfig-general-perl libio-socket-ssl-perl
+apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;rrdtool perl libwww-perl libmailtools-perl libmime-lite-perl librrds-perl libdbi-perl libxml-simple-perl libhttp-server-simple-perl libconfig-general-perl libio-socket-ssl-perl libxml-libxml-perl libxml-libxml-common-perl
+
+&lt;span class=&quot;c&quot;&gt;# hot fix&lt;/span&gt;
+apt-get &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Download: &lt;a href=&quot;https://github.com/brokengdnb/blog/blob/master/images/wd/monitorix_3.13.1-izzy1_all.deb&quot;&gt;monitorix_3.13.1-izzy1_all.deb&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Download: &lt;a href=&quot;https://github.com/brokengdnb/blog/blob/master/images/wd/monitorix_3.13.1-izzy1_all.deb?raw=true&quot;&gt;monitorix_3.13.1-izzy1_all.deb&lt;/a&gt;, put it some where like: ‘DataVolume/shares/Public/’ and run:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# install&lt;/span&gt;
+dpkg &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; monitorix_3.13.1-izzy1_all.deb 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;…in case of “ERROR: while graphing /var/lib/monitorix/www//imgs/” just create folder:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; /var/lib/monitorix/www/imgs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://wd.local:8080/monitorix&quot;&gt;http://wd.local:8080/monitorix&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;demo-1&quot;&gt;Demo&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/brokengdnb/blog/blob/master/images/wd/monitorix.png?raw=true&quot; alt=&quot;demo-monitorix&quot; title=&quot;demo monitorix&quot; /&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Sun, 28 Feb 2021 00:00:00 +0100</pubDate>
