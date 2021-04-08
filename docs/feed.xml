@@ -14,14 +14,20 @@
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://github.com/brokengdnb/blog/blob/master/images/wd.png?raw=true&quot; alt=&quot;wd&quot; title=&quot;wd&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/brokengdnb/blog/blob/master/images/wd/wd.png?raw=true&quot; alt=&quot;wd&quot; title=&quot;wd&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;#warning&quot;&gt;Warning&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#ip&quot;&gt;DNS or IP&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#ssh&quot;&gt;SSH&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#installation&quot;&gt;Installation&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#license&quot;&gt;License&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#optware&quot;&gt;optware&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#tools&quot;&gt;Installing tools&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#transmission-torrents&quot;&gt;transmission - torrents&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#auto-run&quot;&gt;Auto-run&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#demo&quot;&gt;Demo&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;warning&quot;&gt;Warning&lt;/h2&gt;
@@ -40,35 +46,66 @@
 ? &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;224.0.0.251&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; at 1:0:5e:0:0:xx on en6 ifscope permanent &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;ethernet]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h2 id=&quot;enable-ssh&quot;&gt;enable SSH&lt;/h2&gt;
+&lt;p&gt;But I rename “mybooklive.local” to wd.local for next steps:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://github.com/brokengdnb/blog/blob/master/images/wd-ssh.png?raw=true&quot; alt=&quot;ssh&quot; title=&quot;ssh&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;ssh&quot;&gt;SSH&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/brokengdnb/blog/blob/master/images/wd/wd-ssh.png?raw=true&quot; alt=&quot;ssh&quot; title=&quot;ssh&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;After &lt;a href=&quot;http://mybooklive.local/UI/login&quot;&gt;/UI/login&lt;/a&gt; =&amp;gt; open: &lt;a href=&quot;http://mybooklive.local/UI/ssh&quot;&gt;/UI/ssh&lt;/a&gt; to activate SSH access and login to Linux server:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://github.com/brokengdnb/blog/blob/master/images/wd-ssh-login.png?raw=true&quot; alt=&quot;ssh-login&quot; title=&quot;ssh&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/brokengdnb/blog/blob/master/images/wd/wd-ssh-login.png?raw=true&quot; alt=&quot;ssh-login&quot; title=&quot;ssh&quot; /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ssh root@mybooklive.local
 &lt;span class=&quot;c&quot;&gt;# default password: welc0me&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+&lt;h2 id=&quot;optware&quot;&gt;optware&lt;/h2&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# install optware&lt;/span&gt;
 wget http://mybookworld.wikidot.com/local--files/optware/setup-mybooklive.sh
-sh setup-mybooklive.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;or if “wikidot down”:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;feed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;http://ipkg.nslu2-linux.org/feeds/optware/ds101g/cross/stable/
+&lt;span class=&quot;nv&quot;&gt;ipk_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;wget &lt;span class=&quot;nt&quot;&gt;-qO-&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$feed&lt;/span&gt;/Packages | &lt;span class=&quot;nb&quot;&gt;awk&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;/^Filename: ipkg-opt/ {print $2}&apos;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;
+wget &lt;span class=&quot;nv&quot;&gt;$feed&lt;/span&gt;/&lt;span class=&quot;nv&quot;&gt;$ipk_name&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;tar&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-xOvzf&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ipk_name&lt;/span&gt; ./data.tar.gz | &lt;span class=&quot;nb&quot;&gt;tar&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-C&lt;/span&gt; / &lt;span class=&quot;nt&quot;&gt;-xzvf&lt;/span&gt; -
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;src/gz optware &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;feed&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; /opt/etc/ipkg.conf
+&lt;span class=&quot;nb&quot;&gt;mv&lt;/span&gt; /opt/bin/ipkg /opt/bin/ipkg.bin
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;#!/bin/sh&apos;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; /opt/bin/ipkg
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;PATH=/opt/bin:$PATH /opt/bin/ipkg.bin $@&apos;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; /opt/bin/ipkg
+&lt;span class=&quot;nb&quot;&gt;chmod&lt;/span&gt; +x /opt/bin/ipkg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sh setup-mybooklive.sh
 &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;export PATH=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;:/opt/bin:/opt/sbin&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; /root/.bashrc
 
 &lt;span class=&quot;c&quot;&gt;# update pkg manager&lt;/span&gt;
 ipkg update
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;span class=&quot;c&quot;&gt;# install dependencies like nano editor, total commander (mc), htop but mainly: transmission etc.&lt;/span&gt;
-ipkg &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;htop nano mc libevent transmission
+&lt;h2 id=&quot;tools-tools&quot;&gt;Tools (tools)&lt;/h2&gt;
+
+&lt;p&gt;install nano editor, task manager, total commander…&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ipkg &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;nano htop mc 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/brokengdnb/blog/blob/master/images/wd/nano.png?raw=true&quot; alt=&quot;wd&quot; title=&quot;wd&quot; /&gt;
+&lt;img src=&quot;https://github.com/brokengdnb/blog/blob/master/images/wd/htop.png?raw=true&quot; alt=&quot;wd&quot; title=&quot;wd&quot; /&gt;
+&lt;img src=&quot;https://github.com/brokengdnb/blog/blob/master/images/wd/mc.png?raw=true&quot; alt=&quot;wd&quot; title=&quot;wd&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;transmission-torrents&quot;&gt;Transmission (torrents)&lt;/h2&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# install dependencies like nano editor, total commander (mc), htop but mainly: transmission etc.&lt;/span&gt;
+ipkg &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;libevent transmission
 
 &lt;span class=&quot;c&quot;&gt;# setup config for Transmision&lt;/span&gt;
 nano .config/transmission-daemon/settings.json
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Edit config file&lt;/p&gt;
 
 &lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
     &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;alt-speed-down&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
@@ -141,21 +178,22 @@ nano .config/transmission-daemon/settings.json
 &lt;p&gt;Save it &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CTRL+O&lt;/code&gt; … close it &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CTRL+X&lt;/code&gt; … lock it:&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;chmod &lt;/span&gt;600 /root/.config/transmission-daemon/settings.json
-&lt;span class=&quot;c&quot;&gt;# try it:&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# try it?&lt;/span&gt;
 /opt/bin/transmission-daemon
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;woala just like that… and is on &lt;a href=&quot;http://mybooklive.local:9091/&quot; title=&quot;http://mybooklive.local:9091/&quot;&gt;http://mybooklive.local:9091/&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;woala just like that… and is on &lt;a href=&quot;http://wd.local:9091/&quot; title=&quot;http://wd.local:9091/&quot;&gt;http://wd.local:9091/&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# to kill it:&lt;/span&gt;
 killall transmission-daemon
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h2 id=&quot;autorun-at-start-up&quot;&gt;Autorun at start-up&lt;/h2&gt;
+&lt;h3 id=&quot;auto-run&quot;&gt;Auto-run&lt;/h3&gt;
 
-&lt;p&gt;This took me half weekend to figure out. Problems are in little differencies between versions (powerPC) but main is about startnig init.d script AFTER system load up network. WD has “only” 800MHz and after boot it will take time, just split one task to another and just wait about one minute to get loaded.&lt;/p&gt;
+&lt;p&gt;This took me half weekend to figure out. Problems are in little differences between versions (powerPC) but main is about starting init.d script AFTER system load up network. WD has “only” 800MHz and “Required-Start: networking” didn’t work for me so after boot it will take time, just split one task to another and wait about one minute to get that loaded. Starting time is little bit longer but works:&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# create init.d script&lt;/span&gt;
 nano /etc/init.d/transmission-hack
@@ -221,13 +259,15 @@ case&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span c
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# set permision&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;chmod &lt;/span&gt;755 /etc/init.d/transmission-hack
+
 &lt;span class=&quot;c&quot;&gt;# set owner&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;chown &lt;/span&gt;root:root /etc/init.d/transmission-hack
+
 &lt;span class=&quot;c&quot;&gt;# update loader&lt;/span&gt;
 update-rc.d transmission-hack defaults
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Create second loader:&lt;/p&gt;
+&lt;p&gt;Create re-loader:&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;nano /etc/init.d/transmission-reload
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -265,15 +305,9 @@ update-rc.d transmission-reload defaults
 reboot
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h2 id=&quot;demo&quot;&gt;Demo&lt;/h2&gt;
+&lt;h3 id=&quot;demo&quot;&gt;Demo&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://github.com/brokengdnb/blog/blob/master/images/wd-demo.png?raw=true&quot; alt=&quot;demo&quot; title=&quot;demo&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
-
-&lt;p&gt;The MIT License.&lt;/p&gt;
-
-&lt;p&gt;Copyright (c) 2021 BrokenG&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/brokengdnb/blog/blob/master/images/wd/wd-demo.png?raw=true&quot; alt=&quot;demo&quot; title=&quot;demo&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 28 Feb 2021 00:00:00 +0100</pubDate>
         <link>http://brokengdnb.github.io/blog/project/wd-my-book-live</link>

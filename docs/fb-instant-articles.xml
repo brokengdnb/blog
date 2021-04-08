@@ -19,14 +19,20 @@
 
 <hr />
 
-<p><img src="https://github.com/brokengdnb/blog/blob/master/images/wd.png?raw=true" alt="wd" title="wd" /></p>
+<p><img src="https://github.com/brokengdnb/blog/blob/master/images/wd/wd.png?raw=true" alt="wd" title="wd" /></p>
 
 <ul>
   <li><a href="#warning">Warning</a></li>
   <li><a href="#ip">DNS or IP</a></li>
   <li><a href="#ssh">SSH</a></li>
-  <li><a href="#installation">Installation</a></li>
-  <li><a href="#license">License</a></li>
+  <li><a href="#optware">optware</a></li>
+  <li><a href="#tools">Installing tools</a></li>
+  <li><a href="#transmission-torrents">transmission - torrents</a>
+    <ul>
+      <li><a href="#auto-run">Auto-run</a></li>
+      <li><a href="#demo">Demo</a></li>
+    </ul>
+  </li>
 </ul>
 
 <h2 id="warning">Warning</h2>
@@ -45,35 +51,66 @@
 ? <span class="o">(</span>224.0.0.251<span class="o">)</span> at 1:0:5e:0:0:xx on en6 ifscope permanent <span class="o">[</span>ethernet]
 </code></pre></div></div>
 
-<h2 id="enable-ssh">enable SSH</h2>
+<p>But I rename “mybooklive.local” to wd.local for next steps:</p>
 
-<p><img src="https://github.com/brokengdnb/blog/blob/master/images/wd-ssh.png?raw=true" alt="ssh" title="ssh" /></p>
+<h2 id="ssh">SSH</h2>
+
+<p><img src="https://github.com/brokengdnb/blog/blob/master/images/wd/wd-ssh.png?raw=true" alt="ssh" title="ssh" /></p>
 
 <p>After <a href="http://mybooklive.local/UI/login">/UI/login</a> =&gt; open: <a href="http://mybooklive.local/UI/ssh">/UI/ssh</a> to activate SSH access and login to Linux server:</p>
 
-<p><img src="https://github.com/brokengdnb/blog/blob/master/images/wd-ssh-login.png?raw=true" alt="ssh-login" title="ssh" /></p>
+<p><img src="https://github.com/brokengdnb/blog/blob/master/images/wd/wd-ssh-login.png?raw=true" alt="ssh-login" title="ssh" /></p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh root@mybooklive.local
 <span class="c"># default password: welc0me</span>
 </code></pre></div></div>
 
-<h2 id="installation">Installation</h2>
+<h2 id="optware">optware</h2>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># install optware</span>
 wget http://mybookworld.wikidot.com/local--files/optware/setup-mybooklive.sh
-sh setup-mybooklive.sh
+</code></pre></div></div>
+<p>or if “wikidot down”:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">feed</span><span class="o">=</span>http://ipkg.nslu2-linux.org/feeds/optware/ds101g/cross/stable/
+<span class="nv">ipk_name</span><span class="o">=</span><span class="si">$(</span>wget <span class="nt">-qO-</span> <span class="nv">$feed</span>/Packages | <span class="nb">awk</span> <span class="s1">'/^Filename: ipkg-opt/ {print $2}'</span><span class="si">)</span>
+wget <span class="nv">$feed</span>/<span class="nv">$ipk_name</span>
+<span class="nb">tar</span> <span class="nt">-xOvzf</span> <span class="nv">$ipk_name</span> ./data.tar.gz | <span class="nb">tar</span> <span class="nt">-C</span> / <span class="nt">-xzvf</span> -
+<span class="nb">echo</span> <span class="s2">"src/gz optware </span><span class="k">${</span><span class="nv">feed</span><span class="k">}</span><span class="s2">"</span> <span class="o">&gt;&gt;</span> /opt/etc/ipkg.conf
+<span class="nb">mv</span> /opt/bin/ipkg /opt/bin/ipkg.bin
+<span class="nb">echo</span> <span class="s1">'#!/bin/sh'</span> <span class="o">&gt;</span> /opt/bin/ipkg
+<span class="nb">echo</span> <span class="s1">'PATH=/opt/bin:$PATH /opt/bin/ipkg.bin $@'</span> <span class="o">&gt;&gt;</span> /opt/bin/ipkg
+<span class="nb">chmod</span> +x /opt/bin/ipkg
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sh setup-mybooklive.sh
 <span class="nb">echo</span> <span class="s2">"export PATH=</span><span class="nv">$PATH</span><span class="s2">:/opt/bin:/opt/sbin"</span> <span class="o">&gt;&gt;</span> /root/.bashrc
 
 <span class="c"># update pkg manager</span>
 ipkg update
+</code></pre></div></div>
 
-<span class="c"># install dependencies like nano editor, total commander (mc), htop but mainly: transmission etc.</span>
-ipkg <span class="nb">install </span>htop nano mc libevent transmission
+<h2 id="tools-tools">Tools (tools)</h2>
+
+<p>install nano editor, task manager, total commander…</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ipkg <span class="nb">install </span>nano htop mc 
+</code></pre></div></div>
+
+<p><img src="https://github.com/brokengdnb/blog/blob/master/images/wd/nano.png?raw=true" alt="wd" title="wd" />
+<img src="https://github.com/brokengdnb/blog/blob/master/images/wd/htop.png?raw=true" alt="wd" title="wd" />
+<img src="https://github.com/brokengdnb/blog/blob/master/images/wd/mc.png?raw=true" alt="wd" title="wd" /></p>
+
+<h2 id="transmission-torrents">Transmission (torrents)</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># install dependencies like nano editor, total commander (mc), htop but mainly: transmission etc.</span>
+ipkg <span class="nb">install </span>libevent transmission
 
 <span class="c"># setup config for Transmision</span>
 nano .config/transmission-daemon/settings.json
 
 </code></pre></div></div>
+
+<p>Edit config file</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"alt-speed-down"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
@@ -146,21 +183,22 @@ nano .config/transmission-daemon/settings.json
 <p>Save it <code class="language-plaintext highlighter-rouge">CTRL+O</code> … close it <code class="language-plaintext highlighter-rouge">CTRL+X</code> … lock it:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod </span>600 /root/.config/transmission-daemon/settings.json
-<span class="c"># try it:</span>
+
+<span class="c"># try it?</span>
 /opt/bin/transmission-daemon
 </code></pre></div></div>
 
 <blockquote>
-  <p>woala just like that… and is on <a href="http://mybooklive.local:9091/" title="http://mybooklive.local:9091/">http://mybooklive.local:9091/</a></p>
+  <p>woala just like that… and is on <a href="http://wd.local:9091/" title="http://wd.local:9091/">http://wd.local:9091/</a></p>
 </blockquote>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># to kill it:</span>
 killall transmission-daemon
 </code></pre></div></div>
 
-<h2 id="autorun-at-start-up">Autorun at start-up</h2>
+<h3 id="auto-run">Auto-run</h3>
 
-<p>This took me half weekend to figure out. Problems are in little differencies between versions (powerPC) but main is about startnig init.d script AFTER system load up network. WD has “only” 800MHz and after boot it will take time, just split one task to another and just wait about one minute to get loaded.</p>
+<p>This took me half weekend to figure out. Problems are in little differences between versions (powerPC) but main is about starting init.d script AFTER system load up network. WD has “only” 800MHz and “Required-Start: networking” didn’t work for me so after boot it will take time, just split one task to another and wait about one minute to get that loaded. Starting time is little bit longer but works:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># create init.d script</span>
 nano /etc/init.d/transmission-hack
@@ -226,13 +264,15 @@ case</span> <span class="s2">"</span><span class="nv">$rc</span><span class="s2"
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># set permision</span>
 <span class="nb">chmod </span>755 /etc/init.d/transmission-hack
+
 <span class="c"># set owner</span>
 <span class="nb">chown </span>root:root /etc/init.d/transmission-hack
+
 <span class="c"># update loader</span>
 update-rc.d transmission-hack defaults
 </code></pre></div></div>
 
-<p>Create second loader:</p>
+<p>Create re-loader:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nano /etc/init.d/transmission-reload
 </code></pre></div></div>
@@ -270,15 +310,9 @@ update-rc.d transmission-reload defaults
 reboot
 </code></pre></div></div>
 
-<h2 id="demo">Demo</h2>
+<h3 id="demo">Demo</h3>
 
-<p><img src="https://github.com/brokengdnb/blog/blob/master/images/wd-demo.png?raw=true" alt="demo" title="demo" /></p>
-
-<h2 id="license">License</h2>
-
-<p>The MIT License.</p>
-
-<p>Copyright (c) 2021 BrokenG</p>
+<p><img src="https://github.com/brokengdnb/blog/blob/master/images/wd/wd-demo.png?raw=true" alt="demo" title="demo" /></p>
 
                     ]]>
                 </content:encoded>
