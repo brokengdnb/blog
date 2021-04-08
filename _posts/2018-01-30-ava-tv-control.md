@@ -8,16 +8,12 @@ permalink: "/project/ava-tv"
 
 ---
 
-> Then I take AVA & EMI for a walk... we talk and end up in some random room of unlimited posibilities... as a DJ as well as video DJ in one... 3,2,1 and here... we... go...
-
----
 
 - [Demo](#demo)
 - [Download](#download)
 - [Dependencies](#dependencies)
 - [Run](#run)
 - [Index](#index)
-- [Idea](#idea)
 - [TODO](#todo)
 - [Support](#support)
 - [License](#license)
@@ -149,12 +145,6 @@ This syncing room ID then time, state (play/pause), file URL and playerId (YouTu
     });
 ```
 
-## Idea
-
-> The idea started in January 2018, technology and libraries comes by summer thanks to project Vynchronize, the idea is simple... control multiple end-points (AUDIO & VIDEO) from multiple devices in multiple "rooms" and if you can, please render my playlists as well... so far only 2D but I already found a libraries for 360 VR... that will take a time but turtle will always win a race...
-
-
-
 [![MVC](https://github.com/brokengdnb/ava-data/blob/master/demo-img/emi.png?raw=true "preview")](https://github.com/brokengdnb/ava-data/demo-img/emi.png?raw=true "preview")
 
 
@@ -174,7 +164,7 @@ This syncing room ID then time, state (play/pause), file URL and playerId (YouTu
 - **OS X (tested on Mojave 10.14.6)**
 - **iOS > 10 (tested on iPhone 5)**
 - Linux & Android > 6
-- ~~Windows~~  => *(I don't have one and I will **NOT** support this platform, never ever, your choise = your problem)"*
+- ~~Windows~~  *(I don't have any)*
 
 ## License
 

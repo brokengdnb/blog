@@ -7,14 +7,14 @@
     <atom:link href="http://brokengdnb.github.io/blog/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>WD MyBook Live (hack)</title>
+        <title>(Hacking) WD My Book Live</title>
         <description>&lt;blockquote&gt;
-  &lt;p&gt;…adding torrent server to external HDD/NAS - WD MyBook Live&lt;/p&gt;
+  &lt;p&gt;…adding external functionality like SSH, Torrents, Monitors, ffmpeg, SQL database server etc.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://github.com/brokengdnb/blog/blob/master/images/wd.jpeg?raw=true&quot; alt=&quot;wd&quot; title=&quot;wd&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/brokengdnb/blog/blob/master/images/wd.png?raw=true&quot; alt=&quot;wd&quot; title=&quot;wd&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;#warning&quot;&gt;Warning&lt;/a&gt;&lt;/li&gt;
@@ -30,7 +30,7 @@
 
 &lt;h2 id=&quot;dns-or-ip&quot;&gt;DNS or IP&lt;/h2&gt;
 
-&lt;p&gt;First get ip address of your WD MBL. Default is &lt;a href=&quot;http://mybooklive.local/UI/login&quot;&gt;http://mybooklive.local/UI/login&lt;/a&gt; or on OSX open terminal and type:&lt;/p&gt;
+&lt;p&gt;Default is &lt;a href=&quot;http://mybooklive.local/UI/login&quot;&gt;http://mybooklive.local/UI/login&lt;/a&gt; or on Mac open terminal:&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;arp &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -40,7 +40,7 @@
 ? &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;224.0.0.251&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; at 1:0:5e:0:0:xx on en6 ifscope permanent &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;ethernet]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h2 id=&quot;ssh&quot;&gt;SSH&lt;/h2&gt;
+&lt;h2 id=&quot;enable-ssh&quot;&gt;enable SSH&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://github.com/brokengdnb/blog/blob/master/images/wd-ssh.png?raw=true&quot; alt=&quot;ssh&quot; title=&quot;ssh&quot; /&gt;&lt;/p&gt;
 
@@ -276,8 +276,8 @@ reboot
 &lt;p&gt;Copyright (c) 2021 BrokenG&lt;/p&gt;
 </description>
         <pubDate>Sun, 28 Feb 2021 00:00:00 +0100</pubDate>
-        <link>http://brokengdnb.github.io/blog/project/wd-mybook</link>
-        <guid isPermaLink="true">http://brokengdnb.github.io/blog/project/wd-mybook</guid>
+        <link>http://brokengdnb.github.io/blog/project/wd-my-book-live</link>
+        <guid isPermaLink="true">http://brokengdnb.github.io/blog/project/wd-my-book-live</guid>
       </item>
     
       <item>
@@ -1224,7 +1224,7 @@ reboot
       </item>
     
       <item>
-        <title>Homepage (BrokenG.com)</title>
+        <title>Homepage 2020</title>
         <description>&lt;blockquote&gt;
   &lt;p&gt;just an idea to create as much as possible simple &amp;amp; small website in material design to split pages and links into one multi screen page to proof my skills.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1420,7 +1420,7 @@ Unlike other browsers, Konqueror seems to bypass its cache whenever you reload a
       </item>
     
       <item>
-        <title>ME (Markdown Editor)</title>
+        <title>MDE (Markdown Editor)</title>
         <description>&lt;blockquote&gt;
   &lt;p&gt;…just another .md editor but just for me!&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1497,10 +1497,10 @@ npm &lt;span class=&quot;nb&quot;&gt;install
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;OS X (tasted on 10.14.6)&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;Linux&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;Windows&lt;/del&gt;  =&amp;gt; rcedit.exe failed with exit code null &lt;em&gt;(So I don’t have one and I will &lt;strong&gt;NOT&lt;/strong&gt; support this platform. Call Microsoft service in India or your local IT “experts” because I’ll not do that)&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;del&gt;Windows&lt;/del&gt; &lt;em&gt;rcedit.exe failed with exit code null&lt;/em&gt; 🤣
+    &lt;h2 id=&quot;errors&quot;&gt;Errors&lt;/h2&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;h2 id=&quot;errors&quot;&gt;Errors&lt;/h2&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Packaging app for platform win32 x64 using electron v8.0.3
@@ -1509,7 +1509,7 @@ Could not find “wine64” on your system.&lt;/p&gt;
 
 &lt;h3 id=&quot;plan-a&quot;&gt;PLAN A:&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://apple.stackexchange.com/a/376427&quot; title=&quot;Follow white rabbit, good luck!&quot;&gt;Follow white rabbit, good luck!&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://apple.stackexchange.com/a/376427&quot; title=&quot;Follow white rabbit, good luck!&quot;&gt;» Follow white rabbit &amp;amp; Good luck!&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;plan-b&quot;&gt;PLAN B:&lt;/h3&gt;
 
@@ -1518,9 +1518,9 @@ Could not find “wine64” on your system.&lt;/p&gt;
 winecfg
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;That will solve the problem of creating App for Microsoft Windows but still that .exe didn’t wokred out nether. After two days of closed code and useless logs I gave on Mincosoft = NO windows.&lt;/p&gt;
+&lt;h3 id=&quot;plan-c&quot;&gt;PLAN C:&lt;/h3&gt;
 
-&lt;p&gt;BUT!!! If you are Mac or Linux user = NO problem.&lt;/p&gt;
+&lt;p&gt;Stop using/building for Microsoft Windows…&lt;/p&gt;
 
 &lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
 
@@ -1529,8 +1529,8 @@ winecfg
 &lt;p&gt;Copyright (c) 2020 BrokenG&lt;/p&gt;
 </description>
         <pubDate>Tue, 17 Mar 2020 00:00:00 +0100</pubDate>
-        <link>http://brokengdnb.github.io/blog/project/mye</link>
-        <guid isPermaLink="true">http://brokengdnb.github.io/blog/project/mye</guid>
+        <link>http://brokengdnb.github.io/blog/project/mde</link>
+        <guid isPermaLink="true">http://brokengdnb.github.io/blog/project/mde</guid>
       </item>
     
       <item>
@@ -1768,19 +1768,12 @@ ffmpeg &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; movie.mov  &lt;span clas
     
       <item>
         <title>AVA (TV &amp; Control)</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;Then I take AVA &amp;amp; EMI for a walk… we talk and end up in some random room of unlimited posibilities… as a DJ as well as video DJ in one… 3,2,1 and here… we… go…&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;ul&gt;
+        <description>&lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;#demo&quot;&gt;Demo&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#download&quot;&gt;Download&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#dependencies&quot;&gt;Dependencies&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#run&quot;&gt;Run&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#index&quot;&gt;Index&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#idea&quot;&gt;Idea&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#todo&quot;&gt;TODO&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#support&quot;&gt;Support&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#license&quot;&gt;License&lt;/a&gt;&lt;/li&gt;
@@ -1919,12 +1912,6 @@ npm &lt;span class=&quot;nb&quot;&gt;install
     &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h2 id=&quot;idea&quot;&gt;Idea&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;The idea started in January 2018, technology and libraries comes by summer thanks to project Vynchronize, the idea is simple… control multiple end-points (AUDIO &amp;amp; VIDEO) from multiple devices in multiple “rooms” and if you can, please render my playlists as well… so far only 2D but I already found a libraries for 360 VR… that will take a time but turtle will always win a race…&lt;/p&gt;
-&lt;/blockquote&gt;
-
 &lt;p&gt;&lt;a href=&quot;https://github.com/brokengdnb/ava-data/demo-img/emi.png?raw=true&quot; title=&quot;preview&quot;&gt;&lt;img src=&quot;https://github.com/brokengdnb/ava-data/blob/master/demo-img/emi.png?raw=true&quot; alt=&quot;MVC&quot; title=&quot;preview&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;todo&quot;&gt;Todo&lt;/h3&gt;
@@ -1946,7 +1933,7 @@ npm &lt;span class=&quot;nb&quot;&gt;install
   &lt;li&gt;&lt;strong&gt;OS X (tested on Mojave 10.14.6)&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;iOS &amp;gt; 10 (tested on iPhone 5)&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;Linux &amp;amp; Android &amp;gt; 6&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;Windows&lt;/del&gt;  =&amp;gt; &lt;em&gt;(I don’t have one and I will &lt;strong&gt;NOT&lt;/strong&gt; support this platform, never ever, your choise = your problem)”&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;del&gt;Windows&lt;/del&gt;  &lt;em&gt;(I don’t have any)&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
@@ -1962,11 +1949,7 @@ npm &lt;span class=&quot;nb&quot;&gt;install
     
       <item>
         <title>EMI</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;Never ever lost the passion for acomplishing your dreams, never ever… no matter of what? … omg money? fuck the money… fight for your dreams!&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;So the idea was to create a special cusom high level mappings as well as dual-bind responsible skin to adapt on a event on a go, but the point is… limited number of a buttons, so it’s like layer over the layer… over the another one, and the other one based on position in that mixing process. Solution is portable to “any” MIDI or HID device, it just works. In this case Behringer CMD series… and yes, you can separate them and yes each of them have their own layers and yes it works one by one but together…. omg, breaking the rules!&lt;/p&gt;
+        <description>&lt;p&gt;So the idea was to create a special cusom high level mappings as well as dual-bind responsible skin to adapt on a event on a go, but the point is… limited number of a buttons, so it’s like layer over the layer… over the another one, and the other one based on position in that mixing process. Solution is portable to “any” MIDI or HID device, it just works. I started on &lt;em&gt;Akyiama Quark SQ&lt;/em&gt; after two years migrate to &lt;em&gt;Behringer CMD&lt;/em&gt; series…&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;#midi&quot;&gt;MIDI&lt;/a&gt;&lt;/li&gt;
