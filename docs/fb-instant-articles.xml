@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title></title>
-    <link>http://brokengdnb.github.io/blog</link>
+    <link>http://localhost:4000</link>
     <description>
       Just another voice outside of group.
     </description>
@@ -10,7 +10,7 @@
         
             <item>
                 <title>(Hacking) WD My Book Live</title>
-                <link>http://brokengdnb.github.io/blog/project/wd-my-book-live</link>
+                <link>http://localhost:4000/project/wd-my-book-live</link>
                 <content:encoded>
                     <![CDATA[
                     <blockquote>
@@ -27,7 +27,13 @@
   <li><a href="#ssh">SSH</a></li>
   <li><a href="#optware">optware</a></li>
   <li><a href="#tools">Installing tools</a></li>
-  <li><a href="#transmission-torrents">transmission - torrents</a>
+  <li><a href="#transmission-torrents">Transmission (torrents)</a>
+    <ul>
+      <li><a href="#auto-run">Auto-run</a></li>
+      <li><a href="#demo">Demo</a></li>
+    </ul>
+  </li>
+  <li><a href="#monitorix">Monitorix (CPU/NET)</a>
     <ul>
       <li><a href="#auto-run">Auto-run</a></li>
       <li><a href="#demo">Demo</a></li>
@@ -300,12 +306,16 @@ update-rc.d transmission-hack defaults
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># set permision</span>
 <span class="nb">chmod </span>755 /etc/init.d/transmission-reload
+
 <span class="c"># set owner</span>
 <span class="nb">chown </span>root:root /etc/init.d/transmission-reload
+
 <span class="c"># update loader</span>
 update-rc.d transmission-reload defaults
+
 <span class="c"># exit terminal &amp; reboot your WD from web interface</span>
 <span class="nb">exit</span>
+
 <span class="c"># or reboot directly</span>
 reboot
 </code></pre></div></div>
@@ -313,6 +323,18 @@ reboot
 <h3 id="demo">Demo</h3>
 
 <p><img src="https://github.com/brokengdnb/blog/blob/master/images/wd/wd-demo.png?raw=true" alt="demo" title="demo" /></p>
+
+<h2 id="monitorix">Monitorix</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># update</span>
+apt-get update
+
+<span class="c"># dep</span>
+apt-get <span class="nb">install </span>rrdtool perl libwww-perl libmailtools-perl libmime-lite-perl librrds-perl libdbi-perl libxml-simple-perl libhttp-server-simple-perl libconfig-general-perl libio-socket-ssl-perl
+</code></pre></div></div>
+
+<p>Download: <a href="https://github.com/brokengdnb/blog/blob/master/images/wd/monitorix_3.13.1-izzy1_all.deb">monitorix_3.13.1-izzy1_all.deb</a></p>
+
 
                     ]]>
                 </content:encoded>
@@ -330,7 +352,7 @@ reboot
         
             <item>
                 <title>Language Codes</title>
-                <link>http://brokengdnb.github.io/blog/language-codes</link>
+                <link>http://localhost:4000/language-codes</link>
                 <content:encoded>
                     <![CDATA[
                     <p>This table is based on the ISO 2 letter (Alpha-2 code, ISO 639-1) and 3 letter (Alpha-3 code, ISO 639-2) Standard Codes for the Representation of Names of Languages.</p>
@@ -1285,7 +1307,7 @@ reboot
         
             <item>
                 <title>Homepage 2020</title>
-                <link>http://brokengdnb.github.io/blog/project/homepage</link>
+                <link>http://localhost:4000/project/homepage</link>
                 <content:encoded>
                     <![CDATA[
                     <blockquote>
@@ -1354,7 +1376,7 @@ reboot
         
             <item>
                 <title>Cache</title>
-                <link>http://brokengdnb.github.io/blog/cache</link>
+                <link>http://localhost:4000/cache</link>
                 <content:encoded>
                     <![CDATA[
                     <blockquote>
@@ -1505,7 +1527,7 @@ Unlike other browsers, Konqueror seems to bypass its cache whenever you reload a
         
             <item>
                 <title>MDE (Markdown Editor)</title>
-                <link>http://brokengdnb.github.io/blog/project/mde</link>
+                <link>http://localhost:4000/project/mde</link>
                 <content:encoded>
                     <![CDATA[
                     <blockquote>
@@ -1631,7 +1653,7 @@ winecfg
         
             <item>
                 <title>ffmpeg</title>
-                <link>http://brokengdnb.github.io/blog/ffmpeg</link>
+                <link>http://localhost:4000/ffmpeg</link>
                 <content:encoded>
                     <![CDATA[
                     <ul>
@@ -1876,7 +1898,7 @@ ffmpeg <span class="nt">-i</span> movie.mov  <span class="nt">-i</span> watermar
         
             <item>
                 <title>AVA (TV &amp; Control)</title>
-                <link>http://brokengdnb.github.io/blog/project/ava-tv</link>
+                <link>http://localhost:4000/project/ava-tv</link>
                 <content:encoded>
                     <![CDATA[
                     <ul>
@@ -2069,7 +2091,7 @@ npm <span class="nb">install
         
             <item>
                 <title>EMI</title>
-                <link>http://brokengdnb.github.io/blog/project/emi</link>
+                <link>http://localhost:4000/project/emi</link>
                 <content:encoded>
                     <![CDATA[
                     <p>So the idea was to create a special cusom high level mappings as well as dual-bind responsible skin to adapt on a event on a go, but the point is… limited number of a buttons, so it’s like layer over the layer… over the another one, and the other one based on position in that mixing process. Solution is portable to “any” MIDI or HID device, it just works. I started on <em>Akyiama Quark SQ</em> after two years migrate to <em>Behringer CMD</em> series…</p>
@@ -2168,7 +2190,7 @@ npm <span class="nb">install
         
             <item>
                 <title>AVA (Data)</title>
-                <link>http://brokengdnb.github.io/blog/project/ava-data</link>
+                <link>http://localhost:4000/project/ava-data</link>
                 <content:encoded>
                     <![CDATA[
                     <blockquote>
@@ -2465,7 +2487,7 @@ html(lang="en")
         
             <item>
                 <title>Links</title>
-                <link>http://brokengdnb.github.io/blog/urls</link>
+                <link>http://localhost:4000/urls</link>
                 <content:encoded>
                     <![CDATA[
                     <blockquote>

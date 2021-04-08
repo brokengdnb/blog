@@ -3,8 +3,8 @@
   <channel>
     <title>BrokenG - Blog</title>
     <description>Just another voice outside of group.</description>
-    <link>http://brokengdnb.github.io/blog/</link>
-    <atom:link href="http://brokengdnb.github.io/blog/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>(Hacking) WD My Book Live</title>
@@ -22,7 +22,13 @@
   &lt;li&gt;&lt;a href=&quot;#ssh&quot;&gt;SSH&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#optware&quot;&gt;optware&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#tools&quot;&gt;Installing tools&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#transmission-torrents&quot;&gt;transmission - torrents&lt;/a&gt;
+  &lt;li&gt;&lt;a href=&quot;#transmission-torrents&quot;&gt;Transmission (torrents)&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#auto-run&quot;&gt;Auto-run&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#demo&quot;&gt;Demo&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#monitorix&quot;&gt;Monitorix (CPU/NET)&lt;/a&gt;
     &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#auto-run&quot;&gt;Auto-run&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#demo&quot;&gt;Demo&lt;/a&gt;&lt;/li&gt;
@@ -295,12 +301,16 @@ update-rc.d transmission-hack defaults
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# set permision&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;chmod &lt;/span&gt;755 /etc/init.d/transmission-reload
+
 &lt;span class=&quot;c&quot;&gt;# set owner&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;chown &lt;/span&gt;root:root /etc/init.d/transmission-reload
+
 &lt;span class=&quot;c&quot;&gt;# update loader&lt;/span&gt;
 update-rc.d transmission-reload defaults
+
 &lt;span class=&quot;c&quot;&gt;# exit terminal &amp;amp; reboot your WD from web interface&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;exit&lt;/span&gt;
+
 &lt;span class=&quot;c&quot;&gt;# or reboot directly&lt;/span&gt;
 reboot
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -308,10 +318,22 @@ reboot
 &lt;h3 id=&quot;demo&quot;&gt;Demo&lt;/h3&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://github.com/brokengdnb/blog/blob/master/images/wd/wd-demo.png?raw=true&quot; alt=&quot;demo&quot; title=&quot;demo&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;monitorix&quot;&gt;Monitorix&lt;/h2&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# update&lt;/span&gt;
+apt-get update
+
+&lt;span class=&quot;c&quot;&gt;# dep&lt;/span&gt;
+apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;rrdtool perl libwww-perl libmailtools-perl libmime-lite-perl librrds-perl libdbi-perl libxml-simple-perl libhttp-server-simple-perl libconfig-general-perl libio-socket-ssl-perl
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Download: &lt;a href=&quot;https://github.com/brokengdnb/blog/blob/master/images/wd/monitorix_3.13.1-izzy1_all.deb&quot;&gt;monitorix_3.13.1-izzy1_all.deb&lt;/a&gt;&lt;/p&gt;
+
 </description>
         <pubDate>Sun, 28 Feb 2021 00:00:00 +0100</pubDate>
-        <link>http://brokengdnb.github.io/blog/project/wd-my-book-live</link>
-        <guid isPermaLink="true">http://brokengdnb.github.io/blog/project/wd-my-book-live</guid>
+        <link>http://localhost:4000/project/wd-my-book-live</link>
+        <guid isPermaLink="true">http://localhost:4000/project/wd-my-book-live</guid>
       </item>
     
       <item>
@@ -1253,8 +1275,8 @@ reboot
 &lt;p&gt;The table does not include mostly ancient languages that do not have an assigned two letter code.&lt;/p&gt;
 </description>
         <pubDate>Thu, 15 Oct 2020 00:00:00 +0200</pubDate>
-        <link>http://brokengdnb.github.io/blog/language-codes</link>
-        <guid isPermaLink="true">http://brokengdnb.github.io/blog/language-codes</guid>
+        <link>http://localhost:4000/language-codes</link>
+        <guid isPermaLink="true">http://localhost:4000/language-codes</guid>
       </item>
     
       <item>
@@ -1310,8 +1332,8 @@ reboot
 &lt;p&gt;Copyright (c) 2020 BrokenG&lt;/p&gt;
 </description>
         <pubDate>Fri, 04 Sep 2020 00:00:00 +0200</pubDate>
-        <link>http://brokengdnb.github.io/blog/project/homepage</link>
-        <guid isPermaLink="true">http://brokengdnb.github.io/blog/project/homepage</guid>
+        <link>http://localhost:4000/project/homepage</link>
+        <guid isPermaLink="true">http://localhost:4000/project/homepage</guid>
       </item>
     
       <item>
@@ -1449,8 +1471,8 @@ Unlike other browsers, Konqueror seems to bypass its cache whenever you reload a
 &lt;p&gt;&lt;a href=&quot;https://github.com/brokengdnb/blog/blob/master/images/cache-2.jpg?raw=true&quot; title=&quot;beamer&quot;&gt;&lt;img src=&quot;https://github.com/brokengdnb/blog/blob/master/images/cache-2.jpg?raw=true&quot; alt=&quot;cache2&quot; title=&quot;cache2&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sat, 01 Aug 2020 00:00:00 +0200</pubDate>
-        <link>http://brokengdnb.github.io/blog/cache</link>
-        <guid isPermaLink="true">http://brokengdnb.github.io/blog/cache</guid>
+        <link>http://localhost:4000/cache</link>
+        <guid isPermaLink="true">http://localhost:4000/cache</guid>
       </item>
     
       <item>
@@ -1563,8 +1585,8 @@ winecfg
 &lt;p&gt;Copyright (c) 2020 BrokenG&lt;/p&gt;
 </description>
         <pubDate>Tue, 17 Mar 2020 00:00:00 +0100</pubDate>
-        <link>http://brokengdnb.github.io/blog/project/mde</link>
-        <guid isPermaLink="true">http://brokengdnb.github.io/blog/project/mde</guid>
+        <link>http://localhost:4000/project/mde</link>
+        <guid isPermaLink="true">http://localhost:4000/project/mde</guid>
       </item>
     
       <item>
@@ -1796,8 +1818,8 @@ ffmpeg &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; movie.mov  &lt;span clas
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Tue, 30 Jul 2019 00:00:00 +0200</pubDate>
-        <link>http://brokengdnb.github.io/blog/ffmpeg</link>
-        <guid isPermaLink="true">http://brokengdnb.github.io/blog/ffmpeg</guid>
+        <link>http://localhost:4000/ffmpeg</link>
+        <guid isPermaLink="true">http://localhost:4000/ffmpeg</guid>
       </item>
     
       <item>
@@ -1977,8 +1999,8 @@ npm &lt;span class=&quot;nb&quot;&gt;install
 &lt;p&gt;Copyright (c) 2020 BrokenG&lt;/p&gt;
 </description>
         <pubDate>Tue, 30 Jan 2018 00:00:00 +0100</pubDate>
-        <link>http://brokengdnb.github.io/blog/project/ava-tv</link>
-        <guid isPermaLink="true">http://brokengdnb.github.io/blog/project/ava-tv</guid>
+        <link>http://localhost:4000/project/ava-tv</link>
+        <guid isPermaLink="true">http://localhost:4000/project/ava-tv</guid>
       </item>
     
       <item>
@@ -2064,8 +2086,8 @@ npm &lt;span class=&quot;nb&quot;&gt;install
 &lt;p&gt;BrokenG (2020)&lt;/p&gt;
 </description>
         <pubDate>Wed, 30 Nov 2016 00:00:00 +0100</pubDate>
-        <link>http://brokengdnb.github.io/blog/project/emi</link>
-        <guid isPermaLink="true">http://brokengdnb.github.io/blog/project/emi</guid>
+        <link>http://localhost:4000/project/emi</link>
+        <guid isPermaLink="true">http://localhost:4000/project/emi</guid>
       </item>
     
       <item>
@@ -2349,8 +2371,8 @@ html(lang=&quot;en&quot;)
 &lt;p&gt;Copyright (c) 2020 BrokenG&lt;/p&gt;
 </description>
         <pubDate>Fri, 30 Aug 2013 00:00:00 +0200</pubDate>
-        <link>http://brokengdnb.github.io/blog/project/ava-data</link>
-        <guid isPermaLink="true">http://brokengdnb.github.io/blog/project/ava-data</guid>
+        <link>http://localhost:4000/project/ava-data</link>
+        <guid isPermaLink="true">http://localhost:4000/project/ava-data</guid>
       </item>
     
       <item>
@@ -2592,8 +2614,8 @@ html(lang=&quot;en&quot;)
 
 </description>
         <pubDate>Sun, 30 Jan 2011 00:00:00 +0100</pubDate>
-        <link>http://brokengdnb.github.io/blog/urls</link>
-        <guid isPermaLink="true">http://brokengdnb.github.io/blog/urls</guid>
+        <link>http://localhost:4000/urls</link>
+        <guid isPermaLink="true">http://localhost:4000/urls</guid>
       </item>
     
   </channel>
