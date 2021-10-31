@@ -30,15 +30,16 @@
   <li><a href="#transmission-torrents">Transmission (torrents)</a>
     <ul>
       <li><a href="#auto-run">Auto-run</a></li>
-      <li><a href="#demo">Demo</a></li>
+      <li><a href="#demo-transmission">Demo</a></li>
     </ul>
   </li>
   <li><a href="#monitorix">Monitorix (CPU/NET)</a>
     <ul>
       <li><a href="#auto-run">Auto-run</a></li>
-      <li><a href="#demo">Demo</a></li>
+      <li><a href="#demo-monitorix">Demo</a></li>
     </ul>
   </li>
+  <li><a href="#changing-hdd">Changing HDD</a></li>
 </ul>
 
 <h2 id="warning">Warning</h2>
@@ -69,6 +70,13 @@
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh root@mybooklive.local
 <span class="c"># default password: welc0me</span>
+</code></pre></div></div>
+
+<h2 id="date">date</h2>
+
+<p>In some cases you want to “hack” or go around expiration date certificates error, quick fix is change date of internal clock:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">date</span> <span class="nt">--set</span> 2008-01-01
 </code></pre></div></div>
 
 <h2 id="optware">optware</h2>
@@ -105,6 +113,22 @@ ipkg update
 <p><img src="https://github.com/brokengdnb/blog/blob/master/images/wd/nano.png?raw=true" alt="wd" title="wd" />
 <img src="https://github.com/brokengdnb/blog/blob/master/images/wd/htop.png?raw=true" alt="wd" title="wd" />
 <img src="https://github.com/brokengdnb/blog/blob/master/images/wd/mc.png?raw=true" alt="wd" title="wd" /></p>
+
+<h3 id="test">TEST</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>aptitude update
+aptitude <span class="nb">install </span>gcc-4.2
+update-alternatives <span class="nt">--install</span> /usr/bin/gcc gcc /usr/bin/gcc-4.2 42 <span class="nt">--slave</span> /usr/bin/cpp cpp /usr/bin/cpp-4.2
+
+aptitude <span class="nb">install </span>make
+aptitude <span class="nb">install </span>debian-keyring debian-archive-keyring 
+aptitude <span class="nt">--without-recommends</span> <span class="nb">install </span>libc6 libc6-ppc64
+aptitude <span class="nt">--without-recommends</span> <span class="nb">install </span>libc6-dev
+
+aptitude <span class="nb">install </span>python-software-properties
+
+<span class="sb">```</span>bash
+
+</code></pre></div></div>
 
 <h2 id="transmission-torrents">Transmission (torrents)</h2>
 
@@ -320,7 +344,7 @@ update-rc.d transmission-reload defaults
 reboot
 </code></pre></div></div>
 
-<h3 id="demo">Demo</h3>
+<h3 id="demo-transmission">Demo Transmission</h3>
 
 <p><img src="https://github.com/brokengdnb/blog/blob/master/images/wd/wd-demo.png?raw=true" alt="demo" title="demo" /></p>
 
@@ -349,9 +373,20 @@ dpkg <span class="nt">-i</span> monitorix_3.13.1-izzy1_all.deb
 
 <p><a href="http://wd.local:8080/monitorix">http://wd.local:8080/monitorix</a></p>
 
-<h3 id="demo-1">Demo</h3>
+<h3 id="config">Config</h3>
+
+<p>Doc: <a href="http://manpages.ubuntu.com/manpages/disco/man5/monitorix.conf.5.html">http://manpages.ubuntu.com/manpages/disco/man5/monitorix.conf.5.html</a></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nano /etc/monitorix/monitorix.conf
+</code></pre></div></div>
+
+<h3 id="demo-monitorix">Demo Monitorix</h3>
 <p><img src="https://github.com/brokengdnb/blog/blob/master/images/wd/monitorix.png?raw=true" alt="demo-monitorix" title="demo monitorix" /></p>
 
+<h2 id="changing-hdd">Changing HDD</h2>
+
+<p><a href="http://blog.yarrago.com/2010/07/here-is-tutorial-on-how-to-open-western.html">http://blog.yarrago.com/2010/07/here-is-tutorial-on-how-to-open-western.html</a>
+<a href="http://carltonbale.com/western-digital-my-book-opening-the-case-removing-the-drive/">http://carltonbale.com/western-digital-my-book-opening-the-case-removing-the-drive/</a></p>
 
                     ]]>
                 </content:encoded>

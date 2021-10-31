@@ -25,15 +25,16 @@
   &lt;li&gt;&lt;a href=&quot;#transmission-torrents&quot;&gt;Transmission (torrents)&lt;/a&gt;
     &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#auto-run&quot;&gt;Auto-run&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#demo&quot;&gt;Demo&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#demo-transmission&quot;&gt;Demo&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#monitorix&quot;&gt;Monitorix (CPU/NET)&lt;/a&gt;
     &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#auto-run&quot;&gt;Auto-run&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#demo&quot;&gt;Demo&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#demo-monitorix&quot;&gt;Demo&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#changing-hdd&quot;&gt;Changing HDD&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;warning&quot;&gt;Warning&lt;/h2&gt;
@@ -64,6 +65,13 @@
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ssh root@mybooklive.local
 &lt;span class=&quot;c&quot;&gt;# default password: welc0me&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;date&quot;&gt;date&lt;/h2&gt;
+
+&lt;p&gt;In some cases you want to “hack” or go around expiration date certificates error, quick fix is change date of internal clock:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--set&lt;/span&gt; 2008-01-01
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;optware&quot;&gt;optware&lt;/h2&gt;
@@ -100,6 +108,22 @@ ipkg update
 &lt;p&gt;&lt;img src=&quot;https://github.com/brokengdnb/blog/blob/master/images/wd/nano.png?raw=true&quot; alt=&quot;wd&quot; title=&quot;wd&quot; /&gt;
 &lt;img src=&quot;https://github.com/brokengdnb/blog/blob/master/images/wd/htop.png?raw=true&quot; alt=&quot;wd&quot; title=&quot;wd&quot; /&gt;
 &lt;img src=&quot;https://github.com/brokengdnb/blog/blob/master/images/wd/mc.png?raw=true&quot; alt=&quot;wd&quot; title=&quot;wd&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;test&quot;&gt;TEST&lt;/h3&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;aptitude update
+aptitude &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;gcc-4.2
+update-alternatives &lt;span class=&quot;nt&quot;&gt;--install&lt;/span&gt; /usr/bin/gcc gcc /usr/bin/gcc-4.2 42 &lt;span class=&quot;nt&quot;&gt;--slave&lt;/span&gt; /usr/bin/cpp cpp /usr/bin/cpp-4.2
+
+aptitude &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;make
+aptitude &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;debian-keyring debian-archive-keyring 
+aptitude &lt;span class=&quot;nt&quot;&gt;--without-recommends&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;libc6 libc6-ppc64
+aptitude &lt;span class=&quot;nt&quot;&gt;--without-recommends&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;libc6-dev
+
+aptitude &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;python-software-properties
+
+&lt;span class=&quot;sb&quot;&gt;```&lt;/span&gt;bash
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;transmission-torrents&quot;&gt;Transmission (torrents)&lt;/h2&gt;
 
@@ -315,7 +339,7 @@ update-rc.d transmission-reload defaults
 reboot
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;demo&quot;&gt;Demo&lt;/h3&gt;
+&lt;h3 id=&quot;demo-transmission&quot;&gt;Demo Transmission&lt;/h3&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://github.com/brokengdnb/blog/blob/master/images/wd/wd-demo.png?raw=true&quot; alt=&quot;demo&quot; title=&quot;demo&quot; /&gt;&lt;/p&gt;
 
@@ -344,9 +368,20 @@ dpkg &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; monitorix_3.13.1-izzy1_all
 
 &lt;p&gt;&lt;a href=&quot;http://wd.local:8080/monitorix&quot;&gt;http://wd.local:8080/monitorix&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;demo-1&quot;&gt;Demo&lt;/h3&gt;
+&lt;h3 id=&quot;config&quot;&gt;Config&lt;/h3&gt;
+
+&lt;p&gt;Doc: &lt;a href=&quot;http://manpages.ubuntu.com/manpages/disco/man5/monitorix.conf.5.html&quot;&gt;http://manpages.ubuntu.com/manpages/disco/man5/monitorix.conf.5.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;nano /etc/monitorix/monitorix.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;demo-monitorix&quot;&gt;Demo Monitorix&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&quot;https://github.com/brokengdnb/blog/blob/master/images/wd/monitorix.png?raw=true&quot; alt=&quot;demo-monitorix&quot; title=&quot;demo monitorix&quot; /&gt;&lt;/p&gt;
 
+&lt;h2 id=&quot;changing-hdd&quot;&gt;Changing HDD&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://blog.yarrago.com/2010/07/here-is-tutorial-on-how-to-open-western.html&quot;&gt;http://blog.yarrago.com/2010/07/here-is-tutorial-on-how-to-open-western.html&lt;/a&gt;
+&lt;a href=&quot;http://carltonbale.com/western-digital-my-book-opening-the-case-removing-the-drive/&quot;&gt;http://carltonbale.com/western-digital-my-book-opening-the-case-removing-the-drive/&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 28 Feb 2021 00:00:00 +0100</pubDate>
         <link>http://localhost:4000/project/wd-my-book-live</link>
