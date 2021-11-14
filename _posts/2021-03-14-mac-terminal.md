@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      (terminal commands) Mac OS X
+title:      (terminal) Mac OS X
 subtitle:   "Useful and needy terminal commands for MAC"
 author:     "BrokenG"
 header-img: "https://github.com/brokengdnb/blog/blob/master/images/mac/info.png?raw=true"
