@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ffmpeg &#8211; BrokenG - Blog</title>
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="...collection of useful commands">
+    <link rel="manifest" type="application/manifest+json; charset=utf-8" href="/manifest.json" />
+    <meta name="robots" content="all">
+    <meta name="author" content="BrokenG">
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+
+    
+    <meta name="keywords" content="Cheatsheet">
+    <link rel="canonical" href="http://brokengdnb.github.io/blog/ffmpeg">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for BrokenG - Blog" href="/feed.xml" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/pixyll.css?202204132210" type="text/css">
+
+    <!-- Fonts -->
+    
+    <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:900,300' rel='stylesheet' type='text/css'>
+    
+    
+
+    <style>
+        a { background-image: none}
+        img {border:0}
+    </style>
+
+    <!-- MathJax -->
+    
+
+    <!-- Verifications -->
+    
+    
+
+    <!-- Open Graph -->
+    <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="ffmpeg">
+    <meta property="og:url" content="http://brokengdnb.github.io/blog/ffmpeg">
+    <meta property="og:site_name" content="BrokenG - Blog">
+
+    
+
+    <meta property="og:description" content="" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    
+    <meta name="twitter:title" content="ffmpeg" />
+    <meta name="twitter:description" content="" />
+
+    <meta name="twitter:url" content="http://brokengdnb.github.io/blog/ffmpeg" />
+
+    
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    
+</head>
+
+<body class="site animated fade-in-down">
+  
+	
+
+  <div class="site-wrap">
+    <header class="site-header px2 px-responsive" style="display: none">
+  <div class="mt2 wrap">
+    <div class="measure" >
+      <a href="/" class="site-title">BrokenG - Blog</a>
+      <nav class="site-nav">
+        
+
+
+
+    
+    
+    
+    
+        <a class="nav-link" href="/projects/">Projects</a>
+    
+
+    
+
+
+<a class="nav-link" href="/urls">Links</a>
+
+      </nav>
+      <div class="clearfix"></div>
+      
+    </div>
+  </div>
+</header>
+
+
+    <div class="post p2 p-responsive wrap" role="main">
+      <div class="measure">
+        
+
+
+<div class="post-header mb2">
+  <h1>ffmpeg</h1>
+  <span class="post-meta">July 30, 2019</span><br>
+  
+  <span class="post-meta small">
+  
+    3 minute read
+  
+  </span>
+</div>
+
+<article class="post-content">
+  <ul>
+  <li><a href="#3d">3D</a></li>
+  <li><a href="#concat">Concat</a></li>
+  <li><a href="#cover">Cover</a></li>
+  <li><a href="#chapters">Chapters</a></li>
+  <li><a href="#screenshot">Screenshot</a></li>
+  <li><a href="#subtitles">Subtitles</a></li>
+  <li><a href="#watermark">Watermark</a></li>
+  <li><a href="#windows">Windows</a></li>
+</ul>
+
+<hr />
+
+<h2 id="3d">3D</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># convert 3D to 2D</span>
+ffmpeg <span class="nt">-i</span> <span class="s1">'3d.mp4'</span> <span class="nt">-vf</span> <span class="s2">"crop=w=iw/2:h=ih:x=0:y=0,scale=w=2*iw:h=ih,setdar=2"</span> <span class="nt">-metadata</span>:s:v:0 <span class="nv">stereo_mode</span><span class="o">=</span><span class="s2">"mono"</span> 2d.mp4
+</code></pre></div></div>
+
+<h2 id="concat">Concat</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># connect two or more files together</span>
+<span class="nb">cat </span>mylist.txt
+<span class="c"># file '/path/to/file1'</span>
+<span class="c"># file '/path/to/file2'</span>
+<span class="c"># file '/path/to/file3'</span>
+    
+ffmpeg <span class="nt">-f</span> concat <span class="nt">-safe</span> 0 <span class="nt">-i</span> mylist.txt <span class="nt">-c</span> copy output.mp4
+</code></pre></div></div>
+
+<h2 id="cover">Cover</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># add cover image</span>
+ffmpeg <span class="nt">-i</span> input.mp4 <span class="nt">-i</span> cover.png <span class="nt">-map</span> 1 <span class="nt">-map</span> 0 <span class="nt">-c</span> copy <span class="nt">-c</span>:v:1 png <span class="nt">-disposition</span>:0 attached_pic out.mp4
+
+</code></pre></div></div>
+
+<h2 id="chapters">Chapters</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">;</span>FFMETADATA1
+<span class="nv">title</span><span class="o">=</span>bike<span class="se">\\</span>shed
+<span class="p">;</span>this is a comment
+<span class="nv">artist</span><span class="o">=</span>FFmpeg troll team
+
+<span class="o">[</span>CHAPTER]
+<span class="nv">TIMEBASE</span><span class="o">=</span>1/1000
+<span class="nv">START</span><span class="o">=</span>0
+<span class="c">#chapter ends at 0:01:00</span>
+<span class="nv">END</span><span class="o">=</span>60000
+<span class="nv">title</span><span class="o">=</span>chapter <span class="se">\#</span>1
+<span class="o">[</span>STREAM]
+<span class="nv">title</span><span class="o">=</span>multi<span class="se">\</span>
+line
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffmpeg <span class="nt">-i</span> movie.mov <span class="nt">-i</span> FFMETADATAFILE <span class="nt">-map_metadata</span> 1 <span class="nt">-map_chapters</span> 1 <span class="nt">-codec</span> copy OUTPUT.mp4
+</code></pre></div></div>
+
+<h3 id="remove-chapters--metadata">Remove Chapters &amp; Metadata</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffmpeg <span class="nt">-i</span> movie.mp4 <span class="nt">-map_chapters</span> <span class="nt">-1</span> <span class="nt">-map_metadata</span> <span class="nt">-1</span> <span class="nt">-c</span> copy output.mp4
+</code></pre></div></div>
+
+<h2 id="screenshot">Screenshot</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffmpeg <span class="nt">-ss</span> 01:23:45 <span class="nt">-i</span> input <span class="nt">-vframes</span> 1 <span class="nt">-q</span>:v 2 output.jpg
+</code></pre></div></div>
+
+<p>…but let’s be honest, something better than this? <a href="https://github.com/transitive-bullshit/ffmpeg-generate-video-preview">ffmpeg-generate-video-preview</a> as a command/modul in node.js as well +1</p>
+
+<h2 id="stream">Stream</h2>
+
+<p>Macbook mid 2012 WEBCAM possibilites (-video_size &amp; -framerate parameter)</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><strong>Resolution</strong></th>
+      <th style="text-align: center"><strong>FPS</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">160x120</td>
+      <td style="text-align: center">29.970000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">160x120</td>
+      <td style="text-align: center">25.000000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">160x120</td>
+      <td style="text-align: center">23.999981</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">160x120</td>
+      <td style="text-align: center">14.999993</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">176x144</td>
+      <td style="text-align: center">29.970000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">176x144</td>
+      <td style="text-align: center">25.000000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">176x144</td>
+      <td style="text-align: center">23.999981</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">176x144</td>
+      <td style="text-align: center">14.999993</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">320x240</td>
+      <td style="text-align: center">29.970000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">320x240</td>
+      <td style="text-align: center">25.000000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">320x240</td>
+      <td style="text-align: center">23.999981</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">320x240</td>
+      <td style="text-align: center">14.999993</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">352x288</td>
+      <td style="text-align: center">29.970000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">352x288</td>
+      <td style="text-align: center">25.000000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">352x288</td>
+      <td style="text-align: center">23.999981</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">352x288</td>
+      <td style="text-align: center">14.999993</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">640x480</td>
+      <td style="text-align: center">29.970000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">640x480</td>
+      <td style="text-align: center">25.000000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">640x480</td>
+      <td style="text-align: center">23.999981</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">640x480</td>
+      <td style="text-align: center">14.999993</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">960x540</td>
+      <td style="text-align: center">29.970000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">960x540</td>
+      <td style="text-align: center">25.000000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">960x540</td>
+      <td style="text-align: center">23.999981</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">960x540</td>
+      <td style="text-align: center">14.999993</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1024x576</td>
+      <td style="text-align: center">29.970000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1024x576</td>
+      <td style="text-align: center">25.000000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1024x576</td>
+      <td style="text-align: center">23.999981</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1024x576</td>
+      <td style="text-align: center">14.999993</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1280x720</td>
+      <td style="text-align: center">29.970000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1280x720</td>
+      <td style="text-align: center">25.000000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1280x720</td>
+      <td style="text-align: center">23.999981</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1280x720</td>
+      <td style="text-align: center">14.999993</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># get info</span>
+ffmpeg <span class="nt">-f</span> avfoundation <span class="nt">-list_devices</span> <span class="nb">true</span> <span class="nt">-i</span> <span class="s2">""</span>
+
+<span class="c"># stream</span>
+
+ffmpeg <span class="nt">-f</span> avfoundation <span class="nt">-framerate</span> 25  <span class="nt">-i</span> <span class="s2">"0"</span> <span class="nt">-f</span> rawvideo <span class="nt">-pix_fmt</span> argb <span class="nt">-c</span>:v libx264 <span class="nt">-preset</span> veryfast <span class="nt">-tune</span> zerolatency <span class="nt">-c</span>:a aac <span class="nt">-ar</span> 44100 <span class="nt">-r</span> 25 <span class="nt">-filter</span>:v <span class="nv">fps</span><span class="o">=</span><span class="nv">fps</span><span class="o">=</span>25 <span class="nt">-f</span> flv rtmp://localhost/live/test
+
+ffmpeg <span class="nt">-f</span> avfoundation <span class="nt">-framerate</span> 25 <span class="nt">-video_size</span> 640x480 <span class="nt">-i</span> <span class="s2">"0:none"</span> <span class="nt">-vcodec</span> libx264 <span class="nt">-preset</span> ultrafast <span class="nt">-tune</span> zerolatency <span class="nt">-pix_fmt</span> yuv422p <span class="nt">-f</span> mpegts udp://localhost:12345
+</code></pre></div></div>
+
+<ul>
+  <li><a href="https://github.com/illuspas/Node-Media-Server" title="other link">-&gt; for example there (Node-Media-Server)</a></li>
+</ul>
+
+<h2 id="subtitles">Subtitles</h2>
+
+<p><a href="https://blog.brokeng.com/language-codes"> List of language codes</a></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffmpeg <span class="nt">-i</span> input.mp4 <span class="nt">-sub_charenc</span> CP1252 <span class="nt">-i</span> subtitle.srt <span class="nt">-map</span> 0:v <span class="nt">-map</span> 0:a <span class="nt">-c</span> copy <span class="nt">-map</span> 1 <span class="nt">-c</span>:s:0 mov_text <span class="nt">-metadata</span>:s:s:0 <span class="nv">language</span><span class="o">=</span>eng output.mp4
+</code></pre></div></div>
+
+<h2 id="watermark">Watermark</h2>
+
+<p><a href="https://www.reddit.com/r/ffmpeg/comments/j8s3c4/watermark_that_starts_and_stops_intermittently/" title="topic-watermark">topic</a></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># a 15 minute "chunks", enabling for the first 5 minutes (while t % 15min is less than 5 min) of each 15 minute chunk</span>
+ffmpeg <span class="nt">-i</span> movie.mov  <span class="nt">-i</span> watermark.png <span class="nt">-filter_complex</span> <span class="s2">"[0:v][1:v] overlay='enable=lt(mod(t</span><span class="se">\,</span><span class="s2">15*60)</span><span class="se">\,</span><span class="s2">5*60</span><span class="se">\)</span><span class="s2">'"</span> output.mp4
+</code></pre></div></div>
+
+<h2 id="windows">Windows</h2>
+
+<pre><code class="language-cmd">@ECHO OFF 
+TITLE FFMPEG Batch Script
+color 0A
+for /f "skip=1 delims=" %%a in ('"wmic cpu get NumberOfCores"') do (
+    for /f "delims=" %%b in ("%%a") do set "numberOfCores=%%~nb"
+)
+for /F "skip=1 tokens=*" %%a in ('wmic cpu get name') do if not defined cpu set cpu=%%a
+set extension=mkv
+:: Section 1: Windows information
+ECHO ========================================================
+ECHO        %cpu%
+ECHO ========================================================
+ECHO Physical Cores:            %numberOfCores%
+ECHO ========================================================
+
+set /p "numberOfCores=Set number of cores or ENTER for all '%numberOfCores%': "
+set /p "extension=Set file extension or ENTER for '%extension%': "
+ECHO ========================================================
+FOR %%F IN (*.%extension%) DO (
+ set filename=%%F
+ goto continue
+)
+:continue
+ECHO "%filename%"
+for /F "delims=" %%I in ('ffprobe.exe -v error -select_streams a:0 -show_entries stream^=bit_rate -of default^=noprint_wrappers^=1:nokey^=1 "%filename%"') do set "audioBitrate=%%I"
+for /F "delims=" %%I in ('ffprobe.exe -v error -select_streams v:0 -show_entries stream^=bit_rate -of default^=noprint_wrappers^=1:nokey^=1 "%filename%"') do set "videoBitrate=%%I"
+for /F "delims=" %%I in ('ffprobe.exe -v error -select_streams v:0 -show_entries stream^=width -of default^=noprint_wrappers^=1:nokey^=1 "%filename%"') do set "videoWidth=%%I"
+for /F "delims=" %%I in ('ffprobe.exe -v error -select_streams v:0 -show_entries stream^=height -of default^=noprint_wrappers^=1:nokey^=1 "%filename%"') do set "videoHeight=%%I"
+ECHO --------------------------------------------------------
+ECHO Resolution:                %videoWidth%x%videoHeight%
+ECHO Video bitrate:             %videoBitrate%
+ECHO Audio bitrate:             %audioBitrate%
+ECHO ========================================================
+set convertWidth=640
+set /p "numberOfCores=Set video width or ENTER for '%convertWidth%': "
+set convertVideoBitrate=1000k
+set /p "numberOfCores=Set video Bitrate or ENTER for '%convertVideoBitrate%': "
+set convertAudioBitrate=128k
+set /p "numberOfCores=Set video Bitrate or ENTER for '%convertAudioBitrate%': "
+mkdir converted
+for %%a in ("*.%extension%") do "C:\Users\jdr101915\OneDrive - Jan de Rijk Logistics\Documents\ffmpeg.exe" -i "%%a"  -map 0:v -map 0:a -c:v h264 -c:a aac -ac 2 -b:a %convertAudioBitrate% -b:v %convertVideoBitrate% -vf scale="%convertWidth%:-2:flags=lanczos" -pix_fmt yuv420p -profile:v baseline -level 3.0 -movflags +faststart -preset veryslow -threads %numberOfCores% "converted\%%~na.mp4"
+PAUSE
+</code></pre>
+
+</article>
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <div style="width: 100%; text-align:center;">
+ <!-- <a href="https://developers.google.com/speed/pagespeed/insights/" target="_blank" >
+    <img src="https://github.com/brokengdnb/blog/blob/master/images/blog-loading.png?raw=true" style="outline : none;border 0"/>
+  </a>-->
+</div>
+<footer class="center">
+  <div class="measure">
+    <small>
+      build on Jekyll<br>
+      BrokenG | 2021
+    </small>
+  </div>
+</footer>
+<!-- AnchorJS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.0.0/anchor.min.js"></script>
+<script>
+    anchors.options.visible = 'always';
+    anchors.add('article h2, article h3, article h4, article h5, article h6');
+</script>
+<script type="text/javascript">
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/sw.js")
+    }
+</script>
+
+</body>
+</html>

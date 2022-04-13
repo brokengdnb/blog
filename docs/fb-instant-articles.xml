@@ -1,0 +1,2901 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title></title>
+    <link>http://brokengdnb.github.io/blog</link>
+    <description>
+      Just another voice outside of group.
+    </description>
+    
+        
+            <item>
+                <title>(terminal) Mac OS X</title>
+                <link>http://brokengdnb.github.io/blog/project/mac</link>
+                <content:encoded>
+                    <![CDATA[
+                    <blockquote>
+  <p>Useful and needy terminal commands for MAC</p>
+</blockquote>
+
+<hr />
+
+<p><img src="https://github.com/brokengdnb/blog/blob/master/images/mac/info.png?raw=true" alt="wd" title="wd" /></p>
+
+<ul>
+  <li><a href="#disks">Disks</a></li>
+</ul>
+
+<h2 id="disks">Disks</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># cancel exfat check</span>
+<span class="nb">sudo </span>pkill <span class="nt">-f</span> fsck
+
+<span class="c"># list disks</span>
+diskutil list
+
+<span class="c"># manual mounting exfat</span>
+<span class="nb">sudo mkdir</span> /Volumes/External/ <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>mount <span class="nt">-t</span> exfat /dev/disk2s2 /Volumes/External/
+
+</code></pre></div></div>
+
+                    ]]>
+                </content:encoded>
+                <guid isPermaLink="false">/project/mac</guid>
+                <description>
+                    
+                    Useful and needy terminal commands for MAC
+                    
+                </description>
+                <pubDate>Sun, 14 Mar 2021 00:00:00 +0200</pubDate>
+                <author>BrokenG</author>
+            </item>
+        
+    
+        
+            <item>
+                <title>(Hacking) WD My Book Live</title>
+                <link>http://brokengdnb.github.io/blog/project/wd-my-book-live</link>
+                <content:encoded>
+                    <![CDATA[
+                    <blockquote>
+  <p>…adding external functionality like SSH, Torrents, Monitors, ffmpeg, SQL database server etc.</p>
+</blockquote>
+
+<hr />
+
+<p><img src="https://github.com/brokengdnb/blog/blob/master/images/wd/wd.png?raw=true" alt="wd" title="wd" /></p>
+
+<ul>
+  <li><a href="#warning">Warning</a></li>
+  <li><a href="#ip">DNS or IP</a></li>
+  <li><a href="#ssh">SSH</a></li>
+  <li><a href="#optware">optware</a></li>
+  <li><a href="#tools">Installing tools</a></li>
+  <li><a href="#transmission-torrents">Transmission (torrents)</a>
+    <ul>
+      <li><a href="#auto-run">Auto-run</a></li>
+      <li><a href="#demo-transmission">Demo</a></li>
+    </ul>
+  </li>
+  <li><a href="#monitorix">Monitorix (CPU/NET)</a>
+    <ul>
+      <li><a href="#auto-run">Auto-run</a></li>
+      <li><a href="#demo-monitorix">Demo</a></li>
+    </ul>
+  </li>
+  <li><a href="#changing-hdd">Changing HDD</a></li>
+</ul>
+
+<h2 id="warning">Warning</h2>
+
+<p>All editations and instalations are done on your own risk. Have a back-up and be ready to brick your NAS. I’m not responsible for any SW or HW demage.</p>
+
+<h2 id="dns-or-ip">DNS or IP</h2>
+
+<p>Default is <a href="http://mybooklive.local/UI/login">http://mybooklive.local/UI/login</a> or on Mac open terminal:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>arp <span class="nt">-a</span>
+</code></pre></div></div>
+<p><em>getting something like:</em></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mybooklive.local <span class="o">(</span>169.254.6.109<span class="o">)</span> at 0:90:a9:b2:3e:4c on en0 <span class="o">[</span>ethernet]
+6s.local <span class="o">(</span>169.254.4x.xxx<span class="o">)</span> at 3a:ca:da:ac:xx:xx on en6 <span class="o">[</span>ethernet]
+? <span class="o">(</span>224.0.0.251<span class="o">)</span> at 1:0:5e:0:0:xx on en6 ifscope permanent <span class="o">[</span>ethernet]
+</code></pre></div></div>
+
+<p>But I rename “mybooklive.local” to wd.local for next steps:</p>
+
+<h2 id="ssh">SSH</h2>
+
+<p><img src="https://github.com/brokengdnb/blog/blob/master/images/wd/wd-ssh.png?raw=true" alt="ssh" title="ssh" /></p>
+
+<p>After <a href="http://mybooklive.local/UI/login">/UI/login</a> =&gt; open: <a href="http://mybooklive.local/UI/ssh">/UI/ssh</a> to activate SSH access and login to Linux server:</p>
+
+<p><img src="https://github.com/brokengdnb/blog/blob/master/images/wd/wd-ssh-login.png?raw=true" alt="ssh-login" title="ssh" /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh root@mybooklive.local
+<span class="c"># default password: welc0me</span>
+</code></pre></div></div>
+
+<h2 id="date">date</h2>
+
+<p>In some cases you want to “hack” or go around expiration date certificates error, quick fix is change date of internal clock:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">date</span> <span class="nt">--set</span> 2008-01-01
+</code></pre></div></div>
+
+<h2 id="optware">optware</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># install optware</span>
+wget http://mybookworld.wikidot.com/local--files/optware/setup-mybooklive.sh
+</code></pre></div></div>
+<p>or if “wikidot down”:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">feed</span><span class="o">=</span>http://ipkg.nslu2-linux.org/feeds/optware/ds101g/cross/stable/
+<span class="nv">ipk_name</span><span class="o">=</span><span class="si">$(</span>wget <span class="nt">-qO-</span> <span class="nv">$feed</span>/Packages | <span class="nb">awk</span> <span class="s1">'/^Filename: ipkg-opt/ {print $2}'</span><span class="si">)</span>
+wget <span class="nv">$feed</span>/<span class="nv">$ipk_name</span>
+<span class="nb">tar</span> <span class="nt">-xOvzf</span> <span class="nv">$ipk_name</span> ./data.tar.gz | <span class="nb">tar</span> <span class="nt">-C</span> / <span class="nt">-xzvf</span> -
+<span class="nb">echo</span> <span class="s2">"src/gz optware </span><span class="k">${</span><span class="nv">feed</span><span class="k">}</span><span class="s2">"</span> <span class="o">&gt;&gt;</span> /opt/etc/ipkg.conf
+<span class="nb">mv</span> /opt/bin/ipkg /opt/bin/ipkg.bin
+<span class="nb">echo</span> <span class="s1">'#!/bin/sh'</span> <span class="o">&gt;</span> /opt/bin/ipkg
+<span class="nb">echo</span> <span class="s1">'PATH=/opt/bin:$PATH /opt/bin/ipkg.bin $@'</span> <span class="o">&gt;&gt;</span> /opt/bin/ipkg
+<span class="nb">chmod</span> +x /opt/bin/ipkg
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sh setup-mybooklive.sh
+<span class="nb">echo</span> <span class="s2">"export PATH=</span><span class="nv">$PATH</span><span class="s2">:/opt/bin:/opt/sbin"</span> <span class="o">&gt;&gt;</span> /root/.bashrc
+
+<span class="c"># update pkg manager</span>
+ipkg update
+</code></pre></div></div>
+
+<h2 id="tools-tools">Tools (tools)</h2>
+
+<p>install nano editor, task manager, total commander…</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ipkg <span class="nb">install </span>nano htop mc 
+</code></pre></div></div>
+
+<p><img src="https://github.com/brokengdnb/blog/blob/master/images/wd/nano.png?raw=true" alt="wd" title="wd" />
+<img src="https://github.com/brokengdnb/blog/blob/master/images/wd/htop.png?raw=true" alt="wd" title="wd" />
+<img src="https://github.com/brokengdnb/blog/blob/master/images/wd/mc.png?raw=true" alt="wd" title="wd" /></p>
+
+<h3 id="test">TEST</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>aptitude update
+aptitude <span class="nb">install </span>gcc-4.2
+update-alternatives <span class="nt">--install</span> /usr/bin/gcc gcc /usr/bin/gcc-4.2 42 <span class="nt">--slave</span> /usr/bin/cpp cpp /usr/bin/cpp-4.2
+
+aptitude <span class="nb">install </span>make
+aptitude <span class="nb">install </span>debian-keyring debian-archive-keyring 
+aptitude <span class="nt">--without-recommends</span> <span class="nb">install </span>libc6 libc6-ppc64
+aptitude <span class="nt">--without-recommends</span> <span class="nb">install </span>libc6-dev
+
+aptitude <span class="nb">install </span>python-software-properties
+
+<span class="sb">```</span>bash
+
+</code></pre></div></div>
+
+<h2 id="transmission-torrents">Transmission (torrents)</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># install dependencies like nano editor, total commander (mc), htop but mainly: transmission etc.</span>
+ipkg <span class="nb">install </span>libevent transmission
+
+<span class="c"># setup config for Transmision</span>
+nano .config/transmission-daemon/settings.json
+
+</code></pre></div></div>
+
+<p>Edit config file</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"alt-speed-down"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"alt-speed-enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"alt-speed-time-begin"</span><span class="p">:</span><span class="w"> </span><span class="mi">540</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"alt-speed-time-day"</span><span class="p">:</span><span class="w"> </span><span class="mi">127</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"alt-speed-time-enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"alt-speed-time-end"</span><span class="p">:</span><span class="w"> </span><span class="mi">1020</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"alt-speed-up"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"bind-address-ipv4"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0.0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"bind-address-ipv6"</span><span class="p">:</span><span class="w"> </span><span class="s2">"::"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"blocklist-enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"blocklist-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.bluetack.co.uk/config/level1.gz"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cache-size-mb"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dht-enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> 
+    </span><span class="nl">"download-dir"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/DataVolume/shares/Public/TR-Downloads"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"download-queue-enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"download-queue-size"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"encryption"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"idle-seeding-limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"idle-seeding-limit-enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"incomplete-dir"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/DataVolume/shares/Public/TR-INCOMPLETE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"incomplete-dir-enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lpd-enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message-level"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"peer-congestion-algorithm"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"peer-id-ttl-hours"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"peer-limit-global"</span><span class="p">:</span><span class="w"> </span><span class="mi">240</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"peer-limit-per-torrent"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"peer-port"</span><span class="p">:</span><span class="w"> </span><span class="mi">51413</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"peer-port-random-high"</span><span class="p">:</span><span class="w"> </span><span class="mi">65535</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"peer-port-random-low"</span><span class="p">:</span><span class="w"> </span><span class="mi">49152</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"peer-port-random-on-start"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"peer-socket-tos"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"pex-enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"port-forwarding-enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"preallocation"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"prefetch-enabled"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"queue-stalled-enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"queue-stalled-minutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ratio-limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ratio-limit-enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"rename-partial-files"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"rpc-authentication-required"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"rpc-bind-address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0.0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"rpc-enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"rpc-password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{5d73272dade2dccb326e823e555a8bccd6c235f2SkqI2LBJ"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"rpc-port"</span><span class="p">:</span><span class="w"> </span><span class="mi">9091</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"rpc-url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/transmission/"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"rpc-username"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"rpc-whitelist"</span><span class="p">:</span><span class="w"> </span><span class="s2">"127.0.0.1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"rpc-whitelist-enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"scrape-paused-torrents-enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"script-torrent-done-enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"script-torrent-done-filename"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"seed-queue-enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"seed-queue-size"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"speed-limit-down"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"speed-limit-down-enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"speed-limit-up"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"speed-limit-up-enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"start-added-torrents"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"trash-original-torrent-files"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"umask"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"upload-slots-per-torrent"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"utp-enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Save it <code class="language-plaintext highlighter-rouge">CTRL+O</code> … close it <code class="language-plaintext highlighter-rouge">CTRL+X</code> … lock it:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod </span>600 /root/.config/transmission-daemon/settings.json
+
+<span class="c"># try it?</span>
+/opt/bin/transmission-daemon
+</code></pre></div></div>
+
+<blockquote>
+  <p>woala just like that… and is on <a href="http://wd.local:9091/" title="http://wd.local:9091/">http://wd.local:9091/</a></p>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># to kill it:</span>
+killall transmission-daemon
+</code></pre></div></div>
+
+<h3 id="auto-run">Auto-run</h3>
+
+<p>This took me half weekend to figure out. Problems are in little differences between versions (powerPC) but main is about starting init.d script AFTER system load up network. WD has “only” 800MHz and “Required-Start: networking” didn’t work for me so after boot it will take time, just split one task to another and wait about one minute to get that loaded. Starting time is little bit longer but works:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># create init.d script</span>
+nano /etc/init.d/transmission-hack
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+<span class="c">### BEGIN INIT INFO</span>
+<span class="c"># Provides:          transmission-daemon</span>
+<span class="c"># Required-Start:    networking</span>
+<span class="c"># Required-Stop:     networking</span>
+<span class="c"># Default-Start:     2 3 5</span>
+<span class="c"># Default-Stop:      0 1 6</span>
+<span class="c"># Short-Description: Start the transmission BitTorrent daemon client.</span>
+<span class="c">### END INIT INFO</span>
+
+<span class="nb">export </span><span class="nv">EVENT_NOEPOLL</span><span class="o">=</span>1
+
+<span class="nv">prefix</span><span class="o">=</span><span class="s2">"/opt"</span>
+
+<span class="nv">PATH</span><span class="o">=</span><span class="k">${</span><span class="nv">prefix</span><span class="k">}</span>/bin:<span class="k">${</span><span class="nv">prefix</span><span class="k">}</span>/sbin:/sbin:/bin:/usr/sbin:/usr/bin
+<span class="nv">NAME</span><span class="o">=</span>transmission-daemon
+<span class="nv">CONFIGDIR</span><span class="o">=</span>/root/.config/transmission-daemon
+<span class="nv">DAEMON</span><span class="o">=</span><span class="k">${</span><span class="nv">prefix</span><span class="k">}</span>/bin/<span class="k">${</span><span class="nv">NAME</span><span class="k">}</span>
+
+<span class="nb">test</span> <span class="nt">-x</span> <span class="nv">$DAEMON</span> <span class="o">||</span> <span class="nb">exit </span>0
+
+<span class="k">if</span> <span class="o">[</span> <span class="nt">-z</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then
+    case</span> <span class="sb">`</span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$0</span><span class="s2">"</span> | <span class="nb">sed</span> <span class="s1">'s:^.*/\(.*\):\1:g'</span><span class="sb">`</span> <span class="k">in
+        </span>S??<span class="k">*</span><span class="p">)</span> <span class="nv">rc</span><span class="o">=</span><span class="s2">"start"</span> <span class="p">;;</span>
+        K??<span class="k">*</span><span class="p">)</span> <span class="nv">rc</span><span class="o">=</span><span class="s2">"stop"</span> <span class="p">;;</span>
+        <span class="k">*</span><span class="p">)</span> <span class="nv">rc</span><span class="o">=</span><span class="s2">"usage"</span> <span class="p">;;</span>
+    <span class="k">esac</span>
+<span class="k">else
+    </span><span class="nv">rc</span><span class="o">=</span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
+<span class="k">fi
+
+case</span> <span class="s2">"</span><span class="nv">$rc</span><span class="s2">"</span> <span class="k">in
+    </span>start<span class="p">)</span>
+        <span class="nb">echo</span> <span class="s2">"Starting Torrent client: </span><span class="nv">$NAME</span><span class="s2">"</span>
+        <span class="nb">sleep </span>10
+	<span class="nb">nice</span> <span class="nv">$DAEMON</span> <span class="nt">-g</span> <span class="k">${</span><span class="nv">CONFIGDIR</span><span class="k">}</span>
+        <span class="p">;;</span>
+    stop<span class="p">)</span>
+        <span class="c">#if [ -n "`pidof $NAME`" ]; then</span>
+            <span class="nb">echo</span> <span class="s2">"Stopping Torrent client: </span><span class="nv">$NAME</span><span class="s2">"</span>
+            killall <span class="nv">$NAME</span> 2&gt; /dev/null
+        <span class="c">#fi</span>
+        <span class="p">;;</span>
+    restart<span class="p">)</span>
+        <span class="s2">"</span><span class="nv">$0</span><span class="s2">"</span> stop
+        <span class="nb">sleep </span>3
+        <span class="s2">"</span><span class="nv">$0</span><span class="s2">"</span> start
+        <span class="p">;;</span>
+    <span class="k">*</span><span class="p">)</span>
+        <span class="nb">echo</span> <span class="s2">"Usage: </span><span class="nv">$0</span><span class="s2"> (start|stop|restart|usage)"</span>
+        <span class="p">;;</span>
+<span class="k">esac</span>
+
+<span class="nb">exit </span>0
+</code></pre></div></div>
+
+<p>Save it, leave it, load it:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># set permision</span>
+<span class="nb">chmod </span>755 /etc/init.d/transmission-hack
+
+<span class="c"># set owner</span>
+<span class="nb">chown </span>root:root /etc/init.d/transmission-hack
+
+<span class="c"># update loader</span>
+update-rc.d transmission-hack defaults
+</code></pre></div></div>
+
+<p>Create re-loader:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nano /etc/init.d/transmission-reload
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+<span class="c">### BEGIN INIT INFO</span>
+<span class="c"># Provides:          transmission-reload</span>
+<span class="c"># Required-Start:    remote_fs syslog</span>
+<span class="c"># Required-Stop:     remote_fs syslog</span>
+<span class="c"># Should-Start:      portmap</span>
+<span class="c"># Should-Stop:       portmap</span>
+<span class="c"># X-Start-Before:    nis</span>
+<span class="c"># X-Stop-After:      nis</span>
+<span class="c"># Default-Start:     2 3 4 5</span>
+<span class="c"># Default-Stop:      0 1 6</span>
+<span class="c"># X-Interactive:     true</span>
+<span class="c"># Short-Description: Reloads transmission-daemon</span>
+<span class="c"># Description:       Modify sleep according to your preferences</span>
+<span class="c">#                    placed in /etc/init.d.</span>
+<span class="c">### END INIT INFO</span>
+<span class="nb">sleep </span>60
+/etc/init.d/transmission-hack restart
+</code></pre></div></div>
+<p>Save it, leave it, load it:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># set permision</span>
+<span class="nb">chmod </span>755 /etc/init.d/transmission-reload
+
+<span class="c"># set owner</span>
+<span class="nb">chown </span>root:root /etc/init.d/transmission-reload
+
+<span class="c"># update loader</span>
+update-rc.d transmission-reload defaults
+
+<span class="c"># exit terminal &amp; reboot your WD from web interface</span>
+<span class="nb">exit</span>
+
+<span class="c"># or reboot directly</span>
+reboot
+</code></pre></div></div>
+
+<h3 id="demo-transmission">Demo Transmission</h3>
+
+<p><img src="https://github.com/brokengdnb/blog/blob/master/images/wd/wd-demo.png?raw=true" alt="demo" title="demo" /></p>
+
+<h2 id="monitorix">Monitorix</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># update</span>
+apt-get update
+
+<span class="c"># dep</span>
+apt-get <span class="nb">install </span>rrdtool perl libwww-perl libmailtools-perl libmime-lite-perl librrds-perl libdbi-perl libxml-simple-perl libhttp-server-simple-perl libconfig-general-perl libio-socket-ssl-perl libxml-libxml-perl libxml-libxml-common-perl
+
+<span class="c"># hot fix</span>
+apt-get <span class="nt">-f</span> <span class="nb">install</span>
+</code></pre></div></div>
+
+<p>Download: <a href="https://github.com/brokengdnb/blog/blob/master/images/wd/monitorix_3.13.1-izzy1_all.deb?raw=true">monitorix_3.13.1-izzy1_all.deb</a>, put it some where like: ‘DataVolume/shares/Public/’ and run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># install</span>
+dpkg <span class="nt">-i</span> monitorix_3.13.1-izzy1_all.deb 
+</code></pre></div></div>
+
+<p>…in case of “ERROR: while graphing /var/lib/monitorix/www//imgs/” just create folder:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> /var/lib/monitorix/www/imgs
+</code></pre></div></div>
+
+<p><a href="http://wd.local:8080/monitorix">http://wd.local:8080/monitorix</a></p>
+
+<h3 id="config">Config</h3>
+
+<p>Doc: <a href="http://manpages.ubuntu.com/manpages/disco/man5/monitorix.conf.5.html">http://manpages.ubuntu.com/manpages/disco/man5/monitorix.conf.5.html</a></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nano /etc/monitorix/monitorix.conf
+</code></pre></div></div>
+
+<h3 id="demo-monitorix">Demo Monitorix</h3>
+<p><img src="https://github.com/brokengdnb/blog/blob/master/images/wd/monitorix.png?raw=true" alt="demo-monitorix" title="demo monitorix" /></p>
+
+<h2 id="changing-hdd">Changing HDD</h2>
+
+<p><a href="http://blog.yarrago.com/2010/07/here-is-tutorial-on-how-to-open-western.html">http://blog.yarrago.com/2010/07/here-is-tutorial-on-how-to-open-western.html</a>
+<a href="http://carltonbale.com/western-digital-my-book-opening-the-case-removing-the-drive/">http://carltonbale.com/western-digital-my-book-opening-the-case-removing-the-drive/</a></p>
+
+                    ]]>
+                </content:encoded>
+                <guid isPermaLink="false">/project/wd-my-book-live</guid>
+                <description>
+                    
+                    ...adding/hacking &apos;Transmission&apos; torrent functionality with web interface to WD MyBook Live HDD/NAS
+                    
+                </description>
+                <pubDate>Sun, 28 Feb 2021 00:00:00 +0200</pubDate>
+                <author>BrokenG</author>
+            </item>
+        
+    
+        
+            <item>
+                <title>Language Codes</title>
+                <link>http://brokengdnb.github.io/blog/language-codes</link>
+                <content:encoded>
+                    <![CDATA[
+                    <p>This table is based on the ISO 2 letter (Alpha-2 code, ISO 639-1) and 3 letter (Alpha-3 code, ISO 639-2) Standard Codes for the Representation of Names of Languages.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><strong>English name</strong></th>
+      <th style="text-align: center"><strong>Code 2</strong></th>
+      <th style="text-align: center"><strong>Code 3</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Afar</td>
+      <td style="text-align: center">aa</td>
+      <td style="text-align: center">aar</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Abkhazian</td>
+      <td style="text-align: center">ab</td>
+      <td style="text-align: center">abk</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Avestan</td>
+      <td style="text-align: center">ae</td>
+      <td style="text-align: center">ave</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Afrikaans</td>
+      <td style="text-align: center">af</td>
+      <td style="text-align: center">afr</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Akan</td>
+      <td style="text-align: center">ak</td>
+      <td style="text-align: center">aka</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Amharic</td>
+      <td style="text-align: center">am</td>
+      <td style="text-align: center">amh</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Aragonese</td>
+      <td style="text-align: center">an</td>
+      <td style="text-align: center">arg</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Arabic</td>
+      <td style="text-align: center">ar</td>
+      <td style="text-align: center">ara</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Assamese</td>
+      <td style="text-align: center">as</td>
+      <td style="text-align: center">asm</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Avaric</td>
+      <td style="text-align: center">av</td>
+      <td style="text-align: center">ava</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Aymara</td>
+      <td style="text-align: center">ay</td>
+      <td style="text-align: center">aym</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Azerbaijani</td>
+      <td style="text-align: center">az</td>
+      <td style="text-align: center">aze</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Bashkir</td>
+      <td style="text-align: center">ba</td>
+      <td style="text-align: center">bak</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Belarusian</td>
+      <td style="text-align: center">be</td>
+      <td style="text-align: center">bel</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Bulgarian</td>
+      <td style="text-align: center">bg</td>
+      <td style="text-align: center">bul</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Bihari languages</td>
+      <td style="text-align: center">bh</td>
+      <td style="text-align: center">bih</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Bislama</td>
+      <td style="text-align: center">bi</td>
+      <td style="text-align: center">bis</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Bambara</td>
+      <td style="text-align: center">bm</td>
+      <td style="text-align: center">bam</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Bengali</td>
+      <td style="text-align: center">bn</td>
+      <td style="text-align: center">ben</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Tibetan</td>
+      <td style="text-align: center">bo</td>
+      <td style="text-align: center">tib</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Breton</td>
+      <td style="text-align: center">br</td>
+      <td style="text-align: center">bre</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Bosnian</td>
+      <td style="text-align: center">bs</td>
+      <td style="text-align: center">bos</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Catalan; Valencian</td>
+      <td style="text-align: center">ca</td>
+      <td style="text-align: center">cat</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Chechen</td>
+      <td style="text-align: center">ce</td>
+      <td style="text-align: center">che</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Chamorro</td>
+      <td style="text-align: center">ch</td>
+      <td style="text-align: center">cha</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Corsican</td>
+      <td style="text-align: center">co</td>
+      <td style="text-align: center">cos</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Cree</td>
+      <td style="text-align: center">cr</td>
+      <td style="text-align: center">cre</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Czech</td>
+      <td style="text-align: center">cs</td>
+      <td style="text-align: center">cze</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Church Slavic; Slavonic</td>
+      <td style="text-align: center">cu</td>
+      <td style="text-align: center">chu</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Chuvash</td>
+      <td style="text-align: center">cv</td>
+      <td style="text-align: center">chv</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Welsh</td>
+      <td style="text-align: center">cy</td>
+      <td style="text-align: center">wel</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Danish</td>
+      <td style="text-align: center">da</td>
+      <td style="text-align: center">dan</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">German</td>
+      <td style="text-align: center">de</td>
+      <td style="text-align: center">ger</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Divehi; Dhivehi; Maldivian</td>
+      <td style="text-align: center">dv</td>
+      <td style="text-align: center">div</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Dzongkha</td>
+      <td style="text-align: center">dz</td>
+      <td style="text-align: center">dzo</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Ewe</td>
+      <td style="text-align: center">ee</td>
+      <td style="text-align: center">ewe</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Greek, Modern (1453-)</td>
+      <td style="text-align: center">el</td>
+      <td style="text-align: center">gre</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">English</td>
+      <td style="text-align: center">en</td>
+      <td style="text-align: center">eng</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Esperanto</td>
+      <td style="text-align: center">eo</td>
+      <td style="text-align: center">epo</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Spanish; Castilian</td>
+      <td style="text-align: center">es</td>
+      <td style="text-align: center">spa</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Estonian</td>
+      <td style="text-align: center">et</td>
+      <td style="text-align: center">est</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Basque</td>
+      <td style="text-align: center">eu</td>
+      <td style="text-align: center">baq</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Persian</td>
+      <td style="text-align: center">fa</td>
+      <td style="text-align: center">per</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Fulah</td>
+      <td style="text-align: center">ff</td>
+      <td style="text-align: center">ful</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Finnish</td>
+      <td style="text-align: center">fi</td>
+      <td style="text-align: center">fin</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Fijian</td>
+      <td style="text-align: center">fj</td>
+      <td style="text-align: center">fij</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Faroese</td>
+      <td style="text-align: center">fo</td>
+      <td style="text-align: center">fao</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">French</td>
+      <td style="text-align: center">fr</td>
+      <td style="text-align: center">fre</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Western Frisian</td>
+      <td style="text-align: center">fy</td>
+      <td style="text-align: center">fry</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Irish</td>
+      <td style="text-align: center">ga</td>
+      <td style="text-align: center">gle</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Gaelic; Scottish Gaelic</td>
+      <td style="text-align: center">gd</td>
+      <td style="text-align: center">gla</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Galician</td>
+      <td style="text-align: center">gl</td>
+      <td style="text-align: center">glg</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Guarani</td>
+      <td style="text-align: center">gn</td>
+      <td style="text-align: center">grn</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Gujarati</td>
+      <td style="text-align: center">gu</td>
+      <td style="text-align: center">guj</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Manx</td>
+      <td style="text-align: center">gv</td>
+      <td style="text-align: center">glv</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Hausa</td>
+      <td style="text-align: center">ha</td>
+      <td style="text-align: center">hau</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Hebrew</td>
+      <td style="text-align: center">he</td>
+      <td style="text-align: center">heb</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Hindi</td>
+      <td style="text-align: center">hi</td>
+      <td style="text-align: center">hin</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Hiri Motu</td>
+      <td style="text-align: center">ho</td>
+      <td style="text-align: center">hmo</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Croatian</td>
+      <td style="text-align: center">hr</td>
+      <td style="text-align: center">hrv</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Haitian; Haitian Creole</td>
+      <td style="text-align: center">ht</td>
+      <td style="text-align: center">hat</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Hungarian</td>
+      <td style="text-align: center">hu</td>
+      <td style="text-align: center">hun</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Armenian</td>
+      <td style="text-align: center">hy</td>
+      <td style="text-align: center">arm</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Herero</td>
+      <td style="text-align: center">hz</td>
+      <td style="text-align: center">her</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Interlingua</td>
+      <td style="text-align: center">ia</td>
+      <td style="text-align: center">ina</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Indonesian</td>
+      <td style="text-align: center">id</td>
+      <td style="text-align: center">ind</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Interlingue; Occidental</td>
+      <td style="text-align: center">ie</td>
+      <td style="text-align: center">ile</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Igbo</td>
+      <td style="text-align: center">ig</td>
+      <td style="text-align: center">ibo</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Sichuan Yi; Nuosu</td>
+      <td style="text-align: center">ii</td>
+      <td style="text-align: center">iii</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Inupiaq</td>
+      <td style="text-align: center">ik</td>
+      <td style="text-align: center">ipk</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Ido</td>
+      <td style="text-align: center">io</td>
+      <td style="text-align: center">ido</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Icelandic</td>
+      <td style="text-align: center">is</td>
+      <td style="text-align: center">ice</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Italian</td>
+      <td style="text-align: center">it</td>
+      <td style="text-align: center">ita</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Inuktitut</td>
+      <td style="text-align: center">iu</td>
+      <td style="text-align: center">iku</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Japanese</td>
+      <td style="text-align: center">ja</td>
+      <td style="text-align: center">jpn</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Javanese</td>
+      <td style="text-align: center">jv</td>
+      <td style="text-align: center">jav</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Georgian</td>
+      <td style="text-align: center">ka</td>
+      <td style="text-align: center">geo</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Kongo</td>
+      <td style="text-align: center">kg</td>
+      <td style="text-align: center">kon</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Kikuyu; Gikuyu</td>
+      <td style="text-align: center">ki</td>
+      <td style="text-align: center">kik</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Kuanyama; Kwanyama</td>
+      <td style="text-align: center">kj</td>
+      <td style="text-align: center">kua</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Kazakh</td>
+      <td style="text-align: center">kk</td>
+      <td style="text-align: center">kaz</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Kalaallisut; Greenlandic</td>
+      <td style="text-align: center">kl</td>
+      <td style="text-align: center">kal</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Central Khmer</td>
+      <td style="text-align: center">km</td>
+      <td style="text-align: center">khm</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Kannada</td>
+      <td style="text-align: center">kn</td>
+      <td style="text-align: center">kan</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Korean</td>
+      <td style="text-align: center">ko</td>
+      <td style="text-align: center">kor</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Kanuri</td>
+      <td style="text-align: center">kr</td>
+      <td style="text-align: center">kau</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Kashmiri</td>
+      <td style="text-align: center">ks</td>
+      <td style="text-align: center">kas</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Kurdish</td>
+      <td style="text-align: center">ku</td>
+      <td style="text-align: center">kur</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Komi</td>
+      <td style="text-align: center">kv</td>
+      <td style="text-align: center">kom</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Cornish</td>
+      <td style="text-align: center">kw</td>
+      <td style="text-align: center">cor</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Kirghiz; Kyrgyz</td>
+      <td style="text-align: center">ky</td>
+      <td style="text-align: center">kir</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Latin</td>
+      <td style="text-align: center">la</td>
+      <td style="text-align: center">lat</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Luxembourgish</td>
+      <td style="text-align: center">lb</td>
+      <td style="text-align: center">ltz</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Ganda</td>
+      <td style="text-align: center">lg</td>
+      <td style="text-align: center">lug</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Limburgish</td>
+      <td style="text-align: center">li</td>
+      <td style="text-align: center">lim</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Lingala</td>
+      <td style="text-align: center">ln</td>
+      <td style="text-align: center">lin</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Lao</td>
+      <td style="text-align: center">lo</td>
+      <td style="text-align: center">lao</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Lithuanian</td>
+      <td style="text-align: center">lt</td>
+      <td style="text-align: center">lit</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Luba-Katanga</td>
+      <td style="text-align: center">lu</td>
+      <td style="text-align: center">lub</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Latvian</td>
+      <td style="text-align: center">lv</td>
+      <td style="text-align: center">lav</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Malagasy</td>
+      <td style="text-align: center">mg</td>
+      <td style="text-align: center">mlg</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Marshallese</td>
+      <td style="text-align: center">mh</td>
+      <td style="text-align: center">mah</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Maori</td>
+      <td style="text-align: center">mi</td>
+      <td style="text-align: center">mao</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Macedonian</td>
+      <td style="text-align: center">mk</td>
+      <td style="text-align: center">mac</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Malayalam</td>
+      <td style="text-align: center">ml</td>
+      <td style="text-align: center">mal</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Mongolian</td>
+      <td style="text-align: center">mn</td>
+      <td style="text-align: center">mon</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Marathi</td>
+      <td style="text-align: center">mr</td>
+      <td style="text-align: center">mar</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Malay</td>
+      <td style="text-align: center">ms</td>
+      <td style="text-align: center">may</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Maltese</td>
+      <td style="text-align: center">mt</td>
+      <td style="text-align: center">mlt</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Burmese</td>
+      <td style="text-align: center">my</td>
+      <td style="text-align: center">bur</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Nauru</td>
+      <td style="text-align: center">na</td>
+      <td style="text-align: center">nau</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Bokmål, Norwegian; Norwegian Bokmål</td>
+      <td style="text-align: center">nb</td>
+      <td style="text-align: center">nob</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Ndebele; North Ndebele</td>
+      <td style="text-align: center">nd</td>
+      <td style="text-align: center">nde</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Nepali</td>
+      <td style="text-align: center">ne</td>
+      <td style="text-align: center">nep</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Ndonga</td>
+      <td style="text-align: center">ng</td>
+      <td style="text-align: center">ndo</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Dutch; Flemish</td>
+      <td style="text-align: center">nl</td>
+      <td style="text-align: center">dut</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Norwegian Nynorsk, Norwegian</td>
+      <td style="text-align: center">nn</td>
+      <td style="text-align: center">nno</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Norwegian</td>
+      <td style="text-align: center">no</td>
+      <td style="text-align: center">nor</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Ndebele; South Ndebele</td>
+      <td style="text-align: center">nr</td>
+      <td style="text-align: center">nbl</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Navajo; Navaho</td>
+      <td style="text-align: center">nv</td>
+      <td style="text-align: center">nav</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Chichewa; Chewa; Nyanja</td>
+      <td style="text-align: center">ny</td>
+      <td style="text-align: center">nya</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Occitan (post 1500)</td>
+      <td style="text-align: center">oc</td>
+      <td style="text-align: center">oci</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Ojibwa</td>
+      <td style="text-align: center">oj</td>
+      <td style="text-align: center">oji</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Oromo</td>
+      <td style="text-align: center">om</td>
+      <td style="text-align: center">orm</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Oriya</td>
+      <td style="text-align: center">or</td>
+      <td style="text-align: center">ori</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Ossetian; Ossetic</td>
+      <td style="text-align: center">os</td>
+      <td style="text-align: center">oss</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Panjabi; Punjabi</td>
+      <td style="text-align: center">pa</td>
+      <td style="text-align: center">pan</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Pali</td>
+      <td style="text-align: center">pi</td>
+      <td style="text-align: center">pli</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Polish</td>
+      <td style="text-align: center">pl</td>
+      <td style="text-align: center">pol</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Pushto; Pashto</td>
+      <td style="text-align: center">ps</td>
+      <td style="text-align: center">pus</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Portuguese</td>
+      <td style="text-align: center">pt</td>
+      <td style="text-align: center">por</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Quechua</td>
+      <td style="text-align: center">qu</td>
+      <td style="text-align: center">que</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Romansh</td>
+      <td style="text-align: center">rm</td>
+      <td style="text-align: center">roh</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Rundi</td>
+      <td style="text-align: center">rn</td>
+      <td style="text-align: center">run</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Romanian; Moldavian</td>
+      <td style="text-align: center">ro</td>
+      <td style="text-align: center">rum</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Russian</td>
+      <td style="text-align: center">ru</td>
+      <td style="text-align: center">rus</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Kinyarwanda</td>
+      <td style="text-align: center">rw</td>
+      <td style="text-align: center">kin</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Sanskrit</td>
+      <td style="text-align: center">sa</td>
+      <td style="text-align: center">san</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Sardinian</td>
+      <td style="text-align: center">sc</td>
+      <td style="text-align: center">srd</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Sindhi</td>
+      <td style="text-align: center">sd</td>
+      <td style="text-align: center">snd</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Northern Sami</td>
+      <td style="text-align: center">se</td>
+      <td style="text-align: center">sme</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Sango</td>
+      <td style="text-align: center">sg</td>
+      <td style="text-align: center">sag</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Sinhala; Sinhalese</td>
+      <td style="text-align: center">si</td>
+      <td style="text-align: center">sin</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Slovak</td>
+      <td style="text-align: center">sk</td>
+      <td style="text-align: center">slo</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Slovenian</td>
+      <td style="text-align: center">sl</td>
+      <td style="text-align: center">slv</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Samoan</td>
+      <td style="text-align: center">sm</td>
+      <td style="text-align: center">smo</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Shona</td>
+      <td style="text-align: center">sn</td>
+      <td style="text-align: center">sna</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Somali</td>
+      <td style="text-align: center">so</td>
+      <td style="text-align: center">som</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Albanian</td>
+      <td style="text-align: center">sq</td>
+      <td style="text-align: center">alb</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Serbian</td>
+      <td style="text-align: center">sr</td>
+      <td style="text-align: center">srp</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Swati</td>
+      <td style="text-align: center">ss</td>
+      <td style="text-align: center">ssw</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Sotho, Southern</td>
+      <td style="text-align: center">st</td>
+      <td style="text-align: center">sot</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Sundanese</td>
+      <td style="text-align: center">su</td>
+      <td style="text-align: center">sun</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Swedish</td>
+      <td style="text-align: center">sv</td>
+      <td style="text-align: center">swe</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Swahili</td>
+      <td style="text-align: center">sw</td>
+      <td style="text-align: center">swa</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Tamil</td>
+      <td style="text-align: center">ta</td>
+      <td style="text-align: center">tam</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Telugu</td>
+      <td style="text-align: center">te</td>
+      <td style="text-align: center">tel</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Tajik</td>
+      <td style="text-align: center">tg</td>
+      <td style="text-align: center">tgk</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Thai</td>
+      <td style="text-align: center">th</td>
+      <td style="text-align: center">tha</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Tigrinya</td>
+      <td style="text-align: center">ti</td>
+      <td style="text-align: center">tir</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Turkmen</td>
+      <td style="text-align: center">tk</td>
+      <td style="text-align: center">tuk</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Tagalog</td>
+      <td style="text-align: center">tl</td>
+      <td style="text-align: center">tgl</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Tswana</td>
+      <td style="text-align: center">tn</td>
+      <td style="text-align: center">tsn</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Tonga (Tonga Islands)</td>
+      <td style="text-align: center">to</td>
+      <td style="text-align: center">ton</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Turkish</td>
+      <td style="text-align: center">tr</td>
+      <td style="text-align: center">tur</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Tsonga</td>
+      <td style="text-align: center">ts</td>
+      <td style="text-align: center">tso</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Tatar</td>
+      <td style="text-align: center">tt</td>
+      <td style="text-align: center">tat</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Twi</td>
+      <td style="text-align: center">tw</td>
+      <td style="text-align: center">twi</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Tahitian</td>
+      <td style="text-align: center">ty</td>
+      <td style="text-align: center">tah</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Uighur; Uyghur</td>
+      <td style="text-align: center">ug</td>
+      <td style="text-align: center">uig</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Ukrainian</td>
+      <td style="text-align: center">uk</td>
+      <td style="text-align: center">ukr</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Urdu</td>
+      <td style="text-align: center">ur</td>
+      <td style="text-align: center">urd</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Uzbek</td>
+      <td style="text-align: center">uz</td>
+      <td style="text-align: center">uzb</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Venda</td>
+      <td style="text-align: center">ve</td>
+      <td style="text-align: center">ven</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Vietnamese</td>
+      <td style="text-align: center">vi</td>
+      <td style="text-align: center">vie</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Volapük</td>
+      <td style="text-align: center">vo</td>
+      <td style="text-align: center">vol</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Walloon</td>
+      <td style="text-align: center">wa</td>
+      <td style="text-align: center">wln</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Wolof</td>
+      <td style="text-align: center">wo</td>
+      <td style="text-align: center">wol</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Xhosa</td>
+      <td style="text-align: center">xh</td>
+      <td style="text-align: center">xho</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Yiddish</td>
+      <td style="text-align: center">yi</td>
+      <td style="text-align: center">yid</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Yoruba</td>
+      <td style="text-align: center">yo</td>
+      <td style="text-align: center">yor</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Zhuang; Chuang</td>
+      <td style="text-align: center">za</td>
+      <td style="text-align: center">zha</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Chinese</td>
+      <td style="text-align: center">zh</td>
+      <td style="text-align: center">chi</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Zulu</td>
+      <td style="text-align: center">zu</td>
+      <td style="text-align: center">zul</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The table does not include mostly ancient languages that do not have an assigned two letter code.</p>
+
+                    ]]>
+                </content:encoded>
+                <guid isPermaLink="false">/language-codes</guid>
+                <description>
+                    
+                    ISO 639-1 &amp; ISO 639-2 Standard &quot;lng&quot; Codes
+                    
+                </description>
+                <pubDate>Thu, 15 Oct 2020 00:00:00 +0300</pubDate>
+                <author>BrokenG</author>
+            </item>
+        
+    
+        
+            <item>
+                <title>Homepage 2020</title>
+                <link>http://brokengdnb.github.io/blog/project/homepage</link>
+                <content:encoded>
+                    <![CDATA[
+                    <blockquote>
+  <p>just an idea to create as much as possible simple &amp; small website in material design to split pages and links into one multi screen page to proof my skills.</p>
+</blockquote>
+
+<hr />
+
+<ul>
+  <li><a href="#demo">Demo</a></li>
+  <li><a href="#code">Code</a></li>
+  <li><a href="#support">Support</a></li>
+  <li><a href="#license">License</a></li>
+</ul>
+
+<h2 id="demo">Demo</h2>
+
+<p><a href="https://developers.google.com/speed/pagespeed/insights/" title="preview"><img src="https://github.com/brokengdnb/homepage/blob/master/img/loading-03.png?raw=true" alt="loading03" title="preview" /></a></p>
+
+<h3 id="brokengcom"><a href="http://brokeng.com">brokeng.com</a></h3>
+
+<p><a href="https://github.com/brokengdnb/homepage/blob/master/img/demo-pc.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/homepage/blob/master/img/demo-pc.png?raw=true" alt="pc" title="preview" /></a></p>
+
+<p>Website is fully resposive for any type of screen &amp; mobile devices</p>
+
+<p><a href="https://github.com/brokengdnb/homepage/blob/master/img/demo-mobile.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/homepage/blob/master/img/demo-mobile.png?raw=true" alt="mobile" title="preview" /></a></p>
+
+<h2 id="code">Code</h2>
+
+<ul>
+  <li>HTML5, CSS3, ES5</li>
+  <li><a href="http://jquery.org" title="jQuery v3.2.1">jQuery v3.2.1</a></li>
+  <li><a href="http://materializecss.com" title="Materialize">Materialize v0.97.8</a></li>
+  <li><a href="https://material.io/resources/icons/" title="Google Material Icons">Google Material Icons</a></li>
+</ul>
+
+<p>The main goal was to make as low size as posibble to speed up loading. Result is around ~700kB and time +/- 1s… amazing</p>
+
+<p><a href="https://github.com/brokengdnb/homepage/blob/master/img/loading-01.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/homepage/blob/master/img/loading-01.png?raw=true" alt="loading01" title="preview" /></a></p>
+
+<p><a href="https://github.com/brokengdnb/homepage/blob/master/img/loading-02.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/homepage/blob/master/img/loading-02.png?raw=true" alt="loading02" title="preview" /></a></p>
+
+<h2 id="support">Support</h2>
+
+<p><a href="https://github.com/brokengdnb/homepage/blob/master/img/compatibility.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/homepage/blob/master/img/compatibility.png?raw=true" alt="compatibility" title="preview" /></a></p>
+
+<h2 id="license">License</h2>
+
+<p>The MIT License.</p>
+
+<p>Copyright (c) 2020 BrokenG</p>
+
+                    ]]>
+                </content:encoded>
+                <guid isPermaLink="false">/project/homepage</guid>
+                <description>
+                    
+                    Simple, light and tight... just 1s loading time
+                    
+                </description>
+                <pubDate>Fri, 04 Sep 2020 00:00:00 +0300</pubDate>
+                <author>BrokenG</author>
+            </item>
+        
+    
+        
+            <item>
+                <title>Cache</title>
+                <link>http://brokengdnb.github.io/blog/cache</link>
+                <content:encoded>
+                    <![CDATA[
+                    <blockquote>
+  <p>There are only two hard things in Computer Science: cache invalidation and naming things.</p>
+
+  <p>Phil Karlton</p>
+</blockquote>
+
+<p><a href="https://en.wikipedia.org/wiki/Web_cache">Wiki - Web cache</a></p>
+
+<p><a href="https://github.com/brokengdnb/blog/blob/master/images/cache.jpg?raw=true" title="beamer"><img src="https://github.com/brokengdnb/blog/blob/master/images/cache.jpg?raw=true" alt="cache" title="cache" /></a></p>
+
+<p>If you cannot see new posts or updates try to reload your <a href="https://en.wikipedia.org/wiki/Wikipedia:Bypass_your_cache">local cache…</a> but Github CDN “should” reload cache every 10 minutes or so.</p>
+
+<ul>
+  <li><a href="#chrome">Chrome</a></li>
+  <li><a href="#safari">Safari</a></li>
+  <li><a href="#firefox">Firefox</a></li>
+  <li><a href="#opera">Opera</a></li>
+  <li><a href="#konqueror">Konqueror</a></li>
+  <li><a href="#edge">Edge</a></li>
+</ul>
+
+<hr />
+
+<h3 id="chrome">Chrome</h3>
+
+<p>On Windows and Linux, use one of the following:</p>
+
+<ul>
+  <li>Hold the Ctrl key and press the F5 key.</li>
+  <li>Hold the ⇧ Shift key and press the F5 key.</li>
+  <li>Hold the Ctrl key and press the R key.</li>
+  <li>Hold the ⇧ Shift key and press the R key.</li>
+  <li>Hold the Ctrl key and click the Reload button on the navigation toolbar.</li>
+  <li>Hold the ⇧ Shift key and click the Reload button on the navigation toolbar.</li>
+</ul>
+
+<p>On macOS:</p>
+
+<ul>
+  <li>Hold both the ⌘ Cmd and ⇧ Shift keys and press the R key.</li>
+  <li>Hold the ⇧ Shift key and click the Reload button on the navigation toolbar.</li>
+  <li>Hold the Ctrl key and click the Reload button on the navigation toolbar.</li>
+</ul>
+
+<hr />
+
+<h3 id="safari">Safari</h3>
+
+<p>For version 4 and newer:</p>
+
+<ul>
+  <li>Hold down the ⇧ Shift key and click the Reload toolbar button</li>
+</ul>
+
+<p>or</p>
+
+<ul>
+  <li>Use keyboard shortcut ⌥ Opt+⌘ Cmd+R to clear cache.</li>
+</ul>
+
+<p>For version 3 and older:</p>
+
+<ul>
+  <li>Hold down the ⌘ Cmd key and press R. This kind of “regular” reload will usually bypass the cache.</li>
+</ul>
+
+<hr />
+
+<h3 id="firefox">Firefox</h3>
+
+<ul>
+  <li>These instructions work for Firefox, SeaMonkey, and other related browsers.</li>
+</ul>
+
+<p>On Windows and Linux, use one of the following:</p>
+
+<ul>
+  <li>Hold both the Ctrl and ⇧ Shift keys and then press R.</li>
+  <li>Hold the ⇧ Shift key and click the Reload button on the navigation toolbar.</li>
+  <li>Hold the Ctrl key and press the F5 key.</li>
+</ul>
+
+<p>On macOS, use one of the following:</p>
+
+<ul>
+  <li>Hold both the ⌘ Cmd and ⇧ Shift keys and then press R.</li>
+  <li>Hold the ⇧ Shift key and click the Reload button on the navigation toolbar.</li>
+</ul>
+
+<hr />
+
+<h3 id="opera">Opera</h3>
+
+<p>Use one of the following:</p>
+
+<ul>
+  <li>Hold the Ctrl key and press the F5 key.</li>
+  <li>Hold the ⇧ Shift key and click the Reload button on the navigation toolbar.</li>
+  <li>Hold the Ctrl key and click the Reload button on the navigation toolbar.</li>
+  <li>Hold the ⇧ Shift key and press the F5 key.</li>
+</ul>
+
+<hr />
+
+<h3 id="konqueror">Konqueror</h3>
+
+<ul>
+  <li>Press F5 or click the “Reload” button on the toolbar.
+Unlike other browsers, Konqueror seems to bypass its cache whenever you reload a page.</li>
+</ul>
+
+<hr />
+
+<h3 id="edge">Edge</h3>
+
+<p>On Windows:</p>
+
+<ul>
+  <li>Hold the Ctrl key and press the F5 key.</li>
+</ul>
+
+<h4 id="internet-explorer">Internet Explorer</h4>
+
+<p>Use one of the following:</p>
+
+<ul>
+  <li>Hold the Ctrl key and press the F5 key.</li>
+  <li>Hold the Ctrl key and click the “Refresh” button on the toolbar.</li>
+</ul>
+
+<p><a href="https://github.com/brokengdnb/blog/blob/master/images/cache-2.jpg?raw=true" title="beamer"><img src="https://github.com/brokengdnb/blog/blob/master/images/cache-2.jpg?raw=true" alt="cache2" title="cache2" /></a></p>
+
+                    ]]>
+                </content:encoded>
+                <guid isPermaLink="false">/cache</guid>
+                <description>
+                    
+                    ...problems since 1969
+                    
+                </description>
+                <pubDate>Sat, 01 Aug 2020 00:00:00 +0300</pubDate>
+                <author>BrokenG</author>
+            </item>
+        
+    
+        
+            <item>
+                <title>MDE (Markdown Editor)</title>
+                <link>http://brokengdnb.github.io/blog/project/mde</link>
+                <content:encoded>
+                    <![CDATA[
+                    <blockquote>
+  <p>…just another .md editor but just for me!</p>
+</blockquote>
+
+<p><a href="https://github.com/brokengdnb/me" title="preview"><img src="https://github.com/brokengdnb/me/blob/master/about.png?raw=true" alt="preview" title="preview" /></a></p>
+
+<ul>
+  <li>WHY? Because I cannot find any Markdown Editor in “darkmode” but show me that results normaly like the original page (Git). Live preview with double scroll, all needed buttons like WORD or textEdit. Editor who remember (undo) and all those things… which I don’t and who will make it done… for me. So that’s ME.</li>
+  <li>Forked from <a href="https://pandao.github.io/editor.md/en.html" title="editor.md (Live preview)">editor.md (Live preview)</a> and bundled with Electron to act like off-line app… on my Mac. Just an idea but it works very well on daily use.</li>
+</ul>
+
+<hr />
+
+<ul>
+  <li><a href="#demo">Demo</a></li>
+  <li><a href="#downloads">Downloads</a></li>
+  <li><a href="#compilation">Compilation</a></li>
+  <li><a href="#features">Features</a></li>
+  <li><a href="#documentation">Documentation</a></li>
+  <li><a href="#support">Support</a></li>
+  <li><a href="#errors">Errors</a></li>
+  <li><a href="#license">License</a></li>
+</ul>
+
+<h2 id="demo">Demo</h2>
+
+<p><a href="https://github.com/brokengdnb/me" title="demo"><img src="https://github.com/brokengdnb/me/blob/master/demo.gif?raw=true" alt="demo" title="demo" /></a></p>
+
+<h2 id="downloads">Downloads</h2>
+
+<p><a href="https://github.com/brokengdnb/me/releases" title="apple-app"><img src="https://github.com/brokengdnb/me/blob/master/appstore.png?raw=true" alt="apple-app" title="apple-app" /></a></p>
+
+<ul>
+  <li><a href="https://github.com/brokengdnb/me/releases/tag/v1.1">ME-1.1.0.dmg (~70MB) ===&gt; App (~172MB)</a></li>
+</ul>
+
+<blockquote>
+  <p>MD5</p>
+  <ul>
+    <li>abcd9e60072945b7b9aaed886d9638e8</li>
+  </ul>
+</blockquote>
+
+<h2 id="compilation">Compilation</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/brokengdnb/me <span class="o">&amp;&amp;</span> <span class="nb">cd </span>me/
+npm <span class="nb">install
+</span>npm run start
+</code></pre></div></div>
+<blockquote>
+  <p>simple as that…</p>
+</blockquote>
+
+<h2 id="features">Features</h2>
+
+<ul>
+  <li>Dark theme for longer and comfortable time</li>
+  <li>Fullscreen Do-Not-Disturb style</li>
+  <li>App cannot be closed, quited or linked into another page =&gt; safety feature for accidentally quiting app. For quit just kill that run command or force kill by alt.</li>
+  <li>Support Standard Markdown / CommonMark and GFM (GitHub Flavored Markdown)</li>
+  <li>Full-featured: Real-time Preview, Image (cross-domain), Preformatted text/Code blocks/Tables insert, Code fold, Search replace, Themes, Multi-languages, L18n, HTML entities, Code syntax highlighting…</li>
+  <li>Markdown Extras : Support ToC (Table of Contents), Task lists, @Links…</li>
+  <li>Compatible with all major systems</li>
+  <li>Support identification, interpretation, fliter of the HTML tags</li>
+  <li>Support TeX (LaTeX expressions, Based on KaTeX), Flowchart and Sequence Diagram of Markdown extended syntax</li>
+</ul>
+
+<h2 id="documentation">Documentation</h2>
+
+<p><a href="http://editor.md.ipandao.com/examples/index.html" title="Follow the original project page.">Follow the original project page.</a></p>
+
+<h2 id="support">Support</h2>
+
+<ul>
+  <li><strong>OS X (tasted on 10.14.6)</strong></li>
+  <li>Linux</li>
+  <li><del>Windows</del> <em>rcedit.exe failed with exit code null</em> 🤣
+    <h2 id="errors">Errors</h2>
+  </li>
+</ul>
+
+<blockquote>
+  <p>Packaging app for platform win32 x64 using electron v8.0.3
+Could not find “wine64” on your system.</p>
+</blockquote>
+
+<h3 id="plan-a">PLAN A:</h3>
+
+<p><a href="https://apple.stackexchange.com/a/376427" title="Follow white rabbit, good luck!">» Follow white rabbit &amp; Good luck!</a></p>
+
+<h3 id="plan-b">PLAN B:</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew cask <span class="nb">install </span>wine-stable
+<span class="c"># autoinstall</span>
+winecfg
+</code></pre></div></div>
+
+<h3 id="plan-c">PLAN C:</h3>
+
+<p>Stop using/building for Microsoft Windows…</p>
+
+<h2 id="license">License</h2>
+
+<p>The MIT License.</p>
+
+<p>Copyright (c) 2020 BrokenG</p>
+
+                    ]]>
+                </content:encoded>
+                <guid isPermaLink="false">/project/mde</guid>
+                <description>
+                    
+                    ...just another .md editor but you know, just for me and my needs!
+                    
+                </description>
+                <pubDate>Tue, 17 Mar 2020 00:00:00 +0200</pubDate>
+                <author>BrokenG</author>
+            </item>
+        
+    
+        
+            <item>
+                <title>ffmpeg</title>
+                <link>http://brokengdnb.github.io/blog/ffmpeg</link>
+                <content:encoded>
+                    <![CDATA[
+                    <ul>
+  <li><a href="#3d">3D</a></li>
+  <li><a href="#concat">Concat</a></li>
+  <li><a href="#cover">Cover</a></li>
+  <li><a href="#chapters">Chapters</a></li>
+  <li><a href="#screenshot">Screenshot</a></li>
+  <li><a href="#subtitles">Subtitles</a></li>
+  <li><a href="#watermark">Watermark</a></li>
+  <li><a href="#windows">Windows</a></li>
+</ul>
+
+<hr />
+
+<h2 id="3d">3D</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># convert 3D to 2D</span>
+ffmpeg <span class="nt">-i</span> <span class="s1">'3d.mp4'</span> <span class="nt">-vf</span> <span class="s2">"crop=w=iw/2:h=ih:x=0:y=0,scale=w=2*iw:h=ih,setdar=2"</span> <span class="nt">-metadata</span>:s:v:0 <span class="nv">stereo_mode</span><span class="o">=</span><span class="s2">"mono"</span> 2d.mp4
+</code></pre></div></div>
+
+<h2 id="concat">Concat</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># connect two or more files together</span>
+<span class="nb">cat </span>mylist.txt
+<span class="c"># file '/path/to/file1'</span>
+<span class="c"># file '/path/to/file2'</span>
+<span class="c"># file '/path/to/file3'</span>
+    
+ffmpeg <span class="nt">-f</span> concat <span class="nt">-safe</span> 0 <span class="nt">-i</span> mylist.txt <span class="nt">-c</span> copy output.mp4
+</code></pre></div></div>
+
+<h2 id="cover">Cover</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># add cover image</span>
+ffmpeg <span class="nt">-i</span> input.mp4 <span class="nt">-i</span> cover.png <span class="nt">-map</span> 1 <span class="nt">-map</span> 0 <span class="nt">-c</span> copy <span class="nt">-c</span>:v:1 png <span class="nt">-disposition</span>:0 attached_pic out.mp4
+
+</code></pre></div></div>
+
+<h2 id="chapters">Chapters</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">;</span>FFMETADATA1
+<span class="nv">title</span><span class="o">=</span>bike<span class="se">\\</span>shed
+<span class="p">;</span>this is a comment
+<span class="nv">artist</span><span class="o">=</span>FFmpeg troll team
+
+<span class="o">[</span>CHAPTER]
+<span class="nv">TIMEBASE</span><span class="o">=</span>1/1000
+<span class="nv">START</span><span class="o">=</span>0
+<span class="c">#chapter ends at 0:01:00</span>
+<span class="nv">END</span><span class="o">=</span>60000
+<span class="nv">title</span><span class="o">=</span>chapter <span class="se">\#</span>1
+<span class="o">[</span>STREAM]
+<span class="nv">title</span><span class="o">=</span>multi<span class="se">\</span>
+line
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffmpeg <span class="nt">-i</span> movie.mov <span class="nt">-i</span> FFMETADATAFILE <span class="nt">-map_metadata</span> 1 <span class="nt">-map_chapters</span> 1 <span class="nt">-codec</span> copy OUTPUT.mp4
+</code></pre></div></div>
+
+<h3 id="remove-chapters--metadata">Remove Chapters &amp; Metadata</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffmpeg <span class="nt">-i</span> movie.mp4 <span class="nt">-map_chapters</span> <span class="nt">-1</span> <span class="nt">-map_metadata</span> <span class="nt">-1</span> <span class="nt">-c</span> copy output.mp4
+</code></pre></div></div>
+
+<h2 id="screenshot">Screenshot</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffmpeg <span class="nt">-ss</span> 01:23:45 <span class="nt">-i</span> input <span class="nt">-vframes</span> 1 <span class="nt">-q</span>:v 2 output.jpg
+</code></pre></div></div>
+
+<p>…but let’s be honest, something better than this? <a href="https://github.com/transitive-bullshit/ffmpeg-generate-video-preview">ffmpeg-generate-video-preview</a> as a command/modul in node.js as well +1</p>
+
+<h2 id="stream">Stream</h2>
+
+<p>Macbook mid 2012 WEBCAM possibilites (-video_size &amp; -framerate parameter)</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><strong>Resolution</strong></th>
+      <th style="text-align: center"><strong>FPS</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">160x120</td>
+      <td style="text-align: center">29.970000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">160x120</td>
+      <td style="text-align: center">25.000000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">160x120</td>
+      <td style="text-align: center">23.999981</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">160x120</td>
+      <td style="text-align: center">14.999993</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">176x144</td>
+      <td style="text-align: center">29.970000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">176x144</td>
+      <td style="text-align: center">25.000000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">176x144</td>
+      <td style="text-align: center">23.999981</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">176x144</td>
+      <td style="text-align: center">14.999993</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">320x240</td>
+      <td style="text-align: center">29.970000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">320x240</td>
+      <td style="text-align: center">25.000000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">320x240</td>
+      <td style="text-align: center">23.999981</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">320x240</td>
+      <td style="text-align: center">14.999993</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">352x288</td>
+      <td style="text-align: center">29.970000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">352x288</td>
+      <td style="text-align: center">25.000000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">352x288</td>
+      <td style="text-align: center">23.999981</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">352x288</td>
+      <td style="text-align: center">14.999993</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">640x480</td>
+      <td style="text-align: center">29.970000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">640x480</td>
+      <td style="text-align: center">25.000000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">640x480</td>
+      <td style="text-align: center">23.999981</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">640x480</td>
+      <td style="text-align: center">14.999993</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">960x540</td>
+      <td style="text-align: center">29.970000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">960x540</td>
+      <td style="text-align: center">25.000000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">960x540</td>
+      <td style="text-align: center">23.999981</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">960x540</td>
+      <td style="text-align: center">14.999993</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1024x576</td>
+      <td style="text-align: center">29.970000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1024x576</td>
+      <td style="text-align: center">25.000000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1024x576</td>
+      <td style="text-align: center">23.999981</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1024x576</td>
+      <td style="text-align: center">14.999993</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1280x720</td>
+      <td style="text-align: center">29.970000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1280x720</td>
+      <td style="text-align: center">25.000000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1280x720</td>
+      <td style="text-align: center">23.999981</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1280x720</td>
+      <td style="text-align: center">14.999993</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># get info</span>
+ffmpeg <span class="nt">-f</span> avfoundation <span class="nt">-list_devices</span> <span class="nb">true</span> <span class="nt">-i</span> <span class="s2">""</span>
+
+<span class="c"># stream</span>
+
+ffmpeg <span class="nt">-f</span> avfoundation <span class="nt">-framerate</span> 25  <span class="nt">-i</span> <span class="s2">"0"</span> <span class="nt">-f</span> rawvideo <span class="nt">-pix_fmt</span> argb <span class="nt">-c</span>:v libx264 <span class="nt">-preset</span> veryfast <span class="nt">-tune</span> zerolatency <span class="nt">-c</span>:a aac <span class="nt">-ar</span> 44100 <span class="nt">-r</span> 25 <span class="nt">-filter</span>:v <span class="nv">fps</span><span class="o">=</span><span class="nv">fps</span><span class="o">=</span>25 <span class="nt">-f</span> flv rtmp://localhost/live/test
+
+ffmpeg <span class="nt">-f</span> avfoundation <span class="nt">-framerate</span> 25 <span class="nt">-video_size</span> 640x480 <span class="nt">-i</span> <span class="s2">"0:none"</span> <span class="nt">-vcodec</span> libx264 <span class="nt">-preset</span> ultrafast <span class="nt">-tune</span> zerolatency <span class="nt">-pix_fmt</span> yuv422p <span class="nt">-f</span> mpegts udp://localhost:12345
+</code></pre></div></div>
+
+<ul>
+  <li><a href="https://github.com/illuspas/Node-Media-Server" title="other link">-&gt; for example there (Node-Media-Server)</a></li>
+</ul>
+
+<h2 id="subtitles">Subtitles</h2>
+
+<p><a href="https://blog.brokeng.com/language-codes"> List of language codes</a></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffmpeg <span class="nt">-i</span> input.mp4 <span class="nt">-sub_charenc</span> CP1252 <span class="nt">-i</span> subtitle.srt <span class="nt">-map</span> 0:v <span class="nt">-map</span> 0:a <span class="nt">-c</span> copy <span class="nt">-map</span> 1 <span class="nt">-c</span>:s:0 mov_text <span class="nt">-metadata</span>:s:s:0 <span class="nv">language</span><span class="o">=</span>eng output.mp4
+</code></pre></div></div>
+
+<h2 id="watermark">Watermark</h2>
+
+<p><a href="https://www.reddit.com/r/ffmpeg/comments/j8s3c4/watermark_that_starts_and_stops_intermittently/" title="topic-watermark">topic</a></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># a 15 minute "chunks", enabling for the first 5 minutes (while t % 15min is less than 5 min) of each 15 minute chunk</span>
+ffmpeg <span class="nt">-i</span> movie.mov  <span class="nt">-i</span> watermark.png <span class="nt">-filter_complex</span> <span class="s2">"[0:v][1:v] overlay='enable=lt(mod(t</span><span class="se">\,</span><span class="s2">15*60)</span><span class="se">\,</span><span class="s2">5*60</span><span class="se">\)</span><span class="s2">'"</span> output.mp4
+</code></pre></div></div>
+
+<h2 id="windows">Windows</h2>
+
+<pre><code class="language-cmd">@ECHO OFF 
+TITLE FFMPEG Batch Script
+color 0A
+for /f "skip=1 delims=" %%a in ('"wmic cpu get NumberOfCores"') do (
+    for /f "delims=" %%b in ("%%a") do set "numberOfCores=%%~nb"
+)
+for /F "skip=1 tokens=*" %%a in ('wmic cpu get name') do if not defined cpu set cpu=%%a
+set extension=mkv
+:: Section 1: Windows information
+ECHO ========================================================
+ECHO        %cpu%
+ECHO ========================================================
+ECHO Physical Cores:            %numberOfCores%
+ECHO ========================================================
+
+set /p "numberOfCores=Set number of cores or ENTER for all '%numberOfCores%': "
+set /p "extension=Set file extension or ENTER for '%extension%': "
+ECHO ========================================================
+FOR %%F IN (*.%extension%) DO (
+ set filename=%%F
+ goto continue
+)
+:continue
+ECHO "%filename%"
+for /F "delims=" %%I in ('ffprobe.exe -v error -select_streams a:0 -show_entries stream^=bit_rate -of default^=noprint_wrappers^=1:nokey^=1 "%filename%"') do set "audioBitrate=%%I"
+for /F "delims=" %%I in ('ffprobe.exe -v error -select_streams v:0 -show_entries stream^=bit_rate -of default^=noprint_wrappers^=1:nokey^=1 "%filename%"') do set "videoBitrate=%%I"
+for /F "delims=" %%I in ('ffprobe.exe -v error -select_streams v:0 -show_entries stream^=width -of default^=noprint_wrappers^=1:nokey^=1 "%filename%"') do set "videoWidth=%%I"
+for /F "delims=" %%I in ('ffprobe.exe -v error -select_streams v:0 -show_entries stream^=height -of default^=noprint_wrappers^=1:nokey^=1 "%filename%"') do set "videoHeight=%%I"
+ECHO --------------------------------------------------------
+ECHO Resolution:                %videoWidth%x%videoHeight%
+ECHO Video bitrate:             %videoBitrate%
+ECHO Audio bitrate:             %audioBitrate%
+ECHO ========================================================
+set convertWidth=640
+set /p "numberOfCores=Set video width or ENTER for '%convertWidth%': "
+set convertVideoBitrate=1000k
+set /p "numberOfCores=Set video Bitrate or ENTER for '%convertVideoBitrate%': "
+set convertAudioBitrate=128k
+set /p "numberOfCores=Set video Bitrate or ENTER for '%convertAudioBitrate%': "
+mkdir converted
+for %%a in ("*.%extension%") do "C:\Users\jdr101915\OneDrive - Jan de Rijk Logistics\Documents\ffmpeg.exe" -i "%%a"  -map 0:v -map 0:a -c:v h264 -c:a aac -ac 2 -b:a %convertAudioBitrate% -b:v %convertVideoBitrate% -vf scale="%convertWidth%:-2:flags=lanczos" -pix_fmt yuv420p -profile:v baseline -level 3.0 -movflags +faststart -preset veryslow -threads %numberOfCores% "converted\%%~na.mp4"
+PAUSE
+</code></pre>
+
+                    ]]>
+                </content:encoded>
+                <guid isPermaLink="false">/ffmpeg</guid>
+                <description>
+                    
+                    ...collection of useful commands
+                    
+                </description>
+                <pubDate>Tue, 30 Jul 2019 00:00:00 +0300</pubDate>
+                <author>BrokenG</author>
+            </item>
+        
+    
+        
+            <item>
+                <title>AVA (TV &amp; Control)</title>
+                <link>http://brokengdnb.github.io/blog/project/ava-tv</link>
+                <content:encoded>
+                    <![CDATA[
+                    <ul>
+  <li><a href="#demo">Demo</a></li>
+  <li><a href="#download">Download</a></li>
+  <li><a href="#dependencies">Dependencies</a></li>
+  <li><a href="#run">Run</a></li>
+  <li><a href="#index">Index</a></li>
+  <li><a href="#todo">TODO</a></li>
+  <li><a href="#support">Support</a></li>
+  <li><a href="#license">License</a></li>
+</ul>
+
+<h2 id="demo">Demo</h2>
+
+<h2 id="download">Download</h2>
+
+<ul>
+  <li><a href="https://github.com/brokengdnb/ava-tv/releases/tag/v1">AVA-TV-1.0.zip (~70MB)</a></li>
+</ul>
+
+<blockquote>
+  <p>MD5</p>
+  <ul>
+    <li>…</li>
+  </ul>
+</blockquote>
+
+<h2 id="dependencies">Dependencies</h2>
+
+<ul>
+  <li><a href="https://blog.brokeng.com/project/ava-data">AVA-Data</a></li>
+</ul>
+
+<h2 id="run">Run</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/brokengdnb/ava-tv <span class="o">&amp;&amp;</span> <span class="nb">cd </span>ava-tv/
+npm <span class="nb">install
+</span>bower <span class="nb">install
+</span>npm run start
+</code></pre></div></div>
+<blockquote>
+  <p>just like that… TV &amp; Control runs on <a href="http://localhost/" title="http://localhost/">http://localhost/</a> but first you need to start AVA-Data on port 3000 to have some data to stream…</p>
+</blockquote>
+
+<h2 id="index">Index</h2>
+
+<p>Is split in two parts:</p>
+
+<ul>
+  <li>TV / Projector</li>
+</ul>
+
+<p><a href="https://github.com/brokengdnb/ava-tv/demo/ava-TV-beamer.png?raw=true" title="beamer"><img src="https://github.com/brokengdnb/ava-tv/blob/master/demo/ava-TV-beamer.png?raw=true" alt="beamer" title="beamer" /></a></p>
+
+<ul>
+  <li>Controller</li>
+</ul>
+
+<p><a href="https://github.com/brokengdnb/ava-tv/demo/ava-tv-iphone.png?raw=true" title="beamer"><img src="https://github.com/brokengdnb/ava-tv/blob/master/demo/ava-tv-iphone.png?raw=true" alt="iphone" title="beamer" /></a></p>
+
+<p>TV will generate random ID for a room &amp; controller link to connect each other. Each of them can be multiplied by sharing URL link to diferent devices or scanning QR code:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// qr code is changing on a go by IP address of a streaming server and ID of a room</span>
+<span class="nx">$scope</span><span class="p">.</span><span class="nx">idInputChange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">newData</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">$http</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/localIP</span><span class="dl">'</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">$scope</span><span class="p">.</span><span class="nx">QRurl</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">http://</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">data</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">local</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">/</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">newData</span><span class="p">.</span><span class="nx">idRoom</span><span class="p">;</span>
+	<span class="p">});</span>
+<span class="p">};</span>
+
+</code></pre></div></div>
+
+<p>The app will get it’s own IP adsress from local network as well as IP of database so we can have many televisions connected to one controller as well as we can have many controllers that control one TV, for example if you cannot find your TV remote control… just create new one from your phone/tablet or am I going from bedroom to kitchen? so I transform my phone/control into TV so I can continue on a go while I’m doing something else in somewhere else.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// server.js get requsted /roomID and render front-end (control.html)</span>
+<span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/:room</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">given_room</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">room</span><span class="p">;</span>
+	<span class="nx">res</span><span class="p">.</span><span class="nx">sendFile</span><span class="p">(</span><span class="nx">__dirname</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">/control.html</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// where basic JS get roomID, transoport to angularJS and socket.IO do the rest</span>
+<span class="kd">let</span> <span class="nx">urlParam</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span><span class="p">;</span>
+<span class="nx">$scope</span><span class="p">.</span><span class="nx">roomIDparam</span> <span class="o">=</span> <span class="nx">urlParam</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Then we got a ‘roomID’ where all is heppening. So the ID of a room can be a string or number or combination of both [a-Z, 1-9] set or randomly generated for each room where is some number of TVs and some number of connected controlers. Hope you catching my drift:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Sync video data throw all connected devices</span>
+<span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">sync video</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nx">io</span><span class="p">.</span><span class="nx">sockets</span><span class="p">.</span><span class="nx">adapter</span><span class="p">.</span><span class="nx">rooms</span><span class="p">[</span><span class="dl">'</span><span class="s1">room-</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">socket</span><span class="p">.</span><span class="nx">roomnum</span><span class="p">]</span> <span class="o">!==</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+		<span class="kd">let</span> <span class="nx">roomnum</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">room</span>
+		<span class="kd">let</span> <span class="nx">currTime</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">time</span>
+		<span class="kd">let</span> <span class="nx">state</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">state</span>
+		<span class="kd">let</span> <span class="nx">videoId</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">videoId</span>
+
+		<span class="c1">// 0 = YouTube, 1 = Daily Motion, 2 = Vimeo, 3 = local file</span>
+		<span class="kd">let</span> <span class="nx">playerId</span> <span class="o">=</span> <span class="mi">3</span>
+
+		<span class="c1">// var videoId = io.sockets.adapter.rooms['room-'+roomnum].currVideo</span>
+		<span class="nx">io</span><span class="p">.</span><span class="nx">sockets</span><span class="p">.</span><span class="k">in</span><span class="p">(</span><span class="dl">"</span><span class="s2">room-</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">roomnum</span><span class="p">).</span><span class="nx">emit</span><span class="p">(</span><span class="dl">'</span><span class="s1">syncVideoClient</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+			<span class="na">time</span><span class="p">:</span> <span class="nx">currTime</span><span class="p">,</span>
+			<span class="na">state</span><span class="p">:</span> <span class="nx">state</span><span class="p">,</span>
+			<span class="na">videoId</span><span class="p">:</span> <span class="nx">videoId</span><span class="p">,</span>
+			<span class="na">playerId</span><span class="p">:</span> <span class="nx">playerId</span>
+		<span class="p">})</span>
+	<span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>This syncing room ID then time, state (play/pause), file URL and playerId (YouTube,DM,Vimeo or local) stream… not the media itself and that is different. So you can be wacher (user) or you can be admin of the same stream on a go, change URL, seek throw or pause/play… but there is only one admin who can control the main stream at one time for “unlimited” number of users. And every user can be switched to be an admin and takeover main stream for the other users. Ja? Like dat:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Change host</span>
+    <span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">change host</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">io</span><span class="p">.</span><span class="nx">sockets</span><span class="p">.</span><span class="nx">adapter</span><span class="p">.</span><span class="nx">rooms</span><span class="p">[</span><span class="dl">'</span><span class="s1">room-</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">socket</span><span class="p">.</span><span class="nx">roomnum</span><span class="p">]</span> <span class="o">!==</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">io</span><span class="p">.</span><span class="nx">sockets</span><span class="p">.</span><span class="nx">adapter</span><span class="p">.</span><span class="nx">rooms</span><span class="p">[</span><span class="dl">'</span><span class="s1">room-</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">socket</span><span class="p">.</span><span class="nx">roomnum</span><span class="p">])</span>
+            <span class="kd">let</span> <span class="nx">roomnum</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">room</span>
+            <span class="kd">let</span> <span class="nx">newHost</span> <span class="o">=</span> <span class="nx">socket</span><span class="p">.</span><span class="nx">id</span>
+            <span class="kd">let</span> <span class="nx">currHost</span> <span class="o">=</span> <span class="nx">io</span><span class="p">.</span><span class="nx">sockets</span><span class="p">.</span><span class="nx">adapter</span><span class="p">.</span><span class="nx">rooms</span><span class="p">[</span><span class="dl">'</span><span class="s1">room-</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">socket</span><span class="p">.</span><span class="nx">roomnum</span><span class="p">].</span><span class="nx">host</span>
+
+            <span class="c1">// If socket is already the host or not!</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">newHost</span> <span class="o">!=</span> <span class="nx">currHost</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">I want to be the host and my socket id is: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">newHost</span><span class="p">);</span>
+                <span class="c1">//console.log(io.sockets.adapter.rooms['room-' + socket.roomnum])</span>
+
+                <span class="c1">// Broadcast to current host and set false</span>
+                <span class="nx">socket</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">.</span><span class="nx">to</span><span class="p">(</span><span class="nx">currHost</span><span class="p">).</span><span class="nx">emit</span><span class="p">(</span><span class="dl">'</span><span class="s1">unSetHost</span><span class="dl">'</span><span class="p">)</span>
+                <span class="c1">// Reset host</span>
+                <span class="nx">io</span><span class="p">.</span><span class="nx">sockets</span><span class="p">.</span><span class="nx">adapter</span><span class="p">.</span><span class="nx">rooms</span><span class="p">[</span><span class="dl">'</span><span class="s1">room-</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">socket</span><span class="p">.</span><span class="nx">roomnum</span><span class="p">].</span><span class="nx">host</span> <span class="o">=</span> <span class="nx">newHost</span>
+                <span class="c1">// Broadcast to new host and set true</span>
+                <span class="nx">socket</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="dl">'</span><span class="s1">setHost</span><span class="dl">'</span><span class="p">)</span>
+
+                <span class="nx">io</span><span class="p">.</span><span class="nx">sockets</span><span class="p">.</span><span class="nx">adapter</span><span class="p">.</span><span class="nx">rooms</span><span class="p">[</span><span class="dl">'</span><span class="s1">room-</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">socket</span><span class="p">.</span><span class="nx">roomnum</span><span class="p">].</span><span class="nx">hostName</span> <span class="o">=</span> <span class="nx">socket</span><span class="p">.</span><span class="nx">username</span>
+                <span class="c1">// Update host label in all sockets</span>
+                <span class="nx">io</span><span class="p">.</span><span class="nx">sockets</span><span class="p">.</span><span class="k">in</span><span class="p">(</span><span class="dl">"</span><span class="s2">room-</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">roomnum</span><span class="p">).</span><span class="nx">emit</span><span class="p">(</span><span class="dl">'</span><span class="s1">changeHostLabel</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+                    <span class="na">username</span><span class="p">:</span> <span class="nx">socket</span><span class="p">.</span><span class="nx">username</span>
+                <span class="p">})</span>
+                <span class="c1">// Notify alert</span>
+                <span class="nx">socket</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="dl">'</span><span class="s1">notify alerts</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+                    <span class="na">alert</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="na">user</span><span class="p">:</span> <span class="nx">socket</span><span class="p">.</span><span class="nx">username</span>
+                <span class="p">})</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+</code></pre></div></div>
+
+<p><a href="https://github.com/brokengdnb/ava-data/demo-img/emi.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/ava-data/blob/master/demo-img/emi.png?raw=true" alt="MVC" title="preview" /></a></p>
+
+<h3 id="todo">Todo</h3>
+<ul>
+  <li>add effects (fade in/out) between changes of a stream… soft does not work, so hard one into media itself? Or with implementing other players do effect between them as well?</li>
+  <li>add dual-bind connection into EMI for getting time / syncing decks and loading songs into selected deck from this project / playlist</li>
+  <li>add list of connected devices localy in room &amp; globaly for all</li>
+  <li>add function for changing player on go, like between local server and youtube</li>
+  <li>remotely control MUTE function of TVs and selecting wich one in wich room</li>
+  <li>update cache button / new data request</li>
+  <li>export selected playlist for offline local use (PWA?) without database</li>
+  <li>fix favourites new URL data</li>
+  <li>fix song’s connected nodes</li>
+</ul>
+
+<h2 id="support">Support</h2>
+
+<ul>
+  <li><strong>OS X (tested on Mojave 10.14.6)</strong></li>
+  <li><strong>iOS &gt; 10 (tested on iPhone 5)</strong></li>
+  <li>Linux &amp; Android &gt; 6</li>
+  <li><del>Windows</del>  <em>(I don’t have any)</em></li>
+</ul>
+
+<h2 id="license">License</h2>
+
+<p>The MIT License.</p>
+
+<p>Copyright (c) 2020 BrokenG</p>
+
+                    ]]>
+                </content:encoded>
+                <guid isPermaLink="false">/project/ava-tv</guid>
+                <description>
+                    
+                    ...Audio &amp; Video Administration (Stream)
+                    
+                </description>
+                <pubDate>Tue, 30 Jan 2018 00:00:00 +0200</pubDate>
+                <author>BrokenG</author>
+            </item>
+        
+    
+        
+            <item>
+                <title>EMI</title>
+                <link>http://brokengdnb.github.io/blog/project/emi</link>
+                <content:encoded>
+                    <![CDATA[
+                    <p>So the idea was to create a special cusom high level mappings as well as dual-bind responsible skin to adapt on a event on a go, but the point is… limited number of a buttons, so it’s like layer over the layer… over the another one, and the other one based on position in that mixing process. Solution is portable to “any” MIDI or HID device, it just works. I started on <em>Akyiama Quark SQ</em> after two years migrate to <em>Behringer CMD</em> series…</p>
+
+<ul>
+  <li><a href="#midi">MIDI</a></li>
+  <li><a href="#screens">Screens</a></li>
+  <li><a href="#code">Code</a></li>
+  <li><a href="#future">Future</a></li>
+  <li><a href="#documentation">Documentation</a></li>
+  <li><a href="#license">License</a></li>
+</ul>
+
+<h2 id="midi">MIDI</h2>
+
+<p><a href="https://github.com/brokengdnb/emi/blob/master/02.jpg?raw=true" title="preview"><img src="https://github.com/brokengdnb/emi/blob/master/02.jpg?raw=true" alt="preview" title="preview" /></a></p>
+
+<h2 id="screens">Screens</h2>
+
+<p><a href="https://github.com/brokengdnb/emi/blob/master/01.png?raw=true" title="preview1"><img src="https://github.com/brokengdnb/emi/blob/master/01.png?raw=true" alt="preview1" title="preview1" /></a></p>
+
+<p><a href="https://github.com/brokengdnb/emi/blob/master/05.png?raw=true" title="preview3"><img src="https://github.com/brokengdnb/emi/blob/master/05.png?raw=true" alt="preview3" title="preview3" /></a></p>
+
+<p><a href="https://github.com/brokengdnb/emi/blob/master/03.png?raw=true" title="preview2"><img src="https://github.com/brokengdnb/emi/blob/master/03.png?raw=true" alt="preview2" title="preview2" /></a></p>
+
+<h2 id="code">Code</h2>
+
+<p>The core is written in C++ by open source comunity Mixxx and I didn’t touched that core, I took care about skin, mappings and comunication between controller, screen and audio. The magic script is written in pure Javasript ES5 with some deep dark energy and the best part is like:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// e = encoder, b = button... c = cue??? no, what only 4 deck? common!</span>
+<span class="kd">function</span> <span class="nx">deckApi</span><span class="p">(</span><span class="nx">channel</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">cc</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">e1</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">e2</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">e3</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">e4</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">e5</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">e6</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">e7</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">e8</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">pitch</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b1</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">b2</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b3</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b4</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b5</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b6</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b7</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b8</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">load</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">lock</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">deck</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">scratch</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">wheel</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">sync</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">tap</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">cue</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">playPause</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">backward</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">forward</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">minus</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">plus</span><span class="dl">'</span><span class="p">];</span>
+
+    <span class="kd">var</span> <span class="nx">rings</span> <span class="o">=</span> <span class="p">[</span><span class="nx">CC</span><span class="p">.</span><span class="nx">E1</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">E2</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">E3</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">E4</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">E5</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">E6</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">E7</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">E8</span><span class="p">];</span>
+
+    <span class="kd">var</span> <span class="nx">buttons</span> <span class="o">=</span> <span class="p">[</span><span class="nx">CC</span><span class="p">.</span><span class="nx">B1</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">B2</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">B3</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">B4</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">B5</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">B6</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">B7</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">B8</span><span class="p">,</span>
+        <span class="nx">CC</span><span class="p">.</span><span class="nx">LOAD</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">LOCK</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">SCRATCH</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">SYNC</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">TAP</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">CUE</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">PLAY_PAUSE</span><span class="p">,</span>
+        <span class="nx">CC</span><span class="p">.</span><span class="nx">BACKWARD</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">FORWARD</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">MINUS</span><span class="p">,</span> <span class="nx">CC</span><span class="p">.</span><span class="nx">PLUS</span><span class="p">];</span>
+
+    <span class="kd">var</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">deck</span> <span class="o">=</span> <span class="p">{};</span>
+    <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">cc</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="nx">deck</span><span class="p">[</span><span class="nx">cc</span><span class="p">[</span><span class="nx">i</span><span class="p">]]</span> <span class="o">=</span> <span class="nx">controlApi</span><span class="p">();</span>
+    <span class="nx">deck</span><span class="p">.</span><span class="nx">pitch</span><span class="p">.</span><span class="nx">led</span> <span class="o">=</span> <span class="nx">pitchLed</span><span class="p">(</span><span class="nx">channel</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">rings</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+      <span class="nx">deck</span><span class="p">[</span><span class="nx">CC_NAME</span><span class="p">[</span><span class="nx">rings</span><span class="p">[</span><span class="nx">i</span><span class="p">]]].</span><span class="nx">led</span> <span class="o">=</span> <span class="nx">encoderLedApi</span><span class="p">(</span><span class="nx">channel</span><span class="p">,</span> <span class="nx">rings</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">buttons</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+      <span class="nx">deck</span><span class="p">[</span><span class="nx">CC_NAME</span><span class="p">[</span><span class="nx">buttons</span><span class="p">[</span><span class="nx">i</span><span class="p">]]].</span><span class="nx">led</span> <span class="o">=</span> <span class="nx">buttonLedApi</span><span class="p">(</span><span class="nx">channel</span><span class="p">,</span> <span class="nx">buttons</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+
+    <span class="k">return</span> <span class="nx">deck</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="future">Future</h2>
+
+<p>Get some single-board mini PC with LCD and create complete custom and standalone player powered by 5V power bank.</p>
+
+<p><a href="https://github.com/brokengdnb/emi/blob/master/board.jpg?raw=true" title="board"><img src="https://github.com/brokengdnb/emi/blob/master/board.jpg?raw=true" alt="board" title="board" /></a></p>
+
+<p><a href="https://github.com/brokengdnb/emi/blob/master/lcd.jpg?raw=true" title="lcd"><img src="https://github.com/brokengdnb/emi/blob/master/lcd.jpg?raw=true" alt="lcd" title="lcd" /></a></p>
+
+<h2 id="documentation">Documentation</h2>
+
+<ul>
+  <li><a href="http://https://mixxx.org/wiki/doku.php/faq" title="FAQ">FAQ</a></li>
+  <li><a href="https://www.mixxx.org/wiki/doku.phphttp://" title="Wiki">Wiki</a></li>
+  <li><a href="https://mixxx.org/wiki/doku.php/creating_skins" title="Skins">Skins</a></li>
+  <li><a href="https://github.com/brokengdnb/emi/blob/master/Mixxx-Manual.pdf" title="Manual">Manual</a></li>
+  <li><a href="https://mixxx.org/wiki/doku.php/mixxxcontrols" title="Controls">Controls</a></li>
+  <li><a href="https://mixxx.org/wiki/doku.php/midi_scripting" title="Scripting">Scripting</a></li>
+  <li><a href="https://mixxx.org/wiki/doku.php/hardware_compatibility" title="HW Compatibility">HW Compatibility</a></li>
+</ul>
+
+<h2 id="license">License</h2>
+
+<p>See the LICENSE file.</p>
+
+<p>BrokenG (2020)</p>
+
+                    ]]>
+                </content:encoded>
+                <guid isPermaLink="false">/project/emi</guid>
+                <description>
+                    
+                    ...Elegant Mixing Interface (custom DJ app)
+                    
+                </description>
+                <pubDate>Wed, 30 Nov 2016 00:00:00 +0200</pubDate>
+                <author>BrokenG</author>
+            </item>
+        
+    
+        
+            <item>
+                <title>AVA (Data)</title>
+                <link>http://brokengdnb.github.io/blog/project/ava-data</link>
+                <content:encoded>
+                    <![CDATA[
+                    <blockquote>
+  <p>…ok so let’s create a decent REST API database server, with pre &amp; post custom data manipulation, suited up in Material Design (UI) and all of that render in 2D map to visualise songs in a mix &amp; playlists, why? because my memory does not work so I create one…</p>
+</blockquote>
+
+<hr />
+
+<ul>
+  <li><a href="#demo">Demo</a></li>
+  <li><a href="#code">Code</a></li>
+  <li><a href="#dependencies">Dependencies</a></li>
+  <li><a href="#run">Run</a></li>
+  <li><a href="#index">Index</a></li>
+  <li><a href="#idea">Idea</a></li>
+  <li><a href="#todo">TODO</a></li>
+  <li><a href="#support">Support</a></li>
+  <li><a href="#ava-tv">AVA-TV</a></li>
+  <li><a href="#license">License</a></li>
+</ul>
+
+<h2 id="demo">Demo</h2>
+
+<h2 id="code">Code</h2>
+
+<ul>
+  <li><a href="https://github.com/brokengdnb/ava-data/releases/tag/v1">AVA-DATA-1.0.zip (~70MB)</a></li>
+</ul>
+
+<blockquote>
+  <p>MD5</p>
+  <ul>
+    <li>…</li>
+  </ul>
+</blockquote>
+
+<h2 id="dependencies">Dependencies</h2>
+
+<ul>
+  <li><a href="https://github.com">git</a></li>
+  <li><a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/">MongoDB</a></li>
+  <li><a href="https://nodejs.org/en/download/">Node.js &amp; NPM</a></li>
+  <li><a href="http://ffmpeg.org/download.html">ffmpeg</a></li>
+  <li><a href="https://ytdl-org.github.io/youtube-dl/index.html">youtube-dl</a></li>
+</ul>
+
+<h2 id="run">Run</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/brokengdnb/ava-data <span class="o">&amp;&amp;</span> <span class="nb">cd </span>ava-data/
+npm <span class="nb">install
+</span>bower <span class="nb">install
+</span>npm run start
+</code></pre></div></div>
+<blockquote>
+  <p>woala just like that… and is on <a href="http://localhost:3000/" title="http://localhost:3000/">http://localhost:3000/</a> only problem is to create first random item to be able see graph… bug/feature import/rewrite data anyway</p>
+</blockquote>
+
+<p><img src="https://github.com/brokengdnb/ava-data/blob/049a611a016264ab49724ab2e496cde696179d0d/demo-img/home.png?raw=true" alt="home" title="home" /></p>
+
+<h2 id="index">Index</h2>
+
+<p>…so simple and so open for more complexity, plugins, pages and more:</p>
+
+<pre><code class="language-jade">mixin links(names)
+    each name in names
+        link(rel="stylesheet", type="text/css", href=name)
+mixin scripts(names)
+    each name in names
+        script(type="text/javascript", src=name)
+mixin scriptsBowerAngular(names)
+    each name in names
+        script(type="text/javascript", src="/bower_components/"+name+"/"+name+".min.js")
+html(lang="en")
+    head
+        title=appName
+        meta(name="mobile-web-app-capable" content="yes")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        meta(name="theme-color" content="#000")
+
+        +links([
+            "/bower_components/angular-material/angular-material.min.css",
+            "/styles/main.css",
+            "/styles/croppie.css",
+            "/styles/vis.css"
+        ])
+
+        +scriptsBowerAngular([
+            "angular",
+            "angular-animate",
+            "angular-aria",
+            "angular-material",
+            "angular-messages",
+            "angular-resource",
+            "angular-route",
+        ])
+
+        +scripts([
+            "/bower_components/angular-youtube-api-factory/dist/angular-youtube-api-factory.min.js",
+            "/scripts/WSAvcPlayer.js",
+            "/scripts/ng-droplet.min.js",
+            "/scripts/progressbar.min.js",
+            "/scripts/NodePlayer.js",
+            "/scripts/croppie.min.js",
+            "/scripts/angular-croppie.js",
+            "/scripts/socket.io.slim.js",
+            "/scripts/ua-parser.min.js",
+            "/scripts/jquery.min.js",
+            "/scripts/vis.js",
+            "/scripts/app.js",
+            "/scripts/index/component.js",
+            "/scripts/search/component.js",
+            "/scripts/saveAudio/component.js",
+            "/scripts/saveVideo/component.js",
+            "/scripts/local/component.js",
+            "/scripts/move/component.js",
+            "/scripts/home/component.js",
+            "/scripts/movie/component.js",
+            "/scripts/songs/component.js",
+            "/scripts/effects/component.js",
+            "/scripts/csv/component.js",
+            "/scripts/playlists/component.js"
+        ])
+    body(ng-app="ngApp")
+        div(ng-view)
+
+</code></pre>
+
+<p>As you can see in a “body” tag I’m using just one element and that render whole aplication in one page, then it depands and all requests are split between front end getting data &amp; back end doing some extra work:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// definition of front-end routers:</span>
+<span class="nx">$routeProvider</span><span class="p">.</span>
+<span class="nx">when</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+	<span class="na">template</span><span class="p">:</span> <span class="dl">'</span><span class="s1">&lt;home&gt;&lt;/home&gt;</span><span class="dl">'</span><span class="p">,</span>
+	<span class="na">activetab</span><span class="p">:</span> <span class="dl">'</span><span class="s1">home</span><span class="dl">'</span><span class="p">,</span>
+	<span class="na">activename</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Home</span><span class="dl">'</span><span class="p">,</span>
+	<span class="na">reloadOnSearch</span> <span class="p">:</span> <span class="kc">false</span>
+<span class="p">}).</span>
+<span class="nx">when</span><span class="p">(</span><span class="dl">'</span><span class="s1">/search</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+	<span class="na">template</span><span class="p">:</span> <span class="dl">'</span><span class="s1">&lt;search&gt;&lt;/search&gt;</span><span class="dl">'</span><span class="p">,</span>
+	<span class="na">activetab</span><span class="p">:</span> <span class="dl">'</span><span class="s1">search</span><span class="dl">'</span><span class="p">,</span>
+	<span class="na">activename</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Search</span><span class="dl">'</span><span class="p">,</span>
+	<span class="na">reloadOnSearch</span> <span class="p">:</span> <span class="kc">false</span>
+<span class="p">}).</span>
+<span class="nx">when</span><span class="p">(</span><span class="dl">'</span><span class="s1">/index</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+	<span class="c1">// etc... and then back-end API factory</span>
+
+<span class="p">.</span><span class="nx">factory</span><span class="p">(</span><span class="dl">'</span><span class="s1">Songs</span><span class="dl">'</span><span class="p">,</span>
+	<span class="kd">function</span><span class="p">(</span><span class="nx">$resource</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="nx">$resource</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/songs/:id</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">@_id</span><span class="dl">'</span><span class="p">},</span> <span class="p">{</span>
+			<span class="dl">'</span><span class="s1">query</span><span class="dl">'</span><span class="p">:</span>  <span class="p">{</span><span class="na">method</span><span class="p">:</span><span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span> <span class="na">isArray</span><span class="p">:</span><span class="kc">true</span><span class="p">},</span>
+			<span class="dl">'</span><span class="s1">get</span><span class="dl">'</span><span class="p">:</span>    <span class="p">{</span><span class="na">method</span><span class="p">:</span><span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">},</span>
+			<span class="dl">'</span><span class="s1">update</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span><span class="na">method</span><span class="p">:</span><span class="dl">'</span><span class="s1">PUT</span><span class="dl">'</span><span class="p">},</span>
+			<span class="dl">'</span><span class="s1">save</span><span class="dl">'</span><span class="p">:</span>   <span class="p">{</span><span class="na">method</span><span class="p">:</span><span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">},</span>
+			<span class="dl">'</span><span class="s1">remove</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span><span class="na">method</span><span class="p">:</span><span class="dl">'</span><span class="s1">DELETE</span><span class="dl">'</span><span class="p">},</span>
+			<span class="dl">'</span><span class="s1">delete</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span><span class="na">method</span><span class="p">:</span><span class="dl">'</span><span class="s1">DELETE</span><span class="dl">'</span><span class="p">}</span>
+		<span class="p">});</span>
+	<span class="p">}</span>
+<span class="p">).</span><span class="nx">factory</span><span class="p">(</span><span class="dl">'</span><span class="s1">Effects</span><span class="dl">'</span><span class="p">,</span>
+<span class="c1">// etc...</span>
+</code></pre></div></div>
+<p>I tried to keep default model MVC and rendering custom templates on a go as well.</p>
+
+<p><a href="https://github.com/brokengdnb/ava-data/demo-img/mvc.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/ava-data/blob/master/demo-img/mvc.png?raw=true" alt="MVC" title="preview" /></a></p>
+
+<p>as well as REST-API communications on server split on seperate models, controlers and views, you can see all details on  <a href="http://localhost:3000/api-docs/" title="http://localhost:3000/api-docs/">http://localhost:3000/api-docs/</a> using Swagger UI</p>
+
+<p><a href="https://github.com/brokengdnb/ava-data/demo-img/api.png" title="preview"><img src="https://github.com/brokengdnb/ava-data/blob/master/demo-img/api.png?raw=true" alt="api" title="preview" /></a></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">(</span><span class="nx">app</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">notes</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">../controllers/note.controller.js</span><span class="dl">'</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">cors</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">cors</span><span class="dl">'</span><span class="p">);</span>
+
+    <span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">cors</span><span class="p">());</span>
+
+    <span class="c1">// Create a new Note</span>
+    <span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/notes</span><span class="dl">'</span><span class="p">,</span> <span class="nx">notes</span><span class="p">.</span><span class="nx">create</span><span class="p">);</span>
+
+    <span class="c1">// Retrieve all Notes</span>
+    <span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/notes</span><span class="dl">'</span><span class="p">,</span> <span class="nx">notes</span><span class="p">.</span><span class="nx">findAll</span><span class="p">);</span>
+
+    <span class="c1">// Retrieve a single Note with noteId</span>
+    <span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/notes/:noteId</span><span class="dl">'</span><span class="p">,</span> <span class="nx">notes</span><span class="p">.</span><span class="nx">findOne</span><span class="p">);</span>
+
+    <span class="c1">// Update a Note with noteId</span>
+    <span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/notes/:noteId</span><span class="dl">'</span><span class="p">,</span> <span class="nx">notes</span><span class="p">.</span><span class="nx">update</span><span class="p">);</span>
+
+    <span class="c1">// Delete a Note with noteId</span>
+    <span class="nx">app</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/notes/:noteId</span><span class="dl">'</span><span class="p">,</span> <span class="nx">notes</span><span class="p">.</span><span class="k">delete</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="idea">Idea</h2>
+
+<blockquote>
+  <p>The idea started in summer 2013, knowlage, technology and libraries comes by 2018 and all together finished by 2020 but it’s still growing… evolving.</p>
+</blockquote>
+
+<p>So the idea is that I have 3 main elements that I would like to mix:</p>
+
+<ul>
+  <li>music <a href="https://github.com/brokengdnb/emi" title="(project EMI)">(project EMI)</a></li>
+</ul>
+
+<p><a href="https://github.com/brokengdnb/ava-data/demo-img/emi.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/ava-data/blob/master/demo-img/emi.png?raw=true" alt="MVC" title="preview" /></a></p>
+
+<ul>
+  <li>movies (cinema mode)</li>
+</ul>
+
+<p><a href="https://github.com/brokengdnb/ava-data/demo-img/movies.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/ava-data/blob/master/demo-img/movies.png?raw=true" alt="MVC" title="preview" /></a></p>
+
+<ul>
+  <li>video effects (DJ mode)</li>
+</ul>
+
+<p><a href="https://github.com/brokengdnb/ava-data/demo-img/effects.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/ava-data/blob/master/demo-img/effects.png?raw=true" alt="MVC" title="preview" /></a></p>
+
+<h2 id="that-can-be-imported-by-3-different-ways">That can be imported by 3 different ways:</h2>
+<ul>
+  <li>online (YouTube, Soundcloud, etc.)</li>
+</ul>
+
+<p><a href="https://github.com/brokengdnb/ava-data/demo-img/youtube.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/ava-data/blob/master/demo-img/youtube.png?raw=true" alt="MVC" title="preview" /></a></p>
+
+<ul>
+  <li>offline (local)
+    <ul>
+      <li>move</li>
+      <li>convert</li>
+    </ul>
+  </li>
+</ul>
+
+<p><a href="https://github.com/brokengdnb/ava-data/demo-img/local.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/ava-data/blob/master/demo-img/local.png?raw=true" alt="MVC" title="preview" /></a></p>
+
+<p>Online is simply text to find API for getting YouTube (limit 1000 requests/day) or any other kind of media (Audio/Video) from anywhere. Or direct Offline internal import. That require specific format .mp4 with settings and parameters for web based seamless playing on any device (iOS, PC, Android, TV) so If I already have that file ready from previous I can just move it or I can convert audio or video or both of ANY kind of file (.avi .flv .mkv. or whatever) to global format for any device… even my old-school PSP :) or iPhone 5-11</p>
+
+<p><a href="https://github.com/brokengdnb/ava-data/demo-img/csv.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/ava-data/blob/master/demo-img/csv.png?raw=true" alt="MVC" title="preview" /></a></p>
+
+<p>That’s individual import for each of element, once that is solved I started creating playlists. In project EMI once I get the right songs with the right effects in right order, I’m exporting CSV file of those “files/songs” and that will get imported as well with direct connections between each other.</p>
+
+<p><a href="https://github.com/brokengdnb/ava-data/demo-img/playlist.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/ava-data/blob/master/demo-img/playlist.png?raw=true" alt="MVC" title="preview" /></a></p>
+
+<p>Squere is video effect connected to specific song (dot), gray ‘new’ dots mean exit or income from playlist to another one and red dots means that song does not have image cover, by double click on it you can open modal and drag &amp; drop a new cover image as well as import or edit original ID3 tags.</p>
+
+<p><a href="https://github.com/brokengdnb/ava-data/demo-img/edit.png?raw=true" title="preview"><img src="https://github.com/brokengdnb/ava-data/blob/master/demo-img/edit.png?raw=true" alt="MVC" title="preview" /></a></p>
+
+<h3 id="todo">Todo</h3>
+
+<ul>
+  <li>connect automatic searcher for cover images based on title, some open source API for official album &amp; single covers?</li>
+  <li>fix a multiple delete function for movies &amp; effects, so far it’s just one by one but solution is already on songs, just copy/paste that solution… but I’m lazy xD</li>
+  <li>add multiple online responds for just one request</li>
+  <li>dynamic change API key for youtube after reaching 1000 requests/day</li>
+  <li>by Drag &amp; Drop get &amp; map external storage for files</li>
+  <li>copy files into that storage as a backup and write ID3 tags into original file as well</li>
+  <li>export pure JSON &amp; images for offline sever-less PWA</li>
+  <li>fix Safari bugs, but in this case I’m using Chrome and that’s bullet proof</li>
+</ul>
+
+<h2 id="support">Support</h2>
+
+<ul>
+  <li><strong>OS X (tested on Mojave 10.14.6)</strong></li>
+  <li>Linux</li>
+  <li><del>Windows</del>  =&gt; <em>(I don’t have one and I will <strong>NOT</strong> support this platform, never ever)”</em></li>
+</ul>
+
+<h2 id="ava-tv">AVA-TV</h2>
+
+<p>This project AVA-DATA is the base and “data-centrum” for another project AVA-TV focusing on real-time streaming on multiple devices with changes on a go… //simplify <a href="https://github.com/brokengdnb/ava-tv/">AVA-TV</a></p>
+
+<p><a href="https://github.com/brokengdnb/ava-tv/" title="ava-tv"><img src="https://github.com/brokengdnb/ava-tv/blob/master/demo/ava-TV-beamer.png?raw=true" alt="beamer" title="ava-tv" /></a></p>
+
+<h2 id="license">License</h2>
+
+<p>The MIT License.</p>
+
+<p>Copyright (c) 2020 BrokenG</p>
+
+                    ]]>
+                </content:encoded>
+                <guid isPermaLink="false">/project/ava-data</guid>
+                <description>
+                    
+                    ...Audio &amp; Video Administration (Database)
+                    
+                </description>
+                <pubDate>Fri, 30 Aug 2013 00:00:00 +0300</pubDate>
+                <author>BrokenG</author>
+            </item>
+        
+    
+        
+            <item>
+                <title>Links</title>
+                <link>http://brokengdnb.github.io/blog/urls</link>
+                <content:encoded>
+                    <![CDATA[
+                    <blockquote>
+  <p>Never memorize something that you can look up.</p>
+
+  <p>― Albert Einstein</p>
+</blockquote>
+
+<details><summary>Click to expand menu</summary>
+
+
+- [3D](#3d)
+- [Blogs](#blogs)
+- [Browser](#browser)
+- [Buy](#buy)
+- [CDN](#cdn)
+- [Courses](#courses)
+- [Electron](#electron)
+- [Forms](#forms)
+- [Generators](#generators)
+- [Jobs](#jobs)
+- [Logo](#logo)
+- [Passwords](#passwords)
+- [Podcasts](#podcasts)
+- [Radios](#radios)
+- [Resume](#resume)
+- [Safari](#safari)
+- [SBC](#sbc)
+- [Themes](#themes)
+- [TV](#tv)
+- [External](#external)
+
+</details>
+
+<hr />
+
+<h2 id="3d">3D</h2>
+
+<ul>
+  <li><a href="https://alicevision.org">Alicevision</a></li>
+  <li><a href="https://glitch.com/~aframe-gallery">360 change gallery base</a></li>
+  <li><a href="https://quixel.com">quixel - 3D objects for Epic games</a></li>
+  <li><a href="https://www.unrealengine.com/id/login?client_id=17ce2d2864834898ab71847859286c81&amp;response_type=code">unreal epin engine</a></li>
+</ul>
+
+<h2 id="best">Best</h2>
+
+<ul>
+  <li><a href="https://www.10bestdesign.com/firms/app/">10 Best App Developers companies</a></li>
+</ul>
+
+<h2 id="blogs">Blogs</h2>
+
+<ul>
+  <li><a href="https://www.bbc.co.uk/rd/blog" title="BBC Research and Development">BBC Research and Development</a></li>
+  <li><a href="http://https://netflixtechblog.com/" title="Neflix developer blog">Neflix dev blog</a></li>
+  <li><a href="https://youtube-eng.googleblog.com/" title="Youtube dev blog">Youtube dev blog</a></li>
+</ul>
+
+<h2 id="browser">Browser</h2>
+
+<ul>
+  <li><a href="https://www.powermapper.com/products/sortsite/checks/browser-compatibility">Website browser Compatibility</a></li>
+</ul>
+
+<h2 id="buy">Buy</h2>
+
+<ul>
+  <li><a href="https://www.amazon.co.uk/gp/offer-listing/B00DW5N99Y/ref=dp_olp_new_mbc?ie=UTF8&amp;condition=new">Behringer CMD LC-1</a>
+    <ul>
+      <li><a href="https://github.com/mpiraux/CMD-LC-1-Ableton-9-Control-Surface-Script">CMD LC-1 Ableton 9 Control surface script</a></li>
+      <li><a href="https://github.com/mpiraux/CMD-DC-1-Ableton-9-Control-Surface-Script">CMD DC-1 Ableton 9 Control surface script</a></li>
+    </ul>
+  </li>
+  <li><a href="https://www.thomann.de/nl/behringer_x_touch_one.htm">Behringer X-TOUCH ONE</a></li>
+  <li><a href="https://www.dennisdeal.com/products/5mx1-5m-woodland-camouflage-camo-net-for-camping-military-photography">Woodland Camouflage Camo Net</a></li>
+  <li><a href="https://www.sossolutions.nl/ipazzport-met-laserpointer">Portable Keyboard</a></li>
+  <li><a href="https://www.banggood.com/nl/7-Inch-Full-View-LCD-IPS-Touch-Screen-1024+600-800+480-HD-HDMI-Display-Monitor-for-Raspberry-Pi-p-1633584.html?akmClientCountry=NL&amp;rmmds=search&amp;ID=514801&amp;cur_warehouse=CN">7 Inch Full View LCD IPS Touchscreen</a></li>
+  <li><a href="https://www.banggood.com/nl/10-inch-2560x1600P-2K-FHD-Monitor-IPS-Wide-Angle-Display-Screen-with-Protective-Case-for-Raspberry-Pi-4-Model-B-3-Model-Bplus-Pi3-PS3-PS4-WiiU-Xbox360-p-1472776.html?rmmds=detail-left-hotproducts__12&amp;cur_warehouse=CZ">10 Inch 2K LCD</a></li>
+  <li><a href="https://www.bol.com/nl/p/razer-sila-gaming-router-3000-mbps/9200000100294206/?Referrer=ADVNLGOO002013-G-49170246635-S-472333311995-9200000100294206&amp;gclid=EAIaIQobChMI2MOnlpnI5wIVQeh3Ch1mEAQQEAQYAiABEgLnt_D_BwE#product_specifications">Razer Sila - Gaming Router - 3000 Mbps</a></li>
+  <li><a href="https://reolink.com/outdoor-motion-activated-camera/#part1">Hidden Outdoor Motion Activated Cameras</a></li>
+  <li><a href="https://rolls69.com/en/home">smoking</a></li>
+  <li><a href="https://www.ebay.nl/itm/233008730915">SONY LF-B20 Location Free Base Station</a></li>
+  <li><a href="https://www.megekko.nl/product/0/953459/TP-LINK-TL-WN722N">TP-LINK TL-WN722N - wifi hacking</a></li>
+</ul>
+
+<h2 id="cdn">CDN</h2>
+
+<ul>
+  <li><a href="https://render.com/pricing">Free instant Deploys For static, git, database, nodejs</a></li>
+</ul>
+
+<h2 id="courses">Courses</h2>
+
+<ul>
+  <li><a href="https://www.classcentral.com/subject/programming-and-software-development?page=2">Programming</a></li>
+  <li><a href="https://www.coursera.org/learn/vital-signs">Body vital language</a></li>
+</ul>
+
+<h2 id="electron">Electron</h2>
+
+<ul>
+  <li><a href="https://github.com/sindresorhus/electron-context-menu">context menu</a></li>
+  <li><a href="https://github.com/pouchdb/pouchdb">offline/online sync database</a></li>
+  <li><a href="https://github.com/typicode/json-server">full fake REST API</a></li>
+</ul>
+
+<h2 id="forms">Forms</h2>
+
+<ul>
+  <li><a href="https://formspree.io/" title="Formspree">Formspree (front-end)</a></li>
+  <li><a href="https://www.smashingmagazine.com/2018/08/ux-html5-mobile-form-part-2/">Mobile form development</a></li>
+</ul>
+
+<h2 id="generators">Generators</h2>
+
+<ul>
+  <li><a href="https://jakebathman.github.io/Markdown-Table-Generator/">.md table</a></li>
+</ul>
+
+<h2 id="jobs">Jobs</h2>
+
+<p>(IT)</p>
+
+<ul>
+  <li><a href="https://www.honeypot.io/lp/join">Honeypot</a></li>
+  <li><a href="https://jobs.smartrecruiters.com/?keyword=netherlands">SmartRecruiters</a></li>
+</ul>
+
+<h2 id="logo">LOGO</h2>
+
+<ul>
+  <li><a href="https://www.brandcrowd.com">BrandCrowd</a></li>
+</ul>
+
+<h2 id="passwords">Passwords</h2>
+
+<ul>
+  <li><a href="https://bitwarden.com/pricing/">Bitwarden</a></li>
+</ul>
+
+<h2 id="podcasts">Podcasts</h2>
+
+<ul>
+  <li><a href="https://simplecast.com/">Simplecast</a></li>
+  <li><a href="https://www.10bestdesign.com/podcast/">Audio 9 Design</a></li>
+</ul>
+
+<h2 id="radios">Radios</h2>
+
+<ul>
+  <li><a href="http://icecast8.play.cz/color128.mp3" title="Color Music Radio (Czech Republic)">Color Music Radio (Czech Republic)</a></li>
+  <li><a href="http://trace.dnbradio.com:8000/dnbradio_main.mp3" title="Drum &amp; Bass (England)">Drum &amp; Bass (England)</a></li>
+  <li><a href="https://dnbradio.hardcoding.nl/dnbradio_main.mp3">Drum &amp; Bass backup url</a></li>
+  <li><a href="https://www.radiozenders.fm/drum-and-bass-radio">Netherlands Radios</a></li>
+  <li><a href="https://github.com/AzuraCast/AzuraCast">AzuraCast</a></li>
+</ul>
+
+<h2 id="resume">Resume</h2>
+
+<ul>
+  <li><a href="https://novoresume.com/" title="Novorésumé">Novorésumé</a></li>
+</ul>
+
+<h2 id="safari">Safari</h2>
+
+<ul>
+  <li><a href="https://github.com/ashchan/safarikai">JP translator</a></li>
+</ul>
+
+<h2 id="sbc">SBC</h2>
+
+<p>(Single Board Computer)</p>
+
+<ul>
+  <li><a href="https://pine64.com/?product=rockpro64-2gb-single-board-computer&amp;v=0446c16e2e66">ROCKPro64 2GB - 60$</a>
+    <ul>
+      <li><a href="https://www.sossolutions.nl/pine64-rock64-audio-pot-board">Stereo Audio DAC add-on 192kHz / 24bit</a></li>
+    </ul>
+  </li>
+  <li><a href="http://www.orangepi.org/OrangePiWin_WinPlus/">Orange Pi Win</a></li>
+</ul>
+
+<h2 id="svg">SVG</h2>
+
+<ul>
+  <li><a href="https://www.iloveimg.com/download/t3zh88jskp1tr4Ad9Am9w5kdccgxmxdAyzyrj8z34ngjAhcp9r8yzdk08xk6c9hfj0z2q1hkkjsbtspjm1tgd9r2r82pvnq5q2zbrlwg0s7m3nd6zjdpn2n8wxmx2rw4yqAbgsx0p49kpf9kqpfxly7zxxyfk4gjdqwshxt6tq5r9f0cwwh1/4">resize</a></li>
+</ul>
+
+<h2 id="themes">Themes</h2>
+
+<ul>
+  <li><a href="https://github.com/mmistakes/minimal-mistakes">Jekkyl - minimal-mistakes</a></li>
+</ul>
+
+<h2 id="tv">TV</h2>
+
+<ul>
+  <li><a href="https://www.nederland.tv/">Netherlands TV</a></li>
+</ul>
+
+<h2 id="tools">Tools</h2>
+
+<ul>
+  <li><a href="https://www.10bestdesign.com/tools/">beautifying and formatting JS code</a></li>
+</ul>
+
+<h3 id="external">External</h3>
+
+<ul>
+  <li><a href="https://github.com/ebu/awesome-broadcasting" title="Awesome Broadcasting (git)">Awesome Broadcasting (git)</a></li>
+  <li><a href="https://github.com/awesome-selfhosted/awesome-selfhosted" title="Awesome-Selfhosted">Awesome Selfhosted (git)</a></li>
+</ul>
+
+<h3 id="nodejs">Node.js</h3>
+
+<ul>
+  <li><a href="https://github.com/JakubKrizka/available-disk-space-nodejs/blob/master/index.js">Disk Space</a></li>
+  <li><a href="https://www.npmjs.com/package/updated-youtube-info">Youtube video metada info</a></li>
+  <li><a href="https://www.npmjs.com/package/open-graph-scraper">Open Graph metadata reader 1</a></li>
+  <li><a href="https://www.npmjs.com/package/html-metadata-parser">HTML Graph metadata reader 2</a></li>
+</ul>
+
+<h3 id="angularjs">Angular.js</h3>
+
+<ul>
+  <li><a href="https://codepen.io/danemacaulay/pen/PZpWMg">Swipe to right</a></li>
+  <li><a href="https://codepen.io/sunnygleason/pen/jrwEXy">Text-Speech - pubnub</a></li>
+</ul>
+
+<h3 id="material-design">Material Design</h3>
+
+<ul>
+  <li><a href="https://codepen.io/DiEH/pen/jOPPzLV">Cards</a></li>
+  <li><a href="https://codepen.io/ettrics/pen/VvxmPV">Gallery</a></li>
+</ul>
+
+
+                    ]]>
+                </content:encoded>
+                <guid isPermaLink="false">/urls</guid>
+                <description>
+                    
+                    ...collection of all interesting sites &amp; projects
+                    
+                </description>
+                <pubDate>Sun, 30 Jan 2011 00:00:00 +0200</pubDate>
+                <author>BrokenG</author>
+            </item>
+        
+    
+  </channel>
+</rss>

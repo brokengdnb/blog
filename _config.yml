@@ -11,7 +11,7 @@ future: true
 root:
 #baseurl: /
 url: http://brokengdnb.github.io/blog
-destination: /Users/gl/WebstormProjects/blog/docs
+destination: /Users/gl/Documents/blog/docs
 
 collections:
   category:
